@@ -1,4 +1,4 @@
-import logo from './Tau.png';
+import logo from './logo.png';
 import './App.css';
 import FirstC from './components/FirstC.js';
 import SearchBar from './components/SearchBar.js';
@@ -12,16 +12,16 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Adi and ohad first commit <code>src/App.js</code> and save to reload.
+          Team 6  - AssisTAU
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/*<a*/}
+        {/*  className="App-link"*/}
+        {/*  href="https://reactjs.org"*/}
+        {/*  target="_blank"*/}
+        {/*  rel="noopener noreferrer"*/}
+        {/*>*/}
+        {/*  Learn React*/}
+        {/*</a>*/}
         <SearchBar />
         <div>
         </div>

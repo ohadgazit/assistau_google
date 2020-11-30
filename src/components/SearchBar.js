@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: 250,
     },
 }));
 
@@ -94,8 +94,8 @@ export default function ControlledOpenSelect() {
                 chosenTeachers.length ?
                 chosenTeachers.map(({ name, pic}, idx) => (
                     <div key={idx}>
-                        <h3>{name}</h3>
-                        <Avatar alt={name} src={pic} className={classes.large} />
+                        <h3>{name} </h3>
+                        <Avatar alt={name} src={pic} className={classes.large}  />
                     </div>
                 )
                 ) : <p>לא נמצא מורה</p>
