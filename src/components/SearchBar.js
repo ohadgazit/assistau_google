@@ -90,12 +90,15 @@ export default function ControlledOpenSelect() {
 
             </FormControl>
 
+
             {
                 chosenTeachers.length ?
-                chosenTeachers.map(({ name, pic}, idx) => (
+                chosenTeachers.map(({ name, pic, email}, idx) => (
                     <div key={idx}>
-                        <h3>{name} </h3>
+                        <h3>
+                        {name},{email}
                         <Avatar alt={name} src={pic} className={classes.large}  />
+                        </h3>
                     </div>
                 )
                 ) : <p>לא נמצא מורה</p>

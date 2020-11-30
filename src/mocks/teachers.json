@@ -1,7 +1,7 @@
 [
-    {"name": "דודי", "age": 28, "desc": "Wow teacher", "classes": [1,3,5], "pic":"http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png" },
-    {"name": "רועי", "age": 28, "desc": "Wow teacher", "classes": [2,4,8], "pic": "http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png" },
-    {"name": "אוהד", "age": 28, "desc": "Wow teacher", "classes": [1,4,6], "pic": "https://www.nj.com/resizer/zovGSasCaR41h_yUGYHXbVTQW2A=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg"},
-    {"name": "שמוליק", "age": 28, "desc": "Wow teacher", "classes": [1,4,6], "pic": "http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png"},
-    {"name": "דודי", "age": 28, "desc": "Wow teacher", "classes": [1,9,6], "pic": "http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png"}
+    {"name": "דוד אורן", "age": 28,"email": "david@oren.com" , "desc": "Wow teacher", "classes": [1,3,5], "pic":"http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png" },
+    {"name": "ישראל ישראלי", "age": 28,"email": "israel@israeli.com",  "desc": "Wow teacher", "classes": [2,4,8], "pic": "http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png" },
+    {"name": "אוהד גזית", "age": 28,"email": "ohad@gazit.com","desc": "Wow teacher", "classes": [1,4,6], "pic": "https://www.nj.com/resizer/zovGSasCaR41h_yUGYHXbVTQW2A=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg"},
+    {"name": "פלוני אלמוני", "age": 28,"email": "ploni@almoni.com","desc": "Wow teacher", "classes": [1,4,6], "pic": "http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png"},
+    {"name": "הלל בן שחר", "age": 28,"email": "hillel@shachar.com","desc": "Wow teacher", "classes": [1,9,6], "pic": "http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png"}
 ]
