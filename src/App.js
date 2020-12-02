@@ -1,4 +1,4 @@
-import logo from './logo.png';
+import logo from './logo.svg';
 import './App.css';
 import FirstC from './components/FirstC.js';
 import SearchBar from './components/SearchBar.js';
