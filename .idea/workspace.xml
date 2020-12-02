@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="#Updated logo and design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
@@ -63,7 +67,7 @@
       <updated>1606755896923</updated>
       <workItem from="1606755899772" duration="44000" />
       <workItem from="1606756076021" duration="3001000" />
-      <workItem from="1606930346274" duration="5652000" />
+      <workItem from="1606930346274" duration="6356000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -86,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606759617343</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#Updated logo and design">
+      <created>1606936430203</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606936430203</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,13 +131,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="166" y="69" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1606935288140" />
-    <state x="331" y="170" key="Vcs.Push.Dialog.v2" timestamp="1606759621537">
+    <state x="331" y="170" key="Vcs.Push.Dialog.v2" timestamp="1606936433237">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606759621537" />
+    <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606936433237" />
     <state x="532" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606930353019">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="532" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1606930353019" />
+    <state x="410" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1606936546812">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="410" y="213" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606936546812" />
   </component>
 </project>
