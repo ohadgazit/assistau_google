@@ -8,7 +8,7 @@ const DUMMY_TEACHERS = [
         id: 'p1',
         title: 'Dudi Oren',
         description: 'CEO at Assistau',
-        imageUrl: 'https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/17264250_1596514743709275_7928669354904976584_n.jpg?_nc_cat=104&cb=846ca55b-311e05c7&ccb=2&_nc_sid=9267fe&_nc_ohc=LfVLcwbE_-wAX8zgepp&_nc_ht=scontent-mxp1-1.xx&oh=0ddda56556b4c621f9d11040b9a323db&oe=5FED5953',
+        imageUrl: 'https://img.haarets.co.il/img/1.8195303/1148634372.jpg?width=600',
         address: 'BALFUR',
         location: {
             lat: 40.7484405,
