@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="#Updated logo and design" />
+    <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +57,7 @@
       <workItem from="1606756076021" duration="1903000" />
       <workItem from="1606923232113" duration="443000" />
       <workItem from="1606923678733" duration="60000" />
-      <workItem from="1606923780679" duration="15058000" />
+      <workItem from="1606923780679" duration="15393000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -84,7 +84,13 @@
       <option name="presentableId" value="LOCAL‎00004" />
       <updated>1606984866853</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎00005" summary="#Updated logo and design">
+      <created>1606985302089</created>
+      <option name="number" value="LOCAL‎00005" />
+      <option name="presentableId" value="LOCAL‎00005" />
+      <updated>1606985302089</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,10 +105,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606925361904" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1606984926022">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1606985301548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606984926022" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606985301548" />
     <state x="588" y="334" key="Github.ShareDialog" timestamp="1606756242887">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
