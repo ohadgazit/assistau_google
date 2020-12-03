@@ -1,33 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import MainPage from "./pages/MainPage";
 import FirstC from './components/FirstC.js';
-import SearchBar from './components/SearchBar.js';
 import React from "react";
-import { Button } from '@material-ui/core';
-
+import TeachersList from "./pages/TeachersList";
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch
+} from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Team 6  - AssisTAU
-        </p>
-        {/*<a*/}
-        {/*  className="App-link"*/}
-        {/*  href="https://reactjs.org"*/}
-        {/*  target="_blank"*/}
-        {/*  rel="noopener noreferrer"*/}
-        {/*>*/}
-        {/*  Learn React*/}
-        {/*</a>*/}
-        <SearchBar />
-        <div>
-        </div>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Switch>
+                <Route path="/" exact>
+                    <MainPage/>
+                </Route>
+                <Route path="/first_c" exact>
+                    <FirstC/>
+                </Route>
+                <Route path="/teachers" exact>
+                    <TeachersList />
+                </Route>
+                <Redirect to="/"/>
+            </Switch>
+        </Router>
+
+    );
 
 
 }
