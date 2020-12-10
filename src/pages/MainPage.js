@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './MainPage.css';
-import SearchBar from "../components/SearchBar";
+//import SearchBar from "../components/SearchBar";
 import React from "react";
-
+import ControllableStates from "../components/searchbar2"
 
 function MainPage() {
     return (
@@ -12,7 +12,7 @@ function MainPage() {
                         <p>
                             Team 6 - AssisTAU
                         </p>
-                        <SearchBar/>
+                        <ControllableStates/>
                     </header>
                 </div>
 

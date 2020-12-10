@@ -3,6 +3,7 @@ import MainPage from "./pages/MainPage";
 import FirstC from './components/FirstC.js';
 import React from "react";
 import TeachersList from "./pages/TeachersList";
+import SearchBar from "./components/SearchBar"
 import {
     BrowserRouter as Router,
     Route,
@@ -10,7 +11,9 @@ import {
     Switch
 } from 'react-router-dom';
 
-function App() {
+const App = () => {
+
+
     return (
         <Router>
             <Switch>
@@ -20,8 +23,11 @@ function App() {
                 <Route path="/first_c" exact>
                     <FirstC/>
                 </Route>
-                <Route path="/teachers" exact>
+                <Route path="/courses/:courseId/" exact>
                     <TeachersList />
+                </Route>
+                <Route path="/teachers2" exact>
+                    <SearchBar />
                 </Route>
                 <Redirect to="/"/>
             </Switch>
