@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Testing" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +46,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1l1Dq2uaVQZGx5MB8TepdxpAsrH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,10 +70,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
   </component>
@@ -59,7 +89,12 @@
       <workItem from="1606756076021" duration="1903000" />
       <workItem from="1606923232113" duration="443000" />
       <workItem from="1606923678733" duration="60000" />
-      <workItem from="1606923780679" duration="14662000" />
+      <workItem from="1606923780679" duration="15393000" />
+      <workItem from="1607617819449" duration="640000" />
+      <workItem from="1607892238428" duration="1033000" />
+      <workItem from="1607902556098" duration="3488000" />
+      <workItem from="1607938517490" duration="4231000" />
+      <workItem from="1607947550777" duration="10989000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -80,11 +115,70 @@
       <option name="presentableId" value="LOCAL‎00003" />
       <updated>1606955159137</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎00004" summary="#Updated logo and design">
+      <created>1606984866853</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1606984866853</updated>
+    </task>
+    <task id="LOCAL‎00005" summary="#Updated logo and design">
+      <created>1606985302089</created>
+      <option name="number" value="LOCAL‎00005" />
+      <option name="presentableId" value="LOCAL‎00005" />
+      <updated>1606985302089</updated>
+    </task>
+    <task id="LOCAL‎00006" summary="#Updated logo and design">
+      <created>1607618024133</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1607618024133</updated>
+    </task>
+    <task id="LOCAL‎00007" summary="#Updated logo and design">
+      <created>1607959945579</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1607959945579</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Testing" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#Updated logo and design" />
@@ -95,10 +189,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606925361904" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1606955158404">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1607959944704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606955158404" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1607618023503" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607959944704" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1607607043565">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607607043565" />
     <state x="588" y="334" key="Github.ShareDialog" timestamp="1606756242887">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -127,14 +226,31 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606933759933" />
-    <state x="353" y="156" key="Vcs.Push.Dialog.v2" timestamp="1606955143507">
+    <state x="558" y="109" key="VCS.ChangeListViewerDialog" timestamp="1607607005547">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="558" y="109" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1607607005547" />
+    <state x="618" y="325" key="VCS.ChangelistChooser" timestamp="1607606841142">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1607606841142" />
+    <state x="353" y="156" key="Vcs.Push.Dialog.v2" timestamp="1607959968166">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606757589940" />
-    <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606955143507" />
+    <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1607618101954" />
+    <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607959968166" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607607637416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1607607637416" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606923839145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606923839145" />
+    <state x="477" y="0" width="581" height="824" key="find.popup" timestamp="1607954190561">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="0" width="581" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607954190561" />
   </component>
 </project>
