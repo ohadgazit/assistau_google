@@ -1,11 +1,11 @@
 import './App.css';
 import MainPage from "./pages/MainPage";
-import FirstC from './components/FirstC.js';
+import SignInPage from "./pages/SignInPage";
 import React from "react";
 import TeachersList from "./pages/TeachersList";
-import SearchBar from "./components/SearchBar"
-import MainNavigation from "./navigation/MainNavigation";
 import TeacherItemExpanded from "./pages/TeacherPage";
+import MainNavigation from "./navigation/MainNavigation";
+import UserForm from "./components/UserForm";
 import {
     BrowserRouter as Router,
     Route,
@@ -25,17 +25,17 @@ const App = () => {
                 <Route path="/" exact>
                     <MainPage/>
                 </Route>
-                <Route path="/first_c" exact>
-                    <FirstC/>
+                <Route path="/SignIn" exact>
+                    <SignInPage/>
+                </Route>
+                <Route path="/UserForm" exact>
+                    <UserForm/>
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />
                 </Route>
-                <Route path="/teachers/:teacherId/" exact>
+                <Route path="/teachers/:teacherId" exact>
                     <TeacherItemExpanded />
-                </Route>
-                <Route path="/teachers2" exact>
-                    <SearchBar />
                 </Route>
                 <Redirect to="/"/>
             </Switch>
