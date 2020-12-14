@@ -26,13 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="#Updated logo and design">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseTeachersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTeachersList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeacherItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeacherItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mocks/teachers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/teachers.json" afterDir="false" />
-    </list>
+    <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="#Updated logo and design" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,10 +72,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
   </component>
