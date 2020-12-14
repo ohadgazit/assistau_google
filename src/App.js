@@ -5,6 +5,7 @@ import React from "react";
 import TeachersList from "./pages/TeachersList";
 import SearchBar from "./components/SearchBar"
 import MainNavigation from "./navigation/MainNavigation";
+import TeacherItemExpanded from "./pages/TeacherPage";
 import {
     BrowserRouter as Router,
     Route,
@@ -29,6 +30,9 @@ const App = () => {
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />
+                </Route>
+                <Route path="/teachers/:teacherId/" exact>
+                    <TeacherItemExpanded />
                 </Route>
                 <Route path="/teachers2" exact>
                     <SearchBar />

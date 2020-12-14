@@ -26,6 +26,8 @@ const CourseTeachersList = props => {
                 education={place.education}
                 locations={place.locations}
                 creatorId={place.creator}
+                age = {place.age}
+                desc = {place.desc}
 
             />
         ))}

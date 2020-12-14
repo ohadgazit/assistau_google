@@ -19,7 +19,7 @@ const TeacherItem = props => {
                     </div>
                     <div className="place-item__actions">
                         <Button to={"/"}>חזור לחיפוש</Button>
-                        <Button to={`/${props.id}`}  >מידע נוסף</Button>
+                        <Button to={`/teachers/${props.id}`}  >מידע נוסף</Button>
                     </div>
                 </Card>
             </li>
