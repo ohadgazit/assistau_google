@@ -10,16 +10,16 @@ const TeacherItem = props => {
             <li className="place-item">
                 <Card className="place-item__content">
                     <div className="place-item__image">
-                        <img src={props.image} alt={props.title} />
+                        <img src={props.image} alt={props.name} />
                     </div>
                     <div className="place-item__info">
-                        <h2>{props.title}</h2>
-                        <h3>{props.address}</h3>
-                        <p>{props.description}</p>
+                        <h2>{props.name}</h2>
+                        <h3>תחום לימודים: {props.education}</h3>
+                        <p>מיקום שיעור: {props.locations}</p>
                     </div>
                     <div className="place-item__actions">
-                        <Button to={`/places/${props.id}`}>EDIT</Button>
-                        <Button danger  >DELETE</Button>
+                        <Button to={"/"}>חזור לחיפוש</Button>
+                        <Button to={`/${props.id}`}  >מידע נוסף</Button>
                     </div>
                 </Card>
             </li>

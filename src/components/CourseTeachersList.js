@@ -9,7 +9,7 @@ const CourseTeachersList = props => {
         return (
             < div className="placees-list center" >
                 <Card>
-                    <h2>no places found. maybe create one?</h2>
+                    <h2>לא קיימים מורים לקורס זה, אולי תהיה הראשון?</h2>
                     <button>Share Place</button>
                 </Card>
             </div >
@@ -22,11 +22,11 @@ const CourseTeachersList = props => {
                 key={place.id}
                 id={place.id}
                 image={place.imageUrl}
-                title={place.title}
-                description={place.description}
-                address={place.address}
+                name={place.name}
+                education={place.education}
+                locations={place.locations}
                 creatorId={place.creator}
-                coordinates={place.location}
+
             />
         ))}
     </ul>;

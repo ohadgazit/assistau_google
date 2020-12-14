@@ -4,6 +4,7 @@ import FirstC from './components/FirstC.js';
 import React from "react";
 import TeachersList from "./pages/TeachersList";
 import SearchBar from "./components/SearchBar"
+import MainNavigation from "./navigation/MainNavigation";
 import {
     BrowserRouter as Router,
     Route,
@@ -15,7 +16,10 @@ const App = () => {
 
 
     return (
+
         <Router>
+            <MainNavigation/>
+            <main>
             <Switch>
                 <Route path="/" exact>
                     <MainPage/>
@@ -31,6 +35,7 @@ const App = () => {
                 </Route>
                 <Redirect to="/"/>
             </Switch>
+            </main>
         </Router>
 
     );
