@@ -71,7 +71,7 @@ function SignInPage() {
 
 
     if (user) {
-        console.log("dudi", user.displayName)
+        console.log("connected user:", user.displayName)
     } else {
         console.log(user)
     }

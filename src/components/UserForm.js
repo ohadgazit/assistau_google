@@ -3,7 +3,7 @@ import UserDetails from './UserDetails'
 import ConfirmationPage from './ConfirmationPage';
 import Success from './Success'
 import '../pages/MainPage.css';
-import firebase from "firebase";
+//import firebase from "firebase";
 
 export class UserForm extends Component {
     state = {
