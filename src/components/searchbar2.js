@@ -12,6 +12,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 //import TeachersList from "../pages/TeachersList";
 //import { BrowserRouter as Router, Route,  Switch, useParams } from "react-router-dom";
+import coursesItems from "../mocks/coursesItems.json"
 
 
 const ControllableStates = (props) => {
@@ -67,8 +68,10 @@ const ControllableStates = (props) => {
                 defaultValue={null}
                 value={value1}
                 onChange={(event, newValue) => {
-                    setValue(newValue);
-                    setId(newValue)
+                    if (newValue !== null) {
+                        setValue(newValue);
+                        setId(newValue)
+                    }
                 }}
                 inputValue={inputValue}
                 onInputChange={(event, newInputValue) => {
