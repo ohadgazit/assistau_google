@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Button from '../Shared/Button'
 import './TeacherItem.css';
 import Card from "../Shared/Card";
@@ -23,6 +22,7 @@ const TeacherItem = props => {
                     </div>
                 </Card>
             </li>
+
     );
 };
 
