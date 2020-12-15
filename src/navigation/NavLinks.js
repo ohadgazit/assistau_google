@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -6,6 +6,7 @@ import 'firebase/analytics';
 import 'firebase/database'
 import 'firebase/auth';
 import { useHistory } from "react-router-dom";
+
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -23,6 +24,14 @@ const NavLinks = props => {
     } else {
         console.log("not connected")
     }
+    const [isNotHomePage,isNotHomeSet] = useState(window.location.pathname !== "/");
+    console.log(isNotHomePage);
+    useEffect(() => {
+        return history.listen((location) => {
+            isNotHomeSet(window.location.pathname !== "/");
+        })
+    },[history])
+
 
     return <ul className="nav-links">
         <li>
@@ -34,11 +43,12 @@ const NavLinks = props => {
             <NavLink to="/UserForm">הרשם</NavLink>
         </li>}
         <li>
-            <NavLink to="/SignIn">התחבר</NavLink>
+            <NavLink to="/SignIn" >התחבר</NavLink>
         </li>
-        <li>
+        {isNotHomePage?<li>
             <button onClick={() => history.goBack()}>חזור אחורה</button>
-        </li>
+        </li>:null}
+
     </ul>
 };
 
