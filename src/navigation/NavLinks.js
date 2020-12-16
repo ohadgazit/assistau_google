@@ -43,7 +43,7 @@ const NavLinks = props => {
             <NavLink to="/UserForm">הרשם</NavLink>
         </li>}
         <li>
-            <NavLink to="/SignIn" >התחבר</NavLink>
+            <NavLink to="/SignIn">{ user ? auth.currentUser.displayName  : 'התחבר'}</NavLink>
         </li>
         {isNotHomePage?<li>
             <button onClick={() => history.goBack()}>חזור אחורה</button>
