@@ -28,13 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseTeachersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTeachersList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mocks/teachers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/teachers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/MainNavigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/MainNavigation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +100,7 @@
       <workItem from="1607938517490" duration="4231000" />
       <workItem from="1607947550777" duration="10989000" />
       <workItem from="1608141464563" duration="985000" />
-      <workItem from="1608287981049" duration="13689000" />
+      <workItem from="1608287981049" duration="17370000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -209,7 +203,13 @@
       <option name="presentableId" value="LOCAL‎00016" />
       <updated>1608143403779</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎00017" summary="Merge remote-tracking branch 'origin/master' into Testing&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/App.js">
+      <created>1608311970713</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1608311970713</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,10 +264,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606925361904" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1608143403107">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1608311969896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1607618023503" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1608311969896" />
     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607959944704" />
     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1608143403107" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1607607043565">
@@ -322,11 +322,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1607606841142" />
-    <state x="353" y="156" key="Vcs.Push.Dialog.v2" timestamp="1608143406583">
+    <state x="353" y="156" key="Vcs.Push.Dialog.v2" timestamp="1608311973919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607968352429" />
-    <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1607618101954" />
+    <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1608311973919" />
     <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607959968166" />
     <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608143406583" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607607637416">

@@ -4,7 +4,6 @@ import Card from "../Shared/Card";
 import {useHistory, useParams} from 'react-router-dom';
 import teachers from "../mocks/teachers.json"
 import React from "react";
-import "../mocks/coursesItems.json"
 
 
 //import Modal from '@material-ui/core/Modal';
@@ -17,6 +16,9 @@ const TeacherItemExpanded = props =>{
     const history = useHistory();
     var whastappMessageUrl = "https://wa.me/" +chosen_teacher.phone_number +"?text= שלום "
         +chosen_teacher.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+    const additionalCourses = ["מתמטיקה בדידה"," אלגברה לינארית"];
+
+
     return (
 
         <Card className="place-item__content">
@@ -29,6 +31,7 @@ const TeacherItemExpanded = props =>{
                 <p>מיקום שיעור: {chosen_teacher.locations}</p>
                 <p>מידע נוסף: {chosen_teacher.desc}</p>
                 <p>גיל: {chosen_teacher.age}</p>
+                <li>קורסים נוספים: {additionalCourses.map(item => item) }</li>
             </div>
             <div className="place-item__actions">
                 <Button onClick = {() => history.goBack()} >חזור לחיפוש</Button>
