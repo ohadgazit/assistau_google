@@ -3,6 +3,7 @@ import Card from "../Shared/Card";
 
 import TeacherItem from "./TeacherItem";
 import './CourseTeachersList.css';
+import Button from "../Shared/Button";
 
 const CourseTeachersList = props => {
     if (props.items.length === 0) {
@@ -10,7 +11,7 @@ const CourseTeachersList = props => {
             < div className="placees-list center" >
                 <Card>
                     <h2>לא קיימים מורים לקורס זה, אולי תהיה הראשון?</h2>
-                    <button>Share Place</button>
+                    <Button to="/">חזור לדף החיפוש</Button>
                 </Card>
             </div >
         );

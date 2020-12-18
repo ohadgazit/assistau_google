@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import './Button.css';
 
 const Button = props => {
@@ -10,6 +9,9 @@ const Button = props => {
                 className={`button button--${props.size || 'default'} ${props.inverse &&
                 'button--inverse'} ${props.danger && 'button--danger'}`}
                 href={props.href}
+                target = {props.target}
+                rel = {props.rel}
+
             >
                 {props.children}
             </a>
