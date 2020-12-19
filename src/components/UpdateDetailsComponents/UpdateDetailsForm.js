@@ -1,11 +1,10 @@
 import React, {Component} from "react"
-import UserDetails from './UserDetails'
-import ConfirmationPage from './ConfirmationPage';
-import Success from './Success'
-import '../pages/MainPage.css';
-//import firebase from "firebase";
+//import '../pages/MainPage.css';
+import UpdateUserDetails from "./UpdateUserDetails";
+import ConfirmationPageForUpdate from "./ConfirmationPageForUpdate";
+import SuccessUpdate from "./SuccessUpdate";
 
-export class UserForm extends Component {
+export class UpdateDetailsForm extends Component {
     state = {
         step: 1,
         firstName: '',
@@ -51,15 +50,15 @@ export class UserForm extends Component {
         switch(step){
             case 1:
                 return(
-                    <UserDetails
-                    nextStep ={this.nextStep}
-                    handleChange={this.handleChange}
-                    values ={values}
+                    <UpdateUserDetails
+                        nextStep ={this.nextStep}
+                        handleChange={this.handleChange}
+                        values ={values}
                     />
                 )
             case 2:
                 return(
-                    <ConfirmationPage
+                    <ConfirmationPageForUpdate
                         nextStep ={this.nextStep}
                         prevStep ={this.prevStep}
                         values ={values}
@@ -67,14 +66,13 @@ export class UserForm extends Component {
                 )
             case 3:
                 return(
-                    <Success/>
+                    <SuccessUpdate/>
                 )
         }
     }
 }
 
-
-export default UserForm
+export default UpdateDetailsForm
 
 
 
