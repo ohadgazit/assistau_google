@@ -1,0 +1,95 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"80bc2cbf-4d87-4721-bda6-2b01d2f21ddc\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l1Dq2uaVQZGx5MB8TepdxpAsrH\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/pages\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"run.code.analysis.last.selected.profile\" value=\"pProject Default\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"editor.preferences.tabs\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\אוהד גזית\\WebstormProjects\\assitau_google\\src\\pages\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\אוהד גזית\\WebstormProjects\\assitau_google\\src\\pages\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"80bc2cbf-4d87-4721-bda6-2b01d2f21ddc\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1606755896923</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1606755896923</updated>\r\n      <workItem from=\"1606755899772\" duration=\"44000\" />\r\n      <workItem from=\"1606756076021\" duration=\"1903000\" />\r\n      <workItem from=\"1606923232113\" duration=\"443000\" />\r\n      <workItem from=\"1606923678733\" duration=\"60000\" />\r\n      <workItem from=\"1606923780679\" duration=\"14662000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"#Updated logo and design\">\r\n      <created>1606757587482</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1606757587482</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00002\" summary=\"#Updated logo and design\">\r\n      <created>1606924462756</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00002\" />\r\n      <updated>1606924462756</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00003\" summary=\"#Updated logo and design\">\r\n      <created>1606955159137</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00003\" />\r\n      <updated>1606955159137</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"#Updated logo and design\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"#Updated logo and design\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"515\" y=\"267\" key=\"ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1\" timestamp=\"1606925361904\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"515\" y=\"267\" key=\"ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606925361904\" />\r\n    <state x=\"393\" y=\"0\" key=\"CommitChangelistDialog2\" timestamp=\"1606955158404\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"393\" y=\"0\" key=\"CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606955158404\" />\r\n    <state x=\"588\" y=\"334\" key=\"Github.ShareDialog\" timestamp=\"1606756242887\">\r\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\r\n    </state>\r\n    <state x=\"588\" y=\"334\" key=\"Github.ShareDialog/0.0.1440.900@0.0.1440.900\" timestamp=\"1606756242887\" />\r\n    <state x=\"507\" y=\"135\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1606756266340\">\r\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\r\n    </state>\r\n    <state x=\"507\" y=\"135\" key=\"Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900\" timestamp=\"1606756266340\" />\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1606923674430\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606923674430\" />\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.center\" timestamp=\"1606923674430\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606923674430\" />\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.left\" timestamp=\"1606923674430\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606923674430\" />\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.right\" timestamp=\"1606923674430\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state width=\"1515\" height=\"210\" key=\"GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606923674430\" />\r\n    <state x=\"277\" y=\"57\" key=\"SettingsEditor\" timestamp=\"1606933759933\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"277\" y=\"57\" key=\"SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606933759933\" />\r\n    <state x=\"353\" y=\"156\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1606955143507\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"331\" y=\"170\" key=\"Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900\" timestamp=\"1606757589940\" />\r\n    <state x=\"353\" y=\"156\" key=\"Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606955143507\" />\r\n    <state x=\"586\" y=\"326\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1606923839145\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"586\" y=\"326\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824\" timestamp=\"1606923839145\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 01a8407d3d47d69d2793b5faf4da3d81da903937)
++++ .idea/workspace.xml	(date 1607963021237)
+@@ -1,5 +1,23 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select />
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="80bc2cbf-4d87-4721-bda6-2b01d2f21ddc" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+@@ -33,7 +51,7 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../teacher_registration" />
+     <property name="nodejs_package_manager_path" value="npm" />
+     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+@@ -60,6 +78,8 @@
+       <workItem from="1606923232113" duration="443000" />
+       <workItem from="1606923678733" duration="60000" />
+       <workItem from="1606923780679" duration="14662000" />
++      <workItem from="1607960214132" duration="1478000" />
++      <workItem from="1607961819903" duration="877000" />
+     </task>
+     <task id="LOCAL-00001" summary="#Updated logo and design">
+       <created>1606757587482</created>
+@@ -86,6 +106,18 @@
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="#Updated logo and design" />
+     <option name="LAST_COMMIT_MESSAGE" value="#Updated logo and design" />
+@@ -99,6 +131,10 @@
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606955158404" />
++    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1607961832536">
++      <screen x="0" y="0" width="1280" height="680" />
++    </state>
++    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607961832536" />
+     <state x="588" y="334" key="Github.ShareDialog" timestamp="1606756242887">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+@@ -132,9 +168,10 @@
+     </state>
+     <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606757589940" />
+     <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606955143507" />
+-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606923839145">
+-      <screen x="0" y="0" width="1536" height="824" />
++    <state x="488" y="269" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607963021212">
++      <screen x="0" y="0" width="1280" height="680" />
+     </state>
++    <state x="488" y="269" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1607963021212" />
+     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1606923839145" />
+   </component>
+ </project>
+\ No newline at end of file
