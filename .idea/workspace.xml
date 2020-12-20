@@ -26,12 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/searchbar2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchbar2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/NavLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/NavLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.css" afterDir="false" />
-    </list>
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
