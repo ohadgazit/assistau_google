@@ -9,7 +9,7 @@ import 'firebase/analytics';
 import 'firebase/database'
 
 
-export class ConfirmationPage extends Component {
+export class ConfirmationPageForUpdate extends Component {
     continue = e => {
         e.preventDefault();
         //Process form - send to DB//
@@ -101,6 +101,7 @@ export class ConfirmationPage extends Component {
                 email: {values:email},
                 education: {values:education},
                 lessonCost: {values:lessonCost},
+                courseList: {values:courseList},
                 moreDetails: {values:moreDetails},
                 imageUrl: {imageUrl},
                 timestamp : new Date().getTime()
@@ -110,8 +111,6 @@ export class ConfirmationPage extends Component {
     }
 }
 
-
-
 const styles = {
     button: {
         margin: 15
@@ -119,4 +118,4 @@ const styles = {
 
 }
 
-export default ConfirmationPage
+export default ConfirmationPageForUpdate
