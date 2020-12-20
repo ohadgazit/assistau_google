@@ -61,8 +61,8 @@ const ControllableStates = (props) => {
 
         <div>
             <FormControl className={classes.formControl}>
-            <div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>
-            <div>{`inputValue: '${inputValue}'`}</div>
+                {/*<div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>*/}
+                {/*<div>{`inputValue: '${inputValue}'`}</div>*/}
             <br />
             <Autocomplete
                 defaultValue={null}

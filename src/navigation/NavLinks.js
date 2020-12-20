@@ -38,7 +38,7 @@ const NavLinks = props => {
             <NavLink to="/" exact>בית</NavLink>
         </li>
         {user?<li>
-            <NavLink to="/u1/places">איזור אישי</NavLink>
+            <NavLink to="/UserForm">עדכן פרטים</NavLink>
         </li>:<li>
             <NavLink to="/UserForm">הרשם</NavLink>
         </li>}
