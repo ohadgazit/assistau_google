@@ -82,7 +82,7 @@ const ControllableStates = (props) => {
                 getOptionLabel={(option => option.name)}
                 style={{ width: 300 }}
                 //getOptionSelected = {(option => option.id === 2)}
-                renderInput={(params) => <TextField {...params} label="Controllable" variant="outlined" />}
+                renderInput={(params) => <TextField {...params} label="בחר קורס" variant="outlined" />}
             />
             <Button color="primary" variant="contained" onClick={sumbitForm}>
                 <Link to={`/courses/${chosenCourse.id}` }> Search</Link>
