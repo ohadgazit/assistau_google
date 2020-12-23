@@ -6,6 +6,7 @@ import TeachersList from "./pages/TeachersList";
 import TeacherItemExpanded from "./pages/TeacherPage";
 import MainNavigation from "./navigation/MainNavigation";
 import UserForm from "./components/UserForm";
+import UpdateDetailsForm from "./components/UpdateDetailsComponents/UpdateDetailsForm";
 import {
     BrowserRouter as Router,
     Route,
@@ -30,6 +31,9 @@ const App = () => {
                 </Route>
                 <Route path="/UserForm" exact>
                     <UserForm/>
+                </Route>
+                <Route path="/updateUserForm" exact>
+                    <UpdateDetailsForm />
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />

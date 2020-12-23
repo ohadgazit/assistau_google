@@ -7,7 +7,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 import 'firebase/database'
-
+import 'firebase/auth';
 
 export class ConfirmationPage extends Component {
     continue = e => {
@@ -21,8 +21,11 @@ export class ConfirmationPage extends Component {
         this.props.prevStep();
     };
 
+
     render() {
         const {values: {firstName, lastName, gender, phoneNumber, email, education, experience, lessonCost, courseList, moreDetails}} = this.props;
+
+
         return (
             <MuiThemeProvider>
                 <React.Fragment>
@@ -75,7 +78,8 @@ export class ConfirmationPage extends Component {
                         primary={true} //blue color
                         style={styles.button}
                         //onClick={this.continue}
-                        onClick={() => writeUserData()}
+                        onClick={this.continue}
+
                     />
                     <RaisedButton
                         label="חזרה"
@@ -105,7 +109,13 @@ export class ConfirmationPage extends Component {
                 imageUrl: {imageUrl},
                 timestamp : new Date().getTime()
             });
+
         }
+
+
+
+
+
 
     }
 }

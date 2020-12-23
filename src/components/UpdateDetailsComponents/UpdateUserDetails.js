@@ -5,10 +5,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import firebase from "firebase";
 
 const auth = firebase.auth();
-const userId = auth.currentUser.uid
+//const userId = auth.currentUser.uid
 //const email = auth.currentUser.email
 //const imageUrl = auth.currentUser.photoURL
-const a = firebase.database().ref('users/' + userId).get.first_name;
+//const a = firebase.database().ref('users/' + userId).get.first_name;
 
 
 export class UpdateUserDetails extends Component{
@@ -24,7 +24,7 @@ export class UpdateUserDetails extends Component{
                     <TextField
                         hintText="עדכן את שמך הפרטי"
                         //floatingLabelText="שם פרטי"
-                        floatingLabelText={a}
+                        //floatingLabelText={a}
                         onChange={handleChange('firstName')}
                         defaultValue={values.firstName}
                     />

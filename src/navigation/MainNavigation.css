@@ -23,8 +23,9 @@
 
 .main-navigation__title a {
   text-decoration: none;
-  color: white;
-  padding: 3rem;
+  color: darkblue;
+  padding: 0rem;
+  padding-right: 3rem;
 }
 
 .main-navigation__header-nav {

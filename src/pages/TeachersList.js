@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import teachers from '../mocks/teachers.json'
 import CourseTeachersList from '../components/CourseTeachersList';
-
+import ButtonAppBar from "../components/TeachersListAppBar";
 /*
 const DUMMY_TEACHERS = [
     {
@@ -33,13 +33,28 @@ const DUMMY_TEACHERS = [
 ];*/
 const TeachersList = () => {
 
+
+    const [genderFilter,changeGender] = React.useState(0);
     //const userId = 'u1';
     const courseId = useParams().courseId;
-    const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(Number(courseId)));
+    //const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(Number(courseId)) &&
+      //  teacher.gender.includes(Number(genderFilter)));
+
+    const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(Number(courseId)) &&
+        (genderFilter > 0? teacher.gender === (Number(genderFilter)): 1));
+
+
   /// const {chosenCourse} = this.props.location.state;
    // console.log(chosenCourse);
+    return  (
 
-    return  <CourseTeachersList items={loadedPlaces} />
+        <div>
+            <ButtonAppBar data={
+                {genderFilter:genderFilter,changeGender:changeGender.bind(this)}
+            }/>
+        <CourseTeachersList items={loadedPlaces} />
+        </div>
+        );
 };
 
 export default TeachersList;

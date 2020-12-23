@@ -37,8 +37,9 @@ const TeacherItemExpanded = props =>{
                 <h2>{chosen_teacher.name}</h2>
                 <h3>תחום לימודים: {chosen_teacher.education}</h3>
                 <p>מיקום שיעור: {chosen_teacher.locations}</p>
-                <p>מידע נוסף: {chosen_teacher.desc}</p>
+                <p>{chosen_teacher.desc}</p>
                 <p>גיל: {chosen_teacher.age}</p>
+                <p>ניסיון :{chosen_teacher.experience} שנים</p>
                 <li>קורסים נוספים: {additionalCourses.map(item => item) }</li>
             </div>
             <div className="place-item__actions">

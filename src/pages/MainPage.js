@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './MainPage.css';
 //import SearchBar from "../components/SearchBar";
 import React from "react";

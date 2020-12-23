@@ -1,15 +1,17 @@
 .place-item {
     margin: 1rem 0;
+
 }
 
 .place-item__content {
-    padding: 0;
     direction: ltr;
-    width: 90%;
+    width: 80%;
+    margin: auto;
+
 }
 
 .place-item__info {
-    width: 30%;
+    width: 50%;
     padding: 1rem;
     text-align: right;
     display: inline-block;
@@ -20,14 +22,17 @@
 }
 
 .place-item__image {
-    width: 60%;
-    height: 12.5rem;
+    width: 40%;
+    height: 50%;
     display: inline-block;
+
 }
 
 .place-item__image img {
     width: 50%;
-    height: 100%;
+    vertical-align: baseline;
+    height: 50%;
+
     object-fit: cover;
 }
 
@@ -65,6 +70,6 @@
 
 @media (min-width: 768px) {
     .place-item__image {
-        height: 20rem;
+        height: 100%;
     }
 }
