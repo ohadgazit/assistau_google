@@ -13,6 +13,14 @@ import TextField from '@material-ui/core/TextField';
 //import TeachersList from "../pages/TeachersList";
 //import { BrowserRouter as Router, Route,  Switch, useParams } from "react-router-dom";
 import coursesItems from "../mocks/coursesItems.json"
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/analytics';
+import 'firebase/database'
+
+
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 const ControllableStates = (props) => {
@@ -29,16 +37,16 @@ const ControllableStates = (props) => {
 
 
     const sumbitForm = () => {
-        let chosenTeachers = teachers.filter((teacher) => {
-            return teacher.courses.includes(Number(course))
-        })
-
+         let chosenTeachers = teachers.filter((teacher) => {
+             return teacher.courses.includes(Number(course))
+         })
         setId(value1.id)
         console.log({chosenCourse})
         handleTeacher(chosenTeachers)
 
 
     }
+
 
 
     const menuitems = [
@@ -52,6 +60,13 @@ const ControllableStates = (props) => {
         {id: 8, name: 'Class 8' },
         {id: 9, name: 'Class 9' },
     ];
+
+    // var menuitems2 = db.collection("assistau-57bb4").doc("courses")
+    //     .onSnapshot(function(doc) {
+    //         console.log("Current data: ", doc.data());
+    //     });
+
+
 
 
 

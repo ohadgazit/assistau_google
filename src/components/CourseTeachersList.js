@@ -6,6 +6,7 @@ import './CourseTeachersList.css';
 import Button from "../Shared/Button";
 
 const CourseTeachersList = props => {
+    console.log(props.items.length);
     if (props.items.length === 0) {
         return (
             < div className="placees-list center" >
