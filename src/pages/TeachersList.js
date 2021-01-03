@@ -16,12 +16,12 @@ const TeachersList = () => {
     //const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(Number(courseId)) &&
       //  teacher.gender.includes(Number(genderFilter)));
 
-    const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(Number(courseId)) &&
-        (genderFilter > 0? teacher.gender === (Number(genderFilter)): 1));
+    const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(courseId) &&
+        (genderFilter > 0? teacher.gender === (genderFilter): 1));
 
 
     useEffect(() => {
-        filterTeacherByCourseNum(Number(courseId))
+        filterTeacherByCourseNum(courseId)
     }, [])
 
 
