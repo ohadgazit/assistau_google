@@ -26,13 +26,13 @@ const useStylesSelect = makeStyles((theme) => ({
         margin: theme.spacing(1),
         minWidth: 60,
         color: "white",
+        marginRight: "-moz-initial"
     },
 }));
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -51,20 +51,36 @@ const ButtonAppBar = (props) =>{
     const classesSelect = useStylesSelect();
 
 
+    const [gender, setGender] = React.useState(0);
+    const [openGender, setOpenGender] = React.useState(false);
+
+    const handleChangeGender = (event) => {
+        setGender(event.target.value);
+        props.dataGender.changeGender(event.target.value)
+    };
+
+    const handleCloseGender = () => {
+        setOpenGender(false);
+    };
+
+    const handleOpenGender = () => {
+        setOpenGender(true);
+    };
+
     const [age, setAge] = React.useState(0);
-    const [open, setOpen] = React.useState(false);
+    const [openAge,setOpenAge] = React.useState(false);
 
-    const handleChange = (event) => {
+    const handleChangeAge= (event) =>{
         setAge(event.target.value);
-        props.data.changeGender(event.target.value)
+        props.dataAge.changeAgeSorting(event.target.value)
     };
 
-    const handleClose = () => {
-        setOpen(false);
+    const handleCloseAge = () =>{
+        setOpenAge(false);
     };
 
-    const handleOpen = () => {
-        setOpen(true);
+    const handleOpenAge = () => {
+        setOpenAge(true);
     };
 
 
@@ -74,20 +90,20 @@ const ButtonAppBar = (props) =>{
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                    {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
-                    </IconButton>
+                    </IconButton>*/}
 
 
 
-                        <Select
+                        <Select className={classesSelect.formControl}
                             labelId="demo-controlled-open-select-label"
                             id="demo-controlled-open-select"
-                            open={open}
-                            onClose={handleClose}
-                            onOpen={handleOpen}
-                            value={age}
-                            onChange={handleChange}
+                            open={openGender}
+                            onClose={handleCloseGender}
+                            onOpen={handleOpenGender}
+                            value={gender}
+                            onChange={handleChangeGender}
                             defaultValue={"מין"}
                         >
                             <MenuItem value={0}>
@@ -96,6 +112,22 @@ const ButtonAppBar = (props) =>{
                             <MenuItem value={1}>נקבה</MenuItem>
                             <MenuItem value={2}>זכר</MenuItem>
                         </Select>
+                    <Select className={classesSelect.formControl}
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        open={openAge}
+                        onClose={handleCloseAge}
+                        onOpen={handleOpenAge}
+                        value={age}
+                        onChange={handleChangeAge}
+                        defaultValue={"מין"}
+                    >
+                        <MenuItem value={0}>
+                            <em>מיין על פי </em>
+                        </MenuItem>
+                        <MenuItem value={1}>גיל: סדרה עולה</MenuItem>
+                        <MenuItem value={2}>גיל: סדר יורד</MenuItem>
+                    </Select>
 
 
 

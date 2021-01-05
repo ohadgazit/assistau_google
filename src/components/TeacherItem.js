@@ -1,8 +1,18 @@
 import Button from '../Shared/Button'
 import './TeacherItem.css';
 import Card from "../Shared/Card";
+import React from "react";
+
+
 
 const TeacherItem = props => {
+
+
+
+
+
+
+
 
     return (
 
@@ -17,13 +27,36 @@ const TeacherItem = props => {
                         <p>מיקום שיעור: {props.locations}</p>
                     </div>
                     <div className="place-item__actions">
-                        <Button to={"/"}>חזור לחיפוש</Button>
-                        <Button to={`/teachers/${props.id}`}  >מידע נוסף</Button>
+                        <Button to = '/'>חזור לחיפוש</Button>
+                         <Button
+                            to={{
+                                pathname: `/teachers/${props.id}`,
+                                state: {
+                                    key : props.id,
+                                    id  : props.id,
+                                    image: props.image,
+                                    name: props.name,
+                                    education: props.education,
+                                    locations: props.locations,
+                                    age: props.age,
+                                    desc: props.desc,
+                                    phone_number: props.phone_number,
+                                    from_course: props.from_course
+
+                            }
+                            }}
+                            >
+                            מידע נוסף
+                        </Button>
+
+
+
                     </div>
                 </Card>
             </li>
 
     );
+
 };
 
 export default TeacherItem;

@@ -1,15 +1,23 @@
 import React from 'react';
 import Card from "../Shared/Card";
-
 import TeacherItem from "./TeacherItem";
 import './CourseTeachersList.css';
 import Button from "../Shared/Button";
 
+
+
 const CourseTeachersList = props => {
-    console.log(props.items.length);
-    if (props.items.length === 0) {
+
+
+
+
+
+
+
+
+    if (props.items.length === 0 && props.gotData === 1) {
         return (
-            < div className="placees-list center" >
+            < div className="places-list center" >
                 <Card>
                     <h2>לא קיימים מורים לקורס זה, אולי תהיה הראשון?</h2>
                     <Button to="/">חזור לדף החיפוש</Button>
@@ -17,23 +25,41 @@ const CourseTeachersList = props => {
             </div >
         );
     }
+    if (props.items.length === 0 ) {
+        return (
+            < div className="placees-list center" >
+                <Card>
+                    <h2>טוען מורים...</h2>
 
-    return <ul className="place-list">
-        {props.items.map(place => (
-            <TeacherItem
-                key={place.id}
-                id={place.id}
-                image={place.imageUrl}
-                name={place.name}
-                education={place.education}
-                locations={place.locations}
-                creatorId={place.creator}
-                age = {place.age}
-                desc = {place.desc}
+                </Card>
+            </div >
+        );
+    }
 
-            />
-        ))}
-    </ul>;
+
+        return <ul className="place-list">
+            {props.items.map(place => (
+                <TeacherItem
+                    key={place.id}
+                    id={place.id}
+                    image={place.imageUrl}
+                    name={place.name}
+                    education={place.education}
+                    locations={place.locations}
+                    creatorId={place.creator}
+                    age={place.age}
+                    desc={place.desc}
+                    phone_number ={place.phone_number}
+                    from_course ={props.from_course}
+
+                />
+
+            ))}
+        </ul>;
+
+
+
+
 
 };
 

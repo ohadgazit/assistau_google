@@ -25,7 +25,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 const ControllableStates = (props) => {
     const classes = useStyles();
-    const [value1, setValue] = React.useState({id: 0, name: ""});
+    //const [value1, setValue] = React.useState({id: 0, name: ""});
     const [inputValue, setInputValue] = React.useState('');
     const [chosenTeachers, setTeacher] = React.useState([]);
     const [course, setCourse] = React.useState('');
@@ -37,12 +37,12 @@ const ControllableStates = (props) => {
 
 
     const sumbitForm = () => {
-         let chosenTeachers = teachers.filter((teacher) => {
-             return teacher.courses.includes(Number(course))
-         })
-        setId(value1.id)
-        console.log({chosenCourse})
-        handleTeacher(chosenTeachers)
+         //let chosenTeachers = teachers.filter((teacher) => {
+           //  return teacher.courses.includes(Number(course))
+         //})
+        //setId(value1.id)
+        //console.log({chosenCourse})
+        //handleTeacher(chosenTeachers)
 
 
     }
@@ -81,10 +81,10 @@ const ControllableStates = (props) => {
             <br />
             <Autocomplete
                 defaultValue={null}
-                value={value1}
+                //value={value1}
                 onChange={(event, newValue) => {
                     if (newValue !== null) {
-                        setValue(newValue);
+                        //setValue(newValue);
                         setId(newValue)
                     }
                 }}
