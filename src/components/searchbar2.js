@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 //import InputLabel from '@material-ui/core/InputLabel';
 //import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -34,6 +34,39 @@ const ControllableStates = (props) => {
         setTeacher(chosenTeacher);
     };
 
+    const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
+
+
+    useEffect(() => {
+        loadCourses()
+    }, [])
+
+
+
+    function loadCourses() {
+
+        var db = firebase.firestore();
+        var coursesRef = db.collection("courses")
+        var query = coursesRef.where("courseCode", "!=", 'null');
+        query.get().then(function (querySnapshot) {
+            let loadedCourses= [] ;
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.data());
+                //debugger
+                let docData = doc.data()
+                loadedCourses.push({...docData
+                });
+            })
+            console.log(loadedCourses)
+            setLoadedCoursestate(loadedCourses)
+        })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
+    }
+
+
 
 
     const sumbitForm = () => {
@@ -49,6 +82,7 @@ const ControllableStates = (props) => {
 
 
 
+
     const menuitems = [
         {id: 1, name: 'מתמטיקה בדידה' },
         {id: 2, name: 'מבוא מורחב למדעי המחשב' },
@@ -61,16 +95,8 @@ const ControllableStates = (props) => {
         {id: 9, name: 'Class 9' },
     ];
 
-    // var menuitems2 = db.collection("assistau-57bb4").doc("courses")
-    //     .onSnapshot(function(doc) {
-    //         console.log("Current data: ", doc.data());
-    //     });
 
 
-
-
-
-    const caa = menuitems[2];
 
     return (
 
@@ -86,6 +112,8 @@ const ControllableStates = (props) => {
                     if (newValue !== null) {
                         //setValue(newValue);
                         setId(newValue)
+                        console.log(newValue)
+                        console.log(event.target)
                     }
                 }}
                 inputValue={inputValue}
@@ -93,14 +121,14 @@ const ControllableStates = (props) => {
                     setInputValue(newInputValue);
                 }}
                 id="controllable-states-demo"
-                options={menuitems}
-                getOptionLabel={(option => option.name)}
+                options={loadedCourseState}
+                getOptionLabel={(option => option.courseName)}
                 style={{ width: 300 }}
                 //getOptionSelected = {(option => option.id === 2)}
                 renderInput={(params) => <TextField {...params} label="בחר קורס" variant="outlined" />}
             />
             <Button color="primary" variant="contained" onClick={sumbitForm}>{chosenCourse?
-                <Link to={`/courses/${chosenCourse.id}` }> Search</Link>:
+                <Link to={`/courses/${chosenCourse.courseCode}` }> Search</Link>:
                 <Link>Search</Link>}
             </Button>
             </FormControl>
