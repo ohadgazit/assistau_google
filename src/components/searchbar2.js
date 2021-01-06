@@ -24,6 +24,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 
+
 const ControllableStates = (props) => {
     const classes = useStyles();
     //const [value1, setValue] = React.useState({id: 0, name: ""});
@@ -35,12 +36,15 @@ const ControllableStates = (props) => {
         setTeacher(chosenTeacher);
     };
 
+
     const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
 
 
     useEffect(() => {
         loadCourses()
     }, [])
+
+
 
 
 
@@ -145,7 +149,10 @@ const ControllableStates = (props) => {
                 <Link>Search</Link>}
             </Button>
             </FormControl>
+
         </div>
+
+
     );
 }
 
