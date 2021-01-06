@@ -19,11 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master' into Testing&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/App.js">
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Carousel&#10;#Write Review&#10;#Read Review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseTeachersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTeachersList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeacherItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeacherItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Button.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/searchbar2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchbar2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/MainHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/MainHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/MainNavigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/MainNavigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609933050829</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="#Carousel&#10;#Write Review&#10;#Read Review">
+      <created>1609939810744</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609939810744</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,9 +295,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#Updated logo and design" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master' into Testing&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/App.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master' into Testing&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/App.js" />
+    <MESSAGE value="#Carousel&#10;#Write Review&#10;#Read Review" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Carousel&#10;#Write Review&#10;#Read Review" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="441" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609942291692">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="441" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1609942291692" />
     <state x="462" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607963520455">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -358,10 +374,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1607606841142" />
-    <state x="353" y="156" key="Vcs.Push.Dialog.v2" timestamp="1608507240630">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="331" y="170" key="Vcs.Push.Dialog.v2" timestamp="1609939813431">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607968352429" />
+    <state x="331" y="170" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1609939813431" />
     <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1608311973919" />
     <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607959968166" />
     <state x="353" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608507240630" />

@@ -24,9 +24,17 @@ import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TextField from "@material-ui/core/TextField";
+import { withStyles } from '@material-ui/core/styles';
 
 import Carousel from 'react-material-ui-carousel'
 import {Paper} from '@material-ui/core'
+import { borders } from '@material-ui/system';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
+import { makeStyles } from '@material-ui/core/styles';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+
 
 
 const TeacherItemExpanded = props =>{
@@ -51,9 +59,76 @@ const TeacherItemExpanded = props =>{
         setOpen(false);
 
     };
+
     //end of reviews test
     console.log(teacherData)
     console.log(teacherData.reviews[0].entries)
+
+    //box design param
+    const defaultProps = {
+        bgcolor: 'background.paper',
+        borderColor: 'text.primary',
+        m: 1,
+        border: 1,
+        style: { width: '5rem', height: '5rem' },
+    };
+
+    const StyledRating = withStyles({
+        iconFilled: {
+            color: '#ff6d75',
+        },
+        iconHover: {
+            color: '#ff3d47',
+        },
+    })(Rating);
+
+    // const useStyles = makeStyles({
+    //     root: {
+    //         minWidth: 275,
+    //     },
+    //     bullet: {
+    //         display: 'inline-block',
+    //         margin: '0 2px',
+    //         transform: 'scale(0.8)',
+    //     },
+    //     title: {
+    //         fontSize: 14,
+    //     },
+    //     pos: {
+    //         marginBottom: 12,
+    //     },
+    // });
+
+    const useStyles = makeStyles(() => ({
+        root: {
+            overflow: 'initial',
+            maxWidth: 304,
+            backgroundColor: 'transparent',
+        },
+        title: {
+            marginBottom: 0,
+        },
+        rateValue: {
+            fontWeight: 'bold',
+            marginTop: 2,
+        },
+        content: {
+            position: 'relative',
+            padding: 24,
+            margin: '-24% 16px 0',
+            backgroundColor: '#fff',
+            borderRadius: 4,
+        },
+        favorite: {
+            position: 'absolute',
+            top: 12,
+            right: 12,
+        },
+        locationIcon: {
+            marginRight: 4,
+            fontSize: 18,
+        },
+    }));
 
 
 
@@ -73,8 +148,10 @@ const TeacherItemExpanded = props =>{
             reviews: firebase.firestore.FieldValue.arrayUnion(pushit)
         });
     }
-
+    const classes = useStyles();
+    const bull = <span className={classes.bullet}>•</span>;
     return (
+
 
         <Card className="place-item__content">
             <div className="place-item__image">
@@ -103,7 +180,7 @@ const TeacherItemExpanded = props =>{
                     <Button href={whastappMessageUrl} target="_blank" rel="noreferrer">שליחת הודעה דרך ווטסאפ</Button>
                     :<Button to = "/SignIn">התחבר על מנת ליצור קשר עם המורה</Button>
                 }
-                <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+                <Button onClick={handleClickOpen}>
                     כתוב ביקורת
                 </Button>
 
@@ -149,18 +226,29 @@ const TeacherItemExpanded = props =>{
                 </Dialog>
             </div>
             <div className="place-item__actions">
-                <h3> Reviews </h3>
+                <Typography> ביקורות הסטודנטים </Typography>
                 <h1>{teacherData.reviews[0].text_review}</h1>
                 <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}>
                 {teacherData.reviews[0].map((person, index) => {
-                    return <p key={index}>Reviewer: {person.email}, Score: {person.score}, Text Review: {person.text_review}</p>
+                    return <Card>
+                        <p key={index}> <h3>{person.email}</h3>
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                                <Typography component="legend"></Typography>
+                                <Rating name="read-only"  variant={'body2'} value={person.score} readOnly={true} />
+                            </Box>
+                            <Typography color={'textSecondary'} variant={'body2'}> "{person.text_review}" </Typography>
+                    </p>
+                    </Card>
                 })}
                 </Carousel>
-
 
             </div>
 
         </Card>
+
+
+
+
 
 
 

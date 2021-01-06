@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
+import Button from '../Shared/Button'
 //import InputLabel from '@material-ui/core/InputLabel';
 //import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 //import Avatar from '@material-ui/core/Avatar';
 //import Select from '@material-ui/core/Select';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 import teachers  from '../mocks/teachers'
 import { Link } from 'react-router-dom';
 import useStyles from "../Shared/useStyles";
@@ -144,7 +145,7 @@ const ControllableStates = (props) => {
 
             />
                 </ClickAwayListener>
-            <Button color="primary" variant="contained" onClick={sumbitForm}>{chosenCourse?
+            <Button onClick={sumbitForm}>{chosenCourse?
                 <Link to={`/courses/${chosenCourse.courseCode}` }> Search</Link>:
                 <Link>Search</Link>}
             </Button>
