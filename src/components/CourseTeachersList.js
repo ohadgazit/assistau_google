@@ -36,6 +36,8 @@ const CourseTeachersList = props => {
         );
     }
 
+    console.log(props.items)
+
 
         return <ul className="place-list">
             {props.items.map(place => (
@@ -51,6 +53,7 @@ const CourseTeachersList = props => {
                     desc={place.desc}
                     phone_number ={place.phone_number}
                     from_course ={props.from_course}
+                    reviews = {[place.reviews]}
 
                 />
 

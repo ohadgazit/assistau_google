@@ -41,7 +41,8 @@ const TeacherItem = props => {
                                     age: props.age,
                                     desc: props.desc,
                                     phone_number: props.phone_number,
-                                    from_course: props.from_course
+                                    from_course: props.from_course,
+                                    reviews: props.reviews
 
                             }
                             }}

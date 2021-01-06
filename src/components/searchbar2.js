@@ -53,7 +53,7 @@ const ControllableStates = (props) => {
         var db = firebase.firestore();
         var coursesRef = db.collection("courses")
         var query = coursesRef.where("courseCode", "!=", 'null');
-        query.get().then(function (querySnapshot) {
+        query.limit(10).get().then(function (querySnapshot) {
             let loadedCourses= [] ;
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
@@ -137,7 +137,7 @@ const ControllableStates = (props) => {
                 }}
                 id="controllable-states-demo"
                 /*options={loadedCourseState}*/
-                options ={menuitems}
+                options ={loadedCourseState}
                 getOptionLabel={(option => option.courseName)}
                 style={{ width: 300 }}
                 renderInput={(params) =>  <TextField {...params}  label="בחר קורס" variant="outlined" /> }
