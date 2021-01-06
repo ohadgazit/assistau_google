@@ -21,6 +21,7 @@ import 'firebase/database'
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 
 const ControllableStates = (props) => {
@@ -84,19 +85,26 @@ const ControllableStates = (props) => {
 
 
     const menuitems = [
-        {id: 1, name: 'מתמטיקה בדידה' },
-        {id: 2, name: 'מבוא מורחב למדעי המחשב' },
-        {id: 3, name: 'אלגברה לינארית 1ב' },
-        {id: 4, name: 'מבוא לפסיכופתולוגיה' },
-        {id: 5, name: 'Class 5' },
-        {id: 6, name: 'Class 6' },
-        {id: 7, name: 'Class 7' },
-        {id: 8, name: 'Class 8' },
-        {id: 9, name: 'Class 9' },
+        {id: 1, courseName: 'מתמטיקה בדידה' },
+        {id: 2, courseName: 'מבוא מורחב למדעי המחשב' },
+        {id: 3, courseName: 'אלגברה לינארית 1ב' },
+        {id: 4, courseName: 'מבוא לפסיכופתולוגיה' },
+        {id: 5, courseName: 'Class 5' },
+        {id: 6, courseName: 'Class 6' },
+        {id: 7, courseName: 'Class 7' },
+        {id: 8, courseName: 'Class 8' },
+        {id: 9, courseName: 'Class 9' },
     ];
 
-
-
+    function filterItems (params){
+        if (params.size>5){
+            return <TextField {...params} label="בחר קורס" variant="outlined" />
+        }
+    }
+    let open1 = false;
+    const handleClickAway = () => {
+        open1 = false
+    }
 
     return (
 
@@ -105,7 +113,10 @@ const ControllableStates = (props) => {
                 {/*<div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>*/}
                 {/*<div>{`inputValue: '${inputValue}'`}</div>*/}
             <br />
+                <ClickAwayListener onClickAway={handleClickAway}>
             <Autocomplete
+
+                open={ inputValue.length>1? true: false }
                 defaultValue={null}
                 //value={value1}
                 onChange={(event, newValue) => {
@@ -121,12 +132,14 @@ const ControllableStates = (props) => {
                     setInputValue(newInputValue);
                 }}
                 id="controllable-states-demo"
-                options={loadedCourseState}
+                /*options={loadedCourseState}*/
+                options ={menuitems}
                 getOptionLabel={(option => option.courseName)}
                 style={{ width: 300 }}
-                //getOptionSelected = {(option => option.id === 2)}
-                renderInput={(params) => <TextField {...params} label="בחר קורס" variant="outlined" />}
+                renderInput={(params) =>  <TextField {...params}  label="בחר קורס" variant="outlined" /> }
+
             />
+                </ClickAwayListener>
             <Button color="primary" variant="contained" onClick={sumbitForm}>{chosenCourse?
                 <Link to={`/courses/${chosenCourse.courseCode}` }> Search</Link>:
                 <Link>Search</Link>}

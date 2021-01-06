@@ -22,7 +22,7 @@ const TeachersList = () => {
 
 
     useEffect(() => {
-        filterTeacherByCourseNum(Number(courseId))
+        filterTeacherByCourseNum(courseId)
     }, [])
 
     const loadedPlaces2 = loadedPlacesState.filter(teacher => genderFilter > 0 ? teacher.gender === (Number(genderFilter)): 1)
