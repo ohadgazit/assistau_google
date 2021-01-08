@@ -54,6 +54,7 @@ const CourseTeachersList = props => {
                     phone_number ={place.phone_number}
                     from_course ={props.from_course}
                     reviews = {[place.reviews]}
+                    rating = {place.rating}
 
                 />
 

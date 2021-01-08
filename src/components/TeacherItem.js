@@ -2,6 +2,10 @@ import Button from '../Shared/Button'
 import './TeacherItem.css';
 import Card from "../Shared/Card";
 import React from "react";
+import Rating from '@material-ui/lab/Rating';
+import Box from "@material-ui/core/Box";
+import {withStyles} from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 
 
@@ -9,9 +13,19 @@ const TeacherItem = props => {
 
 
 
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            direction:'ltr',
 
+            display: 'flex',
+            flexDirection: 'column',
+            '& > * + *': {
+                marginTop: theme.spacing(1),
+            },
+        },
+    }));
 
-
+    const classes = useStyles();
 
 
     return (
@@ -23,6 +37,7 @@ const TeacherItem = props => {
                     </div>
                     <div className="place-item__info">
                         <h2>{props.name}</h2>
+                        <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>
                         <h3>תחום לימודים: {props.education}</h3>
                         <p>מיקום שיעור: {props.locations}</p>
                     </div>
@@ -42,7 +57,8 @@ const TeacherItem = props => {
                                     desc: props.desc,
                                     phone_number: props.phone_number,
                                     from_course: props.from_course,
-                                    reviews: props.reviews
+                                    reviews: props.reviews,
+                                    rating: props.rating
 
                             }
                             }}

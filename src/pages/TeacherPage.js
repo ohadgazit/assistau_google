@@ -9,8 +9,7 @@ import 'firebase/analytics';
 import 'firebase/database'
 import 'firebase/auth';
 import {useAuthState} from "react-firebase-hooks/auth";
-//import Carusela from "../components/carousal";
-//import Example from "../components/carousal2";
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 //import Modal from '@material-ui/core/Modal';
 
@@ -177,7 +176,7 @@ const TeacherItemExpanded = props =>{
             <div className="place-item__actions">
                 <Button  to={`/courses/${teacherData.from_course}`} >חזור לחיפוש</Button>
                 {user?
-                    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer">שליחת הודעה דרך ווטסאפ</Button>
+                    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>
                     :<Button to = "/SignIn">התחבר על מנת ליצור קשר עם המורה</Button>
                 }
                 <Button onClick={handleClickOpen}>

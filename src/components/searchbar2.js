@@ -101,11 +101,7 @@ const ControllableStates = (props) => {
         {id: 9, courseName: 'Class 9' },
     ];
 
-    function filterItems (params){
-        if (params.size>5){
-            return <TextField {...params} label="בחר קורס" variant="outlined" />
-        }
-    }
+
     let open1 = false;
     const handleClickAway = () => {
         open1 = false
@@ -118,7 +114,7 @@ const ControllableStates = (props) => {
                 {/*<div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>*/}
                 {/*<div>{`inputValue: '${inputValue}'`}</div>*/}
             <br />
-                <ClickAwayListener onClickAway={handleClickAway}>
+                {/*<ClickAwayListener onClickAway={handleClickAway}>*/}
             <Autocomplete
 
                 open={ inputValue.length>1? true: false }
@@ -130,6 +126,7 @@ const ControllableStates = (props) => {
                         setId(newValue)
                         console.log(newValue)
                         console.log(event.target)
+
                     }
                 }}
                 inputValue={inputValue}
@@ -141,14 +138,20 @@ const ControllableStates = (props) => {
                 options ={loadedCourseState}
                 getOptionLabel={(option => option.courseName)}
                 style={{ width: 300 }}
-                renderInput={(params) =>  <TextField {...params}  label="הקלד את שם או מספר הקורס" variant="outlined" /> }
+                renderInput={(params) =>  <TextField {...params}  label="הקלד שם או מספר קורס" variant="outlined" /> }
 
             />
-                </ClickAwayListener>
-            <Button onClick={sumbitForm}>{chosenCourse?
+                {/*</ClickAwayListener>*/}
+            {/*<Button  color="primary" variant="contained" onClick={sumbitForm}>{chosenCourse?
                 <Link to={`/courses/${chosenCourse.courseCode}` }> Search</Link>:
                 <Link>Search</Link>}
+            </Button>*/}
+            {chosenCourse?<Button  color="primary" variant="contained" to={`/courses/${chosenCourse.courseCode}` }>
+                Search
+            </Button>: <Button  color="primary" variant="contained" >
+                Search
             </Button>
+                }
             </FormControl>
 
         </div>
