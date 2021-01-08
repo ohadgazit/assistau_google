@@ -141,7 +141,7 @@ const ControllableStates = (props) => {
                 options ={loadedCourseState}
                 getOptionLabel={(option => option.courseName)}
                 style={{ width: 300 }}
-                renderInput={(params) =>  <TextField {...params}  label="בחר קורס" variant="outlined" /> }
+                renderInput={(params) =>  <TextField {...params}  label="הקלד את שם או מספר הקורס" variant="outlined" /> }
 
             />
                 </ClickAwayListener>

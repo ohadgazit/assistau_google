@@ -123,7 +123,7 @@ const ButtonAppBar = (props) =>{
                         defaultValue={"מין"}
                     >
                         <MenuItem value={0}>
-                            <em>מיין על פי </em>
+                            <em>מיין על פי ציון </em>
                         </MenuItem>
                         <MenuItem value={1}>גיל: סדרה עולה</MenuItem>
                         <MenuItem value={2}>גיל: סדר יורד</MenuItem>

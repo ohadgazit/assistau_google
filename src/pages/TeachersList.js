@@ -27,9 +27,11 @@ const TeachersList = () => {
 
     const loadedPlaces2 = loadedPlacesState.filter(teacher => genderFilter > 0 ? teacher.gender === (Number(genderFilter)): 1)
 
+    if (ageSorting === 0){
+        loadedPlaces2.sort((a,b) => Number(a.rating)>Number(b.rating) ? -1 : 1);
+    }
 
-
-    if (ageSorting === 1){
+    else if (ageSorting === 1){
         loadedPlaces2.sort((a,b) => Number(a.age)>Number(b.age) ? 1 : -1);
     }
     else if (ageSorting === 2){
