@@ -23,6 +23,7 @@ import 'firebase/database'
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import {createFilterOptions} from "@material-ui/lab";
 
 
 
@@ -75,16 +76,6 @@ const ControllableStates = (props) => {
 
 
 
-    const sumbitForm = () => {
-         //let chosenTeachers = teachers.filter((teacher) => {
-           //  return teacher.courses.includes(Number(course))
-         //})
-        //setId(value1.id)
-        //console.log({chosenCourse})
-        //handleTeacher(chosenTeachers)
-
-
-    }
 
 
 
@@ -102,10 +93,10 @@ const ControllableStates = (props) => {
     ];
 
 
-    let open1 = false;
-    const handleClickAway = () => {
-        open1 = false
-    }
+
+    const filterOptions = createFilterOptions({
+        limit:30,
+    });
 
     return (
 
@@ -114,10 +105,8 @@ const ControllableStates = (props) => {
                 {/*<div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>*/}
                 {/*<div>{`inputValue: '${inputValue}'`}</div>*/}
             <br />
-                {/*<ClickAwayListener onClickAway={handleClickAway}>*/}
             <Autocomplete
-
-                open={ inputValue.length>1? true: false }
+                filterOptions={filterOptions}
                 defaultValue={null}
                 //value={value1}
                 onChange={(event, newValue) => {
@@ -141,7 +130,6 @@ const ControllableStates = (props) => {
                 renderInput={(params) =>  <TextField {...params}  label="הקלד שם או מספר קורס" variant="outlined" /> }
 
             />
-                {/*</ClickAwayListener>*/}
             {/*<Button  color="primary" variant="contained" onClick={sumbitForm}>{chosenCourse?
                 <Link to={`/courses/${chosenCourse.courseCode}` }> Search</Link>:
                 <Link>Search</Link>}

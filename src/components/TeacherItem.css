@@ -3,24 +3,33 @@
 }
 
 .place-item__content {
+    direction: ltr;
     padding: 0;
+    margin: auto;
 }
 
 .place-item__info {
+    width: 100%;
     padding: 1rem;
     text-align: center;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .place-item__image {
+
     width: 100%;
     height: 12.5rem;
-    margin-right: 1.5rem;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .place-item__image img {
+    margin-right:50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 }
 
 .place-item__info h2,
