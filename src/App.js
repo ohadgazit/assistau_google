@@ -6,6 +6,7 @@ import TeachersList from "./pages/TeachersList";
 import TeacherItemExpanded from "./pages/TeacherPage";
 import MainNavigation from "./navigation/MainNavigation";
 import UserForm from "./components/UserForm";
+import ReviewCard from "./components/ReviewCard";
 import UpdateDetailsForm from "./components/UpdateDetailsComponents/UpdateDetailsForm";
 import {
     BrowserRouter as Router,
@@ -13,6 +14,8 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom';
+import Register2 from "./components/Registration/Register2";
+
 
 const App = () => {
 
@@ -37,6 +40,9 @@ const App = () => {
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />
+                </Route>
+                <Route path="/register" exact>
+                    <Register2 />
                 </Route>
                 <Route path="/teachers/:teacherId" exact>
                     <TeacherItemExpanded />
