@@ -65,6 +65,9 @@ function Register() {
             });
     }
 
+    const {values: {firstName, lastName, gender, phoneNumber, email, education, experience, lessonCost, courseList, moreDetails}} = this.props;
+    // Change this.props to an array that hold this field
+
     function writeUserData(){
         const auth = firebase.auth();
         const userId = auth.currentUser.uid
