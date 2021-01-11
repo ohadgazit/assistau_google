@@ -16,19 +16,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Testing" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Carousel&#10;#Write Review&#10;#Read Review">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/searchbar2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchbar2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/MainHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/MainHeader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/MainNavigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/MainNavigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Carousel&#10;#Write Review&#10;#Read Review&#10;fixes for registration CSS">
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/RegStyles.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +71,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
   </component>
@@ -303,9 +302,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="441" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1609942291692" />
-    <state x="462" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607963520455">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="411" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610381047913">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="411" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1610381047913" />
     <state x="462" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1607963520454" />
     <state x="515" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606925361904">
       <screen x="0" y="0" width="1536" height="824" />
