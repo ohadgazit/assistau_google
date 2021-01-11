@@ -2,22 +2,25 @@
 .reg-form {
   max-width: 600px;
   margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 .reg-header {
-  font-weight: 100;
-  color: deepskyblue;
+  font-weight: 400;
+  color: #282c34;
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid deepskyblue;
+  border-bottom: 1px solid #f8df00;
 }
 
 .reg-header-small {
   font-weight: 50;
-  color: deepskyblue;
+  color: #282c34;
   text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid deepskyblue;
+  /*padding-bottom: 10px;*/
+  /*border-bottom: 1px solid deepskyblue;*/
 }
 
 .p-error {
@@ -50,29 +53,30 @@
   display: block;
   margin-bottom: 10px;
   margin-top: 20px;
-  color: #000000;
+  color: #282c34;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 /* submit botton: */
 reg-button[type="submit"],
 .reg-input[type="submit"] {
-  background: deepskyblue;
+  background: #282c34;
   color: white;
   text-align: center;
   text-transform: uppercase;
   border: none;
   margin-top: 50px;
-  padding: 20px;
+  padding: 18px;
   font-size: 16px;
   font-weight: 100;
-  letter-spacing: 10px;
+  letter-spacing: 9px;
 }
 
 .reg-button[type="submit"]:hover,
 .reg-input[type="submit"]:hover {
-  background: #bfbfbf;
+  background: #f8df00;
+  color: #282c34
 }
 
 .reg-button[type="submit"]:active,
@@ -98,9 +102,7 @@ reg-button[type="submit"],
 .reg-button[type="button"] {
   display: block;
   appearance: none;
-  /*background: #333;*/
   background: #ffffff;
-  /*color: white;*/
   color: #000000;
   border: none;
   text-transform: uppercase;
