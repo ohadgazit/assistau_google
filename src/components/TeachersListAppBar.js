@@ -11,7 +11,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
+import Switch from '@material-ui/core/Switch';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
 
@@ -59,6 +61,15 @@ const ButtonAppBar = (props) =>{
     const [gender, setGender] = React.useState(0);
     const [openGender, setOpenGender] = React.useState(false);
 
+    const [checked, setChecked] = React.useState(true);
+    const toggleChecked = () => {
+        if (checked === false) {
+            setChecked((prev) => !prev);
+            props.dataAge.changeLessonCostSorting(0)
+            setLessonCose(0)
+        }
+    };
+
     const handleChangeGender = (event) => {
         setGender(event.target.value);
         props.dataGender.changeGender(event.target.value)
@@ -72,20 +83,23 @@ const ButtonAppBar = (props) =>{
         setOpenGender(true);
     };
 
-    const [age, setAge] = React.useState(0);
-    const [openAge,setOpenAge] = React.useState(false);
+    const [lessonCost, setLessonCose] = React.useState(0);
+    const [openCost,setOpenCost] = React.useState(false);
 
     const handleChangeAge= (event) =>{
-        setAge(event.target.value);
-        props.dataAge.changeAgeSorting(event.target.value)
+        setLessonCose(event.target.value);
+        props.dataAge.changeLessonCostSorting(event.target.value)
+        if (checked === true) {
+            setChecked((prev) => !prev);
+        }
     };
 
     const handleCloseAge = () =>{
-        setOpenAge(false);
+        setOpenCost(false);
     };
 
     const handleOpenAge = () => {
-        setOpenAge(true);
+        setOpenCost(true);
     };
 
 
@@ -112,7 +126,7 @@ const ButtonAppBar = (props) =>{
                             defaultValue={"מין"}
                         >
                             <MenuItem value={0}>
-                                <em>מין</em>
+                                <em>מגדר</em>
                             </MenuItem>
                             <MenuItem value={1}>נקבה</MenuItem>
                             <MenuItem value={2}>זכר</MenuItem>
@@ -120,19 +134,26 @@ const ButtonAppBar = (props) =>{
                     <Select className={classesSelect.formControl}
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
-                        open={openAge}
+                        open={openCost}
                         onClose={handleCloseAge}
                         onOpen={handleOpenAge}
-                        value={age}
+                        value={lessonCost}
                         onChange={handleChangeAge}
-                        defaultValue={"מין"}
+                        defaultValue={"מחיר"}
                     >
                         <MenuItem value={0}>
-                            <em>מיין על פי גיל </em>
+                            <em>מיין על פי מחיר </em>
                         </MenuItem>
-                        <MenuItem value={1}>גיל: סדרה עולה</MenuItem>
-                        <MenuItem value={2}>גיל: סדר יורד</MenuItem>
+                        <MenuItem value={1}>מחיר: סדר עולה</MenuItem>
+                        <MenuItem value={2}>מחיר: סדר יורד</MenuItem>
                     </Select>
+
+                    <FormGroup>
+                        <FormControlLabel
+                            control={<Switch checked={checked} onChange={toggleChecked} />}
+                            label="מיין על פי ציון"
+                        />
+                    </FormGroup>
 
 
 

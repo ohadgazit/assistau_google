@@ -8,6 +8,7 @@ import MainNavigation from "./navigation/MainNavigation";
 import UserForm from "./components/UserForm";
 //import ReviewCard from "./components/ReviewCard";
 import UpdateDetailsForm from "./components/UpdateDetailsComponents/UpdateDetailsForm";
+import Register from './components/Registration/Register'
 import {
     BrowserRouter as Router,
     Route,
@@ -54,6 +55,9 @@ const App = () => {
                 </Route>
                 <Route path="/teachers/:teacherId" exact>
                     <TeacherItemExpanded />
+                </Route>
+                <Route path="/register" exact>
+                    <Register />
                 </Route>
                 <Redirect to="/"/>
             </Switch>

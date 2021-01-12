@@ -1,11 +1,13 @@
-import React, { Component, useState } from "react";
-import ReactDOM from "react-dom";
+//import React, { Component, useState } from "react";
+//import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
 //import ErrorMessage from "./errorMessage";
-import "./RegStyles.css";
-import {Multiselect} from "multiselect-react-dropdown";
+//import "./RegStyles.css";
+import { Multiselect } from "multiselect-react-dropdown";
+import Card from '../../Shared/Card';
+import React from "react";
 
-function Register() {
+const  Register = () => {
     const {
         register,
         handleSubmit,
@@ -28,26 +30,26 @@ function Register() {
     function onChangeInput(value){
         console.log('multi:',value)
     }
+    const menuitems = [
+        {id: 1, name: 'מתמטיקה בדידה'},
+        {id: 2, name: 'מבוא מורחב למדעי המחשב'},
+        {id: 3, name: 'אלגברה לינארית 1ב'},
+        {id: 4, name: 'מבוא לפסיכופתולוגיה'},
+        {id: 5, name: 'Class 5'},
+        {id: 6, name: 'Class 6'},
+        {id: 7, name: 'Class 7'},
+        {id: 8, name: 'Class 8'},
+        {id: 9, name: 'Class 9'},
+    ]
+    const SelectCourses = () => {
 
-    function SelectCourses() {
-        const menuitems = [
-            {id: 1, name: 'מתמטיקה בדידה'},
-            {id: 2, name: 'מבוא מורחב למדעי המחשב'},
-            {id: 3, name: 'אלגברה לינארית 1ב'},
-            {id: 4, name: 'מבוא לפסיכופתולוגיה'},
-            {id: 5, name: 'Class 5'},
-            {id: 6, name: 'Class 6'},
-            {id: 7, name: 'Class 7'},
-            {id: 8, name: 'Class 8'},
-            {id: 9, name: 'Class 9'},
-        ]
 
-        const [op] = useState(menuitems);
+            //const [op] = useState(menuitems);
 
             return (
                 <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
                     <label>בחר את הקורסים שברצונך ללמד (ניתן לבחור יותר מקורס אחד)</label>
-                    <Multiselect options={op}
+                    <Multiselect options={menuitems}
                                  displayValue="name"
                                  name="courses"
                                  ref={register({required: true})}
@@ -61,7 +63,8 @@ function Register() {
 
 
     return (
-        <form className="Register" onSubmit={handleSubmit(onSubmit)}>
+        <Card>
+        <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <h1>הרשמה</h1>
             <label>:שם פרטי</label>
             <input name="firstName" ref={register({ required: true,minLength: 2  })} />
@@ -140,11 +143,12 @@ function Register() {
 
             <input disabled={isSubmitting} type="submit" value="הירשם"/>
         </form>
+        </Card>
     );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Register />, rootElement );
+//const rootElement = document.getElementById("root");
+//ReactDOM.render(<Register />, rootElement );
 
 export default Register
 
