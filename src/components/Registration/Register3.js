@@ -56,6 +56,12 @@ function Register3() {
     function onChangeInput(value){
         console.log('multi:',value)
         courses1 = value
+
+        // courses1=value.map( function( el ){
+        //     return el.options.map( function( eln ){
+        //         return eln.courseCode;
+        //     })
+        // });
     }
 
     const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
@@ -107,11 +113,14 @@ function Register3() {
             email: data.email,
             education: data.education,
             lessonCost: data.lessonCost,
-            desc: data.aboutyou,
+            desc: data.desc,
             experience: data.experience,
             imageUrl: {imageUrl},
             timestamp : new Date().getTime(),
-            courses: courses1
+            courses: courses1.map( function( el ){
+                return el.courseCode
+            })
+            //courses: data.courses
         });
 
     }
@@ -176,8 +185,8 @@ function Register3() {
             <label className="reg-label">מגדר:</label>
             <select name="gender" ref={register({ required: true })} dir="rtl" style={styles.select}>
                 <option value="" >בחר..</option>
-                <option value="male">גבר</option>
-                <option value="female">אישה</option>
+                <option value={2}>גבר</option>
+                <option value={1}>אישה</option>
             </select>
             {errors.gender && <p className="p-error">שדה חובה</p>}
 
@@ -223,7 +232,7 @@ function Register3() {
 
 
             <label className="reg-label">הזן תיאור קצר על עצמך ועל שיטת הלימוד שלך ופרטים נוספים כרצונך</label>
-            <textarea className="reg-textarea" name="aboutyou" ref={register({maxLength: 144})} />
+            <textarea className="reg-textarea" name="desc" ref={register({maxLength: 144})} />
 
             <SelectCourses/>
 

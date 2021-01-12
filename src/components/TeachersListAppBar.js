@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     bar:{
-        backgroundColor: "gray",
+        backgroundColor: "grey",
     }
 
 }));

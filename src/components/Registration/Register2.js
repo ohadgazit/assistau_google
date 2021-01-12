@@ -195,7 +195,7 @@ function Register() {
 
 
             <label>הזן תיאור קצר על עצמך ועל שיטת הלימוד שלך ופרטים נוספים כרצונך</label>
-            <textarea name="aboutyou" ref={register({maxLength: 144})} />
+            <textarea name="desc" ref={register({maxLength: 144})} />
 
             <SelectCourses/>
 

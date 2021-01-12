@@ -102,13 +102,13 @@ function UpdateDetails() {
             <h3 className="reg-header-small">עדכן את השדות הרלוונטיים. את השאר השאר ללא שינוי</h3>
             <label className="reg-label">שם פרטי:</label>
             <input className="reg-input" name="firstName" ref={register({ required: true,minLength: 2  })}
-                   defaultValue={"firstName from DB"} //replace with firstName from DB
+                   defaultValue={"דוד"} //replace with firstName from DB
             />
             {errors.firstName && errors.firstName.type === "minLength" && (<p className="p-error">על שדה זה להכיל לפחות 2 תווים</p>)}
 
             <label className="reg-label">שם משפחה:</label>
             <input className="reg-input" name="lastName" ref={register({ required: true, minLength: 2 })}
-                   defaultValue={"lastName from DB"} //replace with lastName from DB
+                   defaultValue={"אורן"} //replace with lastName from DB
             />
             {errors.lastName && errors.lastName.type === "minLength" && (<p className="p-error">על שדה זה להכיל לפחות 2 תווים</p>)}
 
@@ -117,7 +117,7 @@ function UpdateDetails() {
                 name="age"
                 type="number"
                 ref={register({ required: true, min:0})}
-                defaultValue={1} //replace with the age from DB
+                defaultValue={45} //replace with the age from DB
             />
             {errors.age && errors.age.type === "min" && (<p className="p-error">על הגיל להיות חיובי</p>)}
 
@@ -134,7 +134,7 @@ function UpdateDetails() {
 
             <label className="reg-label">מספר טלפון:</label>
             <input className="reg-input" name="phoneNumber" ref={register({ required: true,minLength:10, maxLength:10, pattern:/^[0-9]*$/})}
-                   defaultValue={"0000000000"} //replace with phoneNumber from DB
+                   defaultValue={"0508238536"} //replace with phoneNumber from DB
             />
             {errors.phoneNumber && errors.phoneNumber.type === "minLength" && (<p className="p-error">על מספר הטלפון להכיל 10 ספרות</p>)}
             {errors.phoneNumber && errors.phoneNumber.type === "maxLength" && (<p className="p-error">על מספר הטלפון להכיל 10 ספרות</p>)}
@@ -144,7 +144,7 @@ function UpdateDetails() {
             <input className="reg-input"
                 name="email"
                 ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-                defaultValue={"email@from_DB"} //replace with email from DB
+                defaultValue={"davidoren@mail.tau.ac.il"} //replace with email from DB
             />
             {errors.email && errors.email.type === "pattern" && (<p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}
 
@@ -153,14 +153,14 @@ function UpdateDetails() {
             <input className="reg-input"
                 name="education"
                 ref={register({ required: true})}
-                defaultValue={"education from DB"} //replace with education from DB
+                defaultValue={"מדעי המחשב ופילוסופיה"} //replace with education from DB
             />
 
             <label className="reg-label">מספר שנות נסיון:</label>
             <input className="reg-input"
                 name="experience"
                 ref={register({ required: true})}
-                defaultValue={"experience from DB"} //replace with experience from DB
+                defaultValue={"3"} //replace with experience from DB
             />
 
             <label className="reg-label">עלות שיעור:</label>
@@ -168,13 +168,13 @@ function UpdateDetails() {
                 name="lessonCost"
                 type="number"
                 ref={register({ required: true, min:0})}
-                defaultValue={"1"} //replace with lessonCost from DB
+                defaultValue={"120"} //replace with lessonCost from DB
             />
             {errors.lessonCost && errors.lessonCost.type === "min" && (<p className="p-error">נא הזן ערך חיובי</p>)}
 
 
             <label className="reg-label">הזן תיאור קצר על עצמך ועל שיטת הלימוד שלך ופרטים נוספים כרצונך</label>
-            <textarea className="reg-textarea" name="aboutyou" ref={register({maxLength: 144})} />
+            <textarea className="reg-textarea" name="desc" ref={register({maxLength: 144})} />
 
             <SelectCourses/>
 
