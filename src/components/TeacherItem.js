@@ -35,7 +35,13 @@ const TeacherItem = props => {
                     </div>
                     <div className="place-item__info">
                         <h2>{props.name}</h2>
-                        <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>
+                        {props.rating?
+                            <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>:
+                            null
+                        }
+
+
+                        {/*<h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>*/}
                         <p> {props.desc}</p>
                         <p>השכלה: {props.education}</p>
                         <p> מחיר שיעור: {props.lessonCost}&#8362;</p>

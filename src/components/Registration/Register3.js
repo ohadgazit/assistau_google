@@ -106,16 +106,17 @@ function Register3() {
         const db = firebase.firestore();
         const teacherRef = db.collection('teachers/')
         teacherRef.doc(email).set({
-            first_name: data.firstName,
-            last_name: data.lastName,
-            gender: data.gender,
+            //first_name: data.firstName,
+            //last_name: data.lastName,
+            name: data.firstName+" "+data.lastName,
+            gender: Number(data.gender),
             phoneNumber: data.phoneNumber,
             email: data.email,
             education: data.education,
-            lessonCost: data.lessonCost,
+            lessonCost: Number(data.lessonCost),
             desc: data.desc,
             experience: data.experience,
-            imageUrl: {imageUrl},
+            imageUrl: imageUrl,
             timestamp : new Date().getTime(),
             courses: courses1.map( function( el ){
                 return el.courseCode
