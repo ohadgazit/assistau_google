@@ -38,7 +38,8 @@ const TeacherItem = props => {
                         <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>
                         <p> {props.desc}</p>
                         <p>השכלה: {props.education}</p>
-                        <p> מחיר שיעור: {props.lessonCost}</p>
+                        <p> מחיר שיעור: {props.lessonCost}&#8362;</p>
+                        <p> נסיון: {props.experience}</p>
                         <p> גיל: {props.age}</p>
                     </div>
                     <div className="place-item__actions">

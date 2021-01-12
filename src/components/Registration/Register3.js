@@ -17,6 +17,7 @@ function Register3() {
     const onSubmit = data => {
         console.log(data)
         console.log(data.firstName)
+        writeUserData(data)
     };
 
     //for 'gender' field
@@ -65,13 +66,13 @@ function Register3() {
             });
     }
 
-    // function writeUserData(){
+    // function writeUserData(data){
     //     const auth = firebase.auth();
     //     const userId = auth.currentUser.uid
     //     const email = auth.currentUser.email
     //     const imageUrl = auth.currentUser.photoURL
     //     firebase.database().ref('users/').set({
-    //         first_name: {values:firstName},
+    //         first_name: {datafirstName},
     //         last_name: {values:lastName},
     //         gender: {values:gender},
     //         phoneNumber: {values:phoneNumber},
