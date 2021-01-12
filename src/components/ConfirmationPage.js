@@ -7,7 +7,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 import 'firebase/database'
-import 'firebase/auth';
+
 
 export class ConfirmationPage extends Component {
     continue = e => {

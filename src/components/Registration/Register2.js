@@ -65,28 +65,28 @@ function Register() {
             });
     }
 
-    const {values: {firstName, lastName, gender, phoneNumber, email, education, experience, lessonCost, courseList, moreDetails}} = this.props;
-    // Change this.props to an array that hold this field
-
-    function writeUserData(){
-        const auth = firebase.auth();
-        const userId = auth.currentUser.uid
-        const email = auth.currentUser.email
-        const imageUrl = auth.currentUser.photoURL
-        firebase.database().ref('users/').set({
-            first_name: {values:firstName},
-            last_name: {values:lastName},
-            gender: {values:gender},
-            phoneNumber: {values:phoneNumber},
-            email: {values:email},
-            education: {values:education},
-            lessonCost: {values:lessonCost},
-            moreDetails: {values:moreDetails},
-            imageUrl: {imageUrl},
-            timestamp : new Date().getTime()
-        });
-
-    }
+    // const {values: {firstName, lastName, gender, phoneNumber, email, education, experience, lessonCost, courseList, moreDetails}} = this.props;
+    // // Change this.props to an array that hold this field
+    //
+    // function writeUserData(){
+    //     const auth = firebase.auth();
+    //     const userId = auth.currentUser.uid
+    //     const email = auth.currentUser.email
+    //     const imageUrl = auth.currentUser.photoURL
+    //     firebase.database().ref('users/').set({
+    //         first_name: {values:firstName},
+    //         last_name: {values:lastName},
+    //         gender: {values:gender},
+    //         phoneNumber: {values:phoneNumber},
+    //         email: {values:email},
+    //         education: {values:education},
+    //         lessonCost: {values:lessonCost},
+    //         moreDetails: {values:moreDetails},
+    //         imageUrl: {imageUrl},
+    //         timestamp : new Date().getTime()
+    //     });
+    //
+    // }
 
 
 

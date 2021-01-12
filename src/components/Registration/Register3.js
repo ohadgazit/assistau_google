@@ -8,17 +8,39 @@ import Card from "../../Shared/Card"
 import firebase from "firebase";
 
 function Register3() {
+
     const {
         register,
         handleSubmit,
         errors,
         formState: { isSubmitting }
     } = useForm();
+/*
     const onSubmit = data => {
+
         console.log(data)
         console.log(data.firstName)
+
+        const firstName =  data.firstName
+        const lastName = data.lastName
+        const genderInput =  data.gender
+        const phoneNumber = data.phoneNumber
+        const email =  data.email
+        const education =  data.education
+        const lessonCost =  data.lessonCost
+        const moreDetails = data.moreDetails
+        writeUserData()
+
+    };
+*/
+
+    function onSubmit(data) {
+        console.log(data)
+        //console.log(data.firstName)
         writeUserData(data)
     };
+
+
 
     //for 'gender' field
     const styles={
@@ -28,8 +50,11 @@ function Register3() {
         }
     }
 
+    var courses1 = []
+
     function onChangeInput(value){
         console.log('multi:',value)
+        courses1 = value
     }
 
     const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
@@ -66,25 +91,29 @@ function Register3() {
             });
     }
 
-    // function writeUserData(data){
-    //     const auth = firebase.auth();
-    //     const userId = auth.currentUser.uid
-    //     const email = auth.currentUser.email
-    //     const imageUrl = auth.currentUser.photoURL
-    //     firebase.database().ref('users/').set({
-    //         first_name: {datafirstName},
-    //         last_name: {values:lastName},
-    //         gender: {values:gender},
-    //         phoneNumber: {values:phoneNumber},
-    //         email: {values:email},
-    //         education: {values:education},
-    //         lessonCost: {values:lessonCost},
-    //         moreDetails: {values:moreDetails},
-    //         imageUrl: {imageUrl},
-    //         timestamp : new Date().getTime()
-    //     });
-    //
-    // }
+    function writeUserData(data){
+        const auth = firebase.auth();
+        const userId = auth.currentUser.uid
+        const email = auth.currentUser.email
+        const imageUrl = auth.currentUser.photoURL
+        const db = firebase.firestore();
+        const teacherRef = db.collection('teachers/')
+        teacherRef.doc(email).set({
+            first_name: data.firstName,
+            last_name: data.lastName,
+            gender: data.gender,
+            phoneNumber: data.phoneNumber,
+            email: data.email,
+            education: data.education,
+            lessonCost: data.lessonCost,
+            desc: data.aboutyou,
+            experience: data.experience,
+            imageUrl: {imageUrl},
+            timestamp : new Date().getTime(),
+            courses: courses1
+        });
+
+    }
 
 
 
