@@ -105,6 +105,7 @@ const ControllableStates = (props) => {
                 {/*<div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>*/}
                 {/*<div>{`inputValue: '${inputValue}'`}</div>*/}
             <br />
+
             <Autocomplete
                 filterOptions={filterOptions}
                 defaultValue={null}
@@ -126,7 +127,8 @@ const ControllableStates = (props) => {
                 /*options={loadedCourseState}*/
                 options ={loadedCourseState}
                 getOptionLabel={(option => option.courseName)}
-                style={{ width: 300 }}
+                // style={{ width: 300 }}
+                style={{ width: 500 }}
                 renderInput={(params) =>  <TextField {...params}  label="הקלד שם או מספר קורס" variant="outlined" /> }
 
             />
@@ -134,10 +136,12 @@ const ControllableStates = (props) => {
                 <Link to={`/courses/${chosenCourse.courseCode}` }> Search</Link>:
                 <Link>Search</Link>}
             </Button>*/}
-            {chosenCourse?<Button  color="primary" variant="contained" to={`/courses/${chosenCourse.courseCode}` }>
-                Search
-            </Button>: <Button  color="primary" variant="contained" >
-                Search
+            {chosenCourse?<Button color="primary" variant="contained" to={`/courses/${chosenCourse.courseCode}` }>
+                {/*Search*/}
+                חיפוש
+            </Button>: <Button color="primary" variant="contained" >
+                {/*Search*/}
+                חיפוש
             </Button>
                 }
             </FormControl>
@@ -147,5 +151,6 @@ const ControllableStates = (props) => {
 
     );
 }
+
 
 export default ControllableStates;

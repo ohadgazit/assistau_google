@@ -1,8 +1,10 @@
-import React, { Component, useState } from "react";
+import React, {Component, useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
 import "./RegStyles.css";
 import {Multiselect} from "multiselect-react-dropdown";
+import firebase from "firebase";
+import Card from "../../Shared/Card";
 
 
 function UpdateDetails() {
@@ -44,22 +46,56 @@ function UpdateDetails() {
 
         const [op] = useState(menuitems);
 
+        //
+
+        const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
+
+        useEffect(() => {
+            loadCourses()
+        }, [])
+
+        function loadCourses() {
+
+            var db = firebase.firestore();
+            var coursesRef = db.collection("courses")
+            var query = coursesRef.where("courseCode", "!=", 'null');
+            query.limit(10).get().then(function (querySnapshot) {
+                let loadedCourses= [] ;
+                querySnapshot.forEach(function (doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    //console.log(doc.data());
+                    //debugger
+                    let docData = doc.data()
+                    loadedCourses.push({...docData
+                    });
+                })
+                console.log(loadedCourses)
+                setLoadedCoursestate(loadedCourses)
+            })
+                .catch(function (error) {
+                    console.log("Error getting documents: ", error);
+                });
+        }
+        //
+
         return (
             <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
                 <label className="reg-label">בחר את הקורסים שברצונך ללמד (ניתן לבחור יותר מקורס אחד)</label>
-                <Multiselect options={op}
+                {/*<Multiselect options={op}*/}
+                <Multiselect options={loadedCourseState}
                              displayValue="name"
                              name="courses"
                              ref={register({required: true})}
                              onSelect={onChangeInput}
                              placeholder=''
-                             value={"מתמטיקה בדידה"} //replace with courses list from DB
+                             //value={"מתמטיקה בדידה"} //replace with courses list from DB
                 />
             </div>
         );
     }
 
     return (
+        <Card>
         <form className="reg-form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="reg-header">עדכון פרטים</h1>
             <h3 className="reg-header-small">עדכן את השדות הרלוונטיים. את השאר השאר ללא שינוי</h3>
@@ -143,6 +179,7 @@ function UpdateDetails() {
 
             <input className="reg-input" disabled={isSubmitting} type="submit" value="עדכן פרטים"/>
         </form>
+        </Card>
     );
 }
 
