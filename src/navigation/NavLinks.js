@@ -40,7 +40,7 @@ const NavLinks = props => {
         {user?<li>
             <NavLink to="/updateUserForm">עדכן פרטים</NavLink>
         </li>:null}
-        {user?<li><NavLink to="/UserForm">הרשם כמורה</NavLink></li>:null}
+        {user?<li><NavLink to="/register">הרשם כמורה</NavLink></li>:null}
         <li>
             <NavLink to="/SignIn">{ user ? auth.currentUser.displayName  : 'התחבר'}</NavLink>
         </li>

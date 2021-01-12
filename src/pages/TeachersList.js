@@ -9,7 +9,7 @@ const TeachersList = () => {
 
 
     const [genderFilter,changeGender] = React.useState(0);
-    const [ageSorting,changeAgeSorting] = React.useState(0);
+    const [lessonCostSorting,changeLessonCostSorting] = React.useState(0);
     const [showFilterBar,setShowFilterBar] = React.useState(1);
     const [dataPulled,setDataPulled] = React.useState(0);
 
@@ -27,14 +27,14 @@ const TeachersList = () => {
 
     const loadedPlaces2 = loadedPlacesState.filter(teacher => genderFilter > 0 ? teacher.gender === (Number(genderFilter)): 1)
 
-    if (ageSorting === 0){
+    if (lessonCostSorting === 0){
         loadedPlaces2.sort((a,b) => Number(a.rating)>Number(b.rating) ? -1 : 1);
     }
 
-    else if (ageSorting === 1){
+    else if (lessonCostSorting === 1){
         loadedPlaces2.sort((a,b) => Number(a.age)>Number(b.age) ? 1 : -1);
     }
-    else if (ageSorting === 2){
+    else if (lessonCostSorting === 2){
         loadedPlaces2.sort((a,b) => Number(a.age)>Number(b.age) ? -1 : 1);
     }
 
@@ -70,7 +70,7 @@ const TeachersList = () => {
                 <ButtonAppBar dataGender={
                     {genderFilter: genderFilter, changeGender: changeGender.bind(this)}
                 } dataAge={
-                    {ageSorting: ageSorting, changeAgeSorting: changeAgeSorting.bind(this)}
+                    {lessonCostSorting: lessonCostSorting, changeLessonCostSorting: changeLessonCostSorting.bind(this)}
                 }/>
                 <CourseTeachersList items={loadedPlaces2}
                                     from_course={courseId}
