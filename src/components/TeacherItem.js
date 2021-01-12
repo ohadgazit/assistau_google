@@ -36,8 +36,11 @@ const TeacherItem = props => {
                     <div className="place-item__info">
                         <h2>{props.name}</h2>
                         <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>
-                        <h3>תחום לימודים: {props.education}</h3>
-                        <p>מיקום שיעור: {props.locations}</p>
+                        <p> {props.desc}</p>
+                        <p>השכלה: {props.education}</p>
+                        <p> מחיר שיעור: {props.lessonCost}&#8362;</p>
+                        <p> נסיון: {props.experience}</p>
+                        <p> גיל: {props.age}</p>
                     </div>
                     <div className="place-item__actions">
                         <Button to = '/'>חזור לחיפוש</Button>
@@ -56,7 +59,8 @@ const TeacherItem = props => {
                                     phone_number: props.phone_number,
                                     from_course: props.from_course,
                                     reviews: props.reviews,
-                                    rating: props.rating
+                                    rating: props.rating,
+                                    lessonCost: props.lessonCost
 
                             }
                             }}

@@ -55,6 +55,8 @@ const CourseTeachersList = props => {
                     from_course ={props.from_course}
                     reviews = {[place.reviews]}
                     rating = {place.rating}
+                    lessonCost = {place.lessonCost}
+                    experience = {place.experience}
 
                 />
 

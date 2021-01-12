@@ -43,6 +43,11 @@ const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
+
+    bar:{
+        backgroundColor: "gray",
+    }
+
 }));
 
 //export default function ButtonAppBar() {
@@ -89,7 +94,7 @@ const ButtonAppBar = (props) =>{
     return (
         <div className={classes.root}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar className={classes.bar}>
                     {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>*/}
@@ -123,7 +128,7 @@ const ButtonAppBar = (props) =>{
                         defaultValue={"מין"}
                     >
                         <MenuItem value={0}>
-                            <em>מיין על פי ציון </em>
+                            <em>מיין על פי גיל </em>
                         </MenuItem>
                         <MenuItem value={1}>גיל: סדרה עולה</MenuItem>
                         <MenuItem value={2}>גיל: סדר יורד</MenuItem>

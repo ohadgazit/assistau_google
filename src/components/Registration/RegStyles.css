@@ -1,133 +1,108 @@
-body {
-  /*background: #0e101c;*/
-  background: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+
+.reg-form {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 }
 
-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-weight: 100;
-  /*color: white;*/
-  color: deepskyblue;
+.reg-header {
+  font-weight: 400;
+  color: #282c34;
   text-align: center;
   padding-bottom: 10px;
-  /*border-bottom: 1px solid rgb(79, 98, 148);*/
-  border-bottom: 1px solid deepskyblue;
-
+  border-bottom: 1px solid #f8df00;
 }
 
-.form {
-  background: #0e101c;
-  max-width: 400px;
-  margin: 0 auto;
+.reg-header-small {
+  font-weight: 50;
+  color: #282c34;
+  text-align: center;
+  /*padding-bottom: 10px;*/
+  /*border-bottom: 1px solid deepskyblue;*/
 }
 
-p {
-  /*color: #bf1650;*/
+.p-error {
   color: red;
   font-size: 12px;
   text-align: right;
 }
 
-p::before {
+.p-error::before {
   display: inline;
   content: "⚠ ";
 }
 
-textarea,
-input {
+.reg-textarea,
+.reg-input {
   display: block;
   box-sizing: border-box;
   text-align: right;
   width: 100%;
   border-radius: 4px;
-  /*border: 1px solid white;*/
-  /*border: 1px solid #030000;*/
   border: 1px solid #bfbfbf;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
 }
 
-label {
+.reg-label {
   line-height: 2;
-  /*text-align: left;*/
   text-align: right;
   display: block;
-  /*margin-bottom: 13px;*/
   margin-bottom: 10px;
   margin-top: 20px;
-  /*color: white;*/
-  color: #000000;
-  /*font-size: 14px;*/
+  color: #282c34;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 /* submit botton: */
-button[type="submit"],
-input[type="submit"] {
-  /*background: #ec5990;*/
-  background: deepskyblue;
+reg-button[type="submit"],
+.reg-input[type="submit"] {
+  background: #282c34;
   color: white;
   text-align: center;
   text-transform: uppercase;
   border: none;
-  /*margin-top: 40px;*/
   margin-top: 50px;
-  padding: 20px;
+  padding: 18px;
   font-size: 16px;
   font-weight: 100;
-  letter-spacing: 10px;
+  letter-spacing: 9px;
 }
 
-button[type="submit"]:hover,
-input[type="submit"]:hover {
-  /*background: #bf1650;*/
-  /*background: black;*/
-  background: #bfbfbf;
+.reg-button[type="submit"]:hover,
+.reg-input[type="submit"]:hover {
+  background: #f8df00;
+  color: #282c34
 }
 
-button[type="submit"]:active,
-input[type="button"]:active,
-input[type="submit"]:active {
+.reg-button[type="submit"]:active,
+.reg-input[type="button"]:active,
+.reg-input[type="submit"]:active {
   transition: 0.3s all;
   transform: translateY(3px);
   border: 1px solid transparent;
   opacity: 0.8;
 }
 
-input:disabled {
-  opacity: 0.4;
-}
-
-input[type="button"]:hover {
+.reg-input[type="button"]:hover {
   transition: 0.3s all;
 }
 
-button[type="submit"],
-input[type="button"],
-input[type="submit"] {
+.reg-button[type="submit"],
+.reg-input[type="button"],
+.reg-input[type="submit"] {
   -webkit-appearance: none;
 }
 
-.App {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-button[type="button"] {
+/*course dropdown arrow box */
+.reg-button[type="button"] {
   display: block;
   appearance: none;
-  /*background: #333;*/
   background: #ffffff;
-  /*color: white;*/
   color: #000000;
   border: none;
   text-transform: uppercase;
@@ -135,18 +110,4 @@ button[type="button"] {
   border-radius: 4px;
 }
 
-hr {
-  margin-top: 30px;
-}
 
-button {
-  display: block;
-  appearance: none;
-  margin-top: 40px;
-  /*border: 1px solid #333;*/
-  border: 1px solid #9223b1;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border-radius: 4px;
-}

@@ -159,9 +159,11 @@ const TeacherItemExpanded = props =>{
             </div>
             <div className="place-item__info">
                 <h2>{teacherData.name}</h2>
-                <h3>תחום לימודים: {teacherData.education}</h3>
-                <p>מיקום שיעור: {teacherData.locations}</p>
-                <p>{teacherData.desc}</p>
+                <Typography color={'textSecondary'} variant={'title'}> "{teacherData.desc}" </Typography>
+
+
+                <p>השכלה: {teacherData.education}</p>
+
                 <p>גיל: {teacherData.age}</p>
                 <p>ניסיון :{teacherData.experience} שנים</p>
 
@@ -179,9 +181,16 @@ const TeacherItemExpanded = props =>{
                     <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>
                     :<Button to = "/SignIn">התחבר על מנת ליצור קשר עם המורה</Button>
                 }
-                <Button onClick={handleClickOpen}>
-                    כתוב ביקורת
-                </Button>
+                {user?
+                    <Button onClick={handleClickOpen}>
+                        כתוב ביקורת
+                    </Button>
+                    :<Button to = "/SignIn">התחבר על מנת לכתוב ביקורת</Button>
+                }
+
+                {/*<Button onClick={handleClickOpen}>*/}
+                {/*    כתוב ביקורת*/}
+                {/*</Button>*/}
 
                 <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                     <DialogTitle id="form-dialog-title"> דרג את המורה {teacherData.name}</DialogTitle>

@@ -6,7 +6,7 @@ import TeachersList from "./pages/TeachersList";
 import TeacherItemExpanded from "./pages/TeacherPage";
 import MainNavigation from "./navigation/MainNavigation";
 import UserForm from "./components/UserForm";
-import ReviewCard from "./components/ReviewCard";
+//import ReviewCard from "./components/ReviewCard";
 import UpdateDetailsForm from "./components/UpdateDetailsComponents/UpdateDetailsForm";
 import {
     BrowserRouter as Router,
@@ -14,7 +14,9 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom';
-import Register2 from "./components/Registration/Register2";
+//import Register2 from "./components/Registration/Register2";
+import Register3 from "./components/Registration/Register3";
+import UpdateDetails from "./components/Registration/UpdateDetails";
 
 
 const App = () => {
@@ -32,17 +34,23 @@ const App = () => {
                 <Route path="/SignIn" exact>
                     <SignInPage/>
                 </Route>
+                {/*<Route path="/UserForm" exact>*/}
+                {/*    <UserForm/>*/}
+                {/*</Route>*/}
                 <Route path="/UserForm" exact>
-                    <UserForm/>
+                    <Register3/>
                 </Route>
+                {/*<Route path="/updateUserForm" exact>*/}
+                {/*    <UpdateDetailsForm />*/}
+                {/*</Route>*/}
                 <Route path="/updateUserForm" exact>
-                    <UpdateDetailsForm />
+                    <UpdateDetails />
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />
                 </Route>
                 <Route path="/register" exact>
-                    <Register2 />
+                    <Register3 />
                 </Route>
                 <Route path="/teachers/:teacherId" exact>
                     <TeacherItemExpanded />
