@@ -27,6 +27,7 @@
   background: #f8df00;
   border-color: #292929;
   color: #292929;
+  border-radius: 4px;
 }
 
 .nav-links button {
@@ -36,6 +37,7 @@
   background: transparent;
   padding: 0.5rem;
   font: inherit;
+  border-radius: 4px;
 }
 
 .nav-links button:focus {
