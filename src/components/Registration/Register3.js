@@ -6,6 +6,7 @@ import "./RegStyles.css";
 import {Multiselect} from "multiselect-react-dropdown"
 import Card from "../../Shared/Card"
 import firebase from "firebase";
+import RegCard from "./RegCard";
 
 function Register3() {
 
@@ -149,7 +150,7 @@ function Register3() {
 
 
     return (
-        <Card>
+        <RegCard>
         <form className="reg-form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="reg-header">הרשמה</h1>
             <label className="reg-label">שם פרטי:</label>
@@ -229,7 +230,7 @@ function Register3() {
 
             <input className="reg-input" disabled={isSubmitting} type="submit" value="הירשם"/>
         </form>
-        </Card>
+        </RegCard>
     );
 }
 

@@ -5,6 +5,7 @@ import "./RegStyles.css";
 import {Multiselect} from "multiselect-react-dropdown";
 import firebase from "firebase";
 import Card from "../../Shared/Card";
+import RegCard from "./RegCard";
 
 
 function UpdateDetails() {
@@ -83,7 +84,7 @@ function UpdateDetails() {
                 <label className="reg-label">בחר את הקורסים שברצונך ללמד (ניתן לבחור יותר מקורס אחד)</label>
                 {/*<Multiselect options={op}*/}
                 <Multiselect options={loadedCourseState}
-                             displayValue="name"
+                             displayValue="courseName"
                              name="courses"
                              ref={register({required: true})}
                              onSelect={onChangeInput}
@@ -95,7 +96,7 @@ function UpdateDetails() {
     }
 
     return (
-        <Card>
+        <RegCard>
         <form className="reg-form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="reg-header">עדכון פרטים</h1>
             <h3 className="reg-header-small">עדכן את השדות הרלוונטיים. את השאר השאר ללא שינוי</h3>
@@ -179,7 +180,7 @@ function UpdateDetails() {
 
             <input className="reg-input" disabled={isSubmitting} type="submit" value="עדכן פרטים"/>
         </form>
-        </Card>
+        </RegCard>
     );
 }
 

@@ -160,18 +160,20 @@ const TeacherItemExpanded = props =>{
             <div className="place-item__info">
                 <h2>{teacherData.name}</h2>
                 <Typography color={'textSecondary'} variant={'title'}> "{teacherData.desc}" </Typography>
-
-
+                <p></p>
                 <p>השכלה: {teacherData.education}</p>
-
                 <p>גיל: {teacherData.age}</p>
+                <p>מגדר: {teacherData.gender}</p>
                 <p>ניסיון :{teacherData.experience} שנים</p>
-
+                <p>עלות שיעור :{teacherData.lessonCost}&#8362; </p>
+                {user ?
+                    <p>מספר טלפון :{teacherData.phoneNumber} </p>:null
+                }
+                {user ?
+                    <p>כתובת Email :{teacherData.email} </p>:null
+                }
                 <li>קורסים נוספים: {additionalCourses.map(item => item) }</li>
                 {/*<Carusela/>*/}
-
-
-
 
 
             </div>
