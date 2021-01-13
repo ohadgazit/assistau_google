@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './MainPage.css';
 
 import firebase from 'firebase/app';
@@ -6,8 +6,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 import 'firebase/database'
-
-
+import { useHistory } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
@@ -24,16 +23,19 @@ const config = {
     measurementId: "G-QXELTZ6ZFY"
 };
 
+
+
+
 firebase.initializeApp(config);
-
-
+console.log(window.history.back());
 // Configure FirebaseUI.
 const uiConfig = {
+
     // Popup signin flow rather than redirect flow.
     signInFlow: 'popup',
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
     // signInSuccessUrl: '/signedIn',
-    signInSuccessUrl: window.location.href,
+    signInSuccessUrl: window.history.back,
     signInOptions: [
         {
             provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -87,7 +89,7 @@ function SignInPage() {
                 <SignOut />
             </header>
             <section>
-                {user ?  <SignIn /> : <SignIn />}
+                {user ?  null : <SignIn />}
             </section>
         </div>
     );
@@ -122,9 +124,9 @@ function SignOut() {
     return auth.currentUser && (
         <div>
             <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-            <button className="user-name" onClick={() => writeUserData()}> {auth.currentUser.displayName} </button>
+            {/*<button className="user-name" onClick={() => writeUserData()}> {auth.currentUser.displayName} </button>
             <button className="test-button" onClick={() => readUserData()}> Read Data </button>
-            <button className="test-button" onClick={() => writeUserData2()}> Write to collection </button>
+            <button className="test-button" onClick={() => writeUserData2()}> Write to collection </button>*/}
         </div>
 
     )
