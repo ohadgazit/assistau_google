@@ -51,12 +51,13 @@ const CourseTeachersList = props => {
                     creatorId={place.creator}
                     age={place.age}
                     desc={place.desc}
-                    phone_number ={place.phone_number}
+                    phone_number ={place.phoneNumber}
                     from_course ={props.from_course}
                     reviews = {[place.reviews]}
                     rating = {place.rating}
                     lessonCost = {place.lessonCost}
                     experience = {place.experience}
+                    email = {place.email}
 
                 />
 

@@ -167,10 +167,10 @@ const TeacherItemExpanded = props =>{
                 <p>ניסיון :{teacherData.experience} שנים</p>
                 <p>עלות שיעור :{teacherData.lessonCost}&#8362; </p>
                 {user ?
-                    <p>מספר טלפון :{teacherData.phoneNumber} </p>:null
+                    <p>מספר טלפון : {teacherData.phone_number} </p>:null
                 }
                 {user ?
-                    <p>כתובת Email :{teacherData.email} </p>:null
+                    <p>דואר אלקטרוני: {teacherData.email} </p>:null
                 }
                 <li>קורסים נוספים: {additionalCourses.map(item => item) }</li>
                 {/*<Carusela/>*/}
@@ -190,9 +190,7 @@ const TeacherItemExpanded = props =>{
                     :<Button to = "/SignIn">התחבר על מנת לכתוב ביקורת</Button>
                 }
 
-                {/*<Button onClick={handleClickOpen}>*/}
-                {/*    כתוב ביקורת*/}
-                {/*</Button>*/}
+
 
                 <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                     <DialogTitle id="form-dialog-title"> דרג את המורה {teacherData.name}</DialogTitle>
