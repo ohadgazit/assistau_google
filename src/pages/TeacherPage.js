@@ -61,7 +61,7 @@ const TeacherItemExpanded = props =>{
 
     //end of reviews test
     console.log(teacherData)
-    console.log(teacherData.reviews[0].entries)
+
 
     //box design param
     const defaultProps = {
@@ -184,7 +184,7 @@ const TeacherItemExpanded = props =>{
                     :<Button to = "/SignIn">התחבר על מנת ליצור קשר עם המורה</Button>
                 }
                 {user?
-                    <Button onClick={handleClickOpen}>
+                    <Button onClick={handleClickOpen} type = "button">
                         כתוב ביקורת
                     </Button>
                     :<Button to = "/SignIn">התחבר על מנת לכתוב ביקורת</Button>
@@ -234,9 +234,13 @@ const TeacherItemExpanded = props =>{
                 </Dialog>
             </div>
             <div className="place-item__actions">
-                <Typography> ביקורות הסטודנטים </Typography>
-                <h1>{teacherData.reviews[0].text_review}</h1>
-                <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}>
+                {teacherData.reviews[0]?
+                    <Typography> ביקורות הסטודנטים </Typography>:
+                    <Typography>אין ביקורות על מורה זה</Typography>
+                }
+                {teacherData.reviews[0]?
+                <h1>{teacherData.reviews[0].text_review}</h1> &&
+                <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}> &&
                 {teacherData.reviews[0].map((person, index) => {
                     return <Card>
                         <p key={index}> <h3>{person.email}</h3>
@@ -248,7 +252,7 @@ const TeacherItemExpanded = props =>{
                     </p>
                     </Card>
                 })}
-                </Carousel>
+                </Carousel>:null}
 
             </div>
 
