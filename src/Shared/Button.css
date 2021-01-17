@@ -8,7 +8,9 @@
     color: white;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
+    display: inline-block  ;
+    transition: all 0.2s;
+
 }
 
 .button:focus {
@@ -19,7 +21,7 @@
 /*.button:active */
 /*    background: #ff4382;*/
 /*    border-color: #ff4382;*/
-/**/
+
 
 .button--inverse {
     background: transparent;

@@ -34,6 +34,11 @@ const NavLinks = props => {
 
 
     return <ul className="nav-links">
+        {user? <img src={auth.currentUser.photoURL} alt="" className={"profile_pic"}/>: null}
+        {user ? <div className="name_style">
+            {auth.currentUser.displayName}
+        </div> :null}
+
         <li>
             <NavLink to="/" exact>בית</NavLink>
         </li>
@@ -42,11 +47,12 @@ const NavLinks = props => {
         </li>:null}
         {user?<li><NavLink to="/register">הרשם כמורה</NavLink></li>:null}
         <li>
-            <NavLink to="/SignIn">{ user ? auth.currentUser.displayName  : 'התחבר'}</NavLink>
+            <NavLink to="/SignIn">{ user ?  'התנתק' : 'התחבר'}</NavLink>
         </li>
         {isNotHomePage?<li>
             <button onClick={() => history.goBack()}>חזור אחורה</button>
         </li>:null}
+
 
     </ul>
 };

@@ -27,7 +27,6 @@ const config = {
 
 
 firebase.initializeApp(config);
-console.log(window.history.back());
 // Configure FirebaseUI.
 const uiConfig = {
 

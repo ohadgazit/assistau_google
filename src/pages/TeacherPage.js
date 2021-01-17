@@ -240,7 +240,7 @@ const TeacherItemExpanded = props =>{
                 }
                 {teacherData.reviews[0]?
                 <h1>{teacherData.reviews[0].text_review}</h1> &&
-                <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}> &&
+                <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}>
                 {teacherData.reviews[0].map((person, index) => {
                     return <Card>
                         <p key={index}> <h3>{person.email}</h3>
