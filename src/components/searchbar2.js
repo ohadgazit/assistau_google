@@ -19,7 +19,6 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 import 'firebase/database'
-import './searchbar2.css';
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -130,7 +129,7 @@ const ControllableStates = (props) => {
                 getOptionLabel={(option => option.courseName)}
                 // style={{ width: 300 }}
                 style={{ width: 500 }}
-                renderInput={(params) =>  <TextField className="textfield__searchbar" {...params}  label="הקלד שם או מספר קורס" variant="outlined" /> }
+                renderInput={(params) =>  <TextField  {...params}  label="הקלד שם או מספר קורס" variant="outlined" /> }
 
             />
             {/*<Button  color="primary" variant="contained" onClick={sumbitForm}>{chosenCourse?
