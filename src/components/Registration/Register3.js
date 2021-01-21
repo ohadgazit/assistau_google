@@ -108,7 +108,9 @@ function Register3() {
         teacherRef.doc(email).set({
             //first_name: data.firstName,
             //last_name: data.lastName,
-            name: data.firstName+" "+data.lastName,
+            first_name: data.firstName,
+            last_name: data.lastName,
+            age: data.age,
             gender: Number(data.gender),
             phoneNumber: data.phoneNumber,
             email: data.email,

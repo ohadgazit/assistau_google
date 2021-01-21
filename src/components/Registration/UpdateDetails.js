@@ -13,6 +13,8 @@ function UpdateDetails() {
 
     useEffect(() => {
         loadTeacherData()
+        loadCourses()
+        fixCourses()
     }, [])
 
 
@@ -32,10 +34,20 @@ function UpdateDetails() {
         errors,
         formState: { isSubmitting }
     } = useForm();
-    const onSubmit = data => {
+
+
+    // const onSubmit = data => {
+    //     console.log(data)
+    //     console.log(data.firstName)
+    //     updateTeacherInfo(data)
+    //
+    // };
+
+    function onSubmit(data) {
         console.log(data)
-        console.log(data.firstName)
-    };
+        //console.log(data.firstName)
+        updateTeacherInfo(data)
+    }
 
     //for 'gender' field
     const styles={
@@ -45,15 +57,16 @@ function UpdateDetails() {
         }
     }
 
+    var courses1 = []
+
     function onChangeInput(value){
         console.log('multi:',value)
+        courses1 = value
     }
 
     const [loadedTeacherState,setLoadedTeacherstate] = React.useState(null);
 
     const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
-
-
 
 
     function loadTeacherData() {
@@ -78,24 +91,87 @@ function UpdateDetails() {
         }).catch(function(error) {
             console.log("Error getting document:", error);
         });
+    }
+
+    function loadCourses() {
+
+        var db = firebase.firestore();
+        var coursesRef = db.collection("courses")
+        var query = coursesRef.where("courseCode", "!=", 'null');
+        query.limit(10).get().then(function (querySnapshot) {
+            let loadedCourses= [] ;
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.data());
+                //debugger
+                let docData = doc.data()
+                loadedCourses.push({...docData
+                });
+            })
+            console.log(loadedCourses)
+            setLoadedCoursestate(loadedCourses)
+        })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
+    }
+
+
+
+
+    function updateTeacherInfo(data){
+        const email = auth.currentUser.email
+        const imageUrl = auth.currentUser.photoURL
+        const db = firebase.firestore();
+        const teacherRef = db.collection('teachers/')
+        teacherRef.doc(email).set({
+            first_name: data.firstName,
+            last_name: data.lastName,
+            age: data.age,
+            gender: Number(data.gender),
+            phoneNumber: data.phoneNumber,
+            email: data.email,
+            education: data.education,
+            lessonCost: Number(data.lessonCost),
+            desc: data.desc,
+            experience: data.experience,
+            imageUrl: imageUrl,
+            timestamp : new Date().getTime(),
+            courses: courses1.map( function( el ){
+                return el.courseCode
+            })
+            //courses: data.courses
+        });
+
+    }
+
+    function getCourseNameFromDB() {
+        if (loadedCourseState && loadedTeacherState) {
+            loadedTeacherState.courses.map((number) =>
+                console.log({courseCode: {number}, courseName: {loadedCourseState: number.toString()}})
+            );
+        }
 
     }
 
     function SelectCourses() {
-        const menuitems = [
-            {courseCode: 1, courseName: 'מתמטיקה בדידה'},
-            {courseCode: 2, courseName: 'מבוא מורחב למדעי המחשב'},
-            {courseCode: 3, courseName: 'אלגברה לינארית 1ב'},
-            {courseCode: 4, courseName: 'מבוא לפסיכופתולוגיה'},
-            {id: 5, name: 'Class 5'},
-            {id: 6, name: 'Class 6'},
-            {id: 7, name: 'Class 7'},
-            {id: 8, name: 'Class 8'},
-            {id: 9, name: 'Class 9'},
-        ]
 
-        const [op] = useState(menuitems);
+        //mock - delete it !!
+        // const menuitems = [
+        //     {courseCode: 1, courseName: 'מתמטיקה בדידה'},
+        //     {courseCode: 2, courseName: 'מבוא מורחב למדעי המחשב'},
+        //     {courseCode: 3, courseName: 'אלגברה לינארית 1ב'},
+        //     {courseCode: 4, courseName: 'מבוא לפסיכופתולוגיה'},
+        //     {id: 5, name: 'Class 5'},
+        //     {id: 6, name: 'Class 6'},
+        //     {id: 7, name: 'Class 7'},
+        //     {id: 8, name: 'Class 8'},
+        //     {id: 9, name: 'Class 9'},
+        // ]
+        //
+        // const [op] = useState(menuitems);
 
+        ///////////
 
 
 
@@ -104,8 +180,7 @@ function UpdateDetails() {
             <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
                 <label className="reg-label">ערוך את הקורסים שברצונך ללמוד. ביכולתך להוסיף או למחוק קורסים</label>
                 {/*<Multiselect options={op}*/}
-                <Multiselect options={[ {courseCode: 1, courseName: 'מתמטיקה בדידה'},
-                    {courseCode: 2, courseName: 'מבוא מורחב למדעי המחשב'}]}
+                <Multiselect options={loadedCourseState}
                              selectedValues={loadedTeacherState.courses}
                              isMulti
                              displayValue="courseName"

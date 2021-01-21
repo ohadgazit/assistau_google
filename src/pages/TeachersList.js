@@ -48,7 +48,7 @@ const TeachersList = () => {
             let loadedPlaces3 = [] ;
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
-                //console.log(doc.data());
+                console.log(doc.data());
                 //debugger
                 let docData = doc.data()
                 loadedPlaces3.push({...docData
