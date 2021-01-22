@@ -28,7 +28,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Carousel from 'react-material-ui-carousel'
 import {Paper} from '@material-ui/core'
 import { borders } from '@material-ui/system';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import { makeStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
