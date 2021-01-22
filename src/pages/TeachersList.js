@@ -1,7 +1,7 @@
 import React, { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import CourseTeachersList from '../components/CourseTeachersList';
-import ButtonAppBar from "../components/TeachersListAppBar";
+import CourseTeachersList from '../components/TeachersComponents/CourseTeachersList';
+import ButtonAppBar from "../components/TeachersComponents/TeachersListAppBar";
 import firebase from "firebase";
 
 const TeachersList = () => {

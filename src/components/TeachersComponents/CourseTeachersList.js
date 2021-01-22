@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from "../Shared/Card";
+import Card from "../../Shared/Card";
 import TeacherItem from "./TeacherItem";
 import './CourseTeachersList.css';
-import Button from "../Shared/Button";
+import Button from "../../Shared/Button";
 
 
 

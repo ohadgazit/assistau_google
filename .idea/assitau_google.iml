@@ -3,6 +3,17 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/Admin" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/App" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/Home" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/Landing" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/PasswordChange" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/PasswordForget" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/Session" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/SignIn" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/SignOut" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/SignUp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/UpdateDetailsComponents" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

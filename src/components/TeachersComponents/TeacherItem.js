@@ -1,6 +1,6 @@
-import Button from '../Shared/Button'
+import Button from '../../Shared/Button'
 import './TeacherItem.css';
-import Card from "../Shared/Card";
+import Card from "../../Shared/Card";
 import React from "react";
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';

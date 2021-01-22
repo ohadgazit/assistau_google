@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
 import DialogActions from "@material-ui/core/DialogActions";
-import Button from "./Shared/Button";
+import Button from "../../Shared/Button";
 import Dialog from "@material-ui/core/Dialog";
 import React from "react";
 import firebase from "firebase";

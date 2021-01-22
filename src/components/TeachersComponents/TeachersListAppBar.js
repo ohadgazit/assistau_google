@@ -128,8 +128,8 @@ const ButtonAppBar = (props) =>{
                             <MenuItem value={0}>
                                 <em>מגדר</em>
                             </MenuItem>
-                            <MenuItem value={1}>נקבה</MenuItem>
-                            <MenuItem value={2}>זכר</MenuItem>
+                            <MenuItem value={1}>אישה</MenuItem>
+                            <MenuItem value={2}>גבר</MenuItem>
                         </Select>
                     <Select className={classesSelect.formControl}
                         labelId="demo-controlled-open-select-label"

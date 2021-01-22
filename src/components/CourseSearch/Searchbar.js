@@ -1,19 +1,19 @@
 import React, {useEffect} from 'react';
-import Button from '../Shared/Button'
+import Button from '../../Shared/Button'
 //import InputLabel from '@material-ui/core/InputLabel';
 //import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 //import Avatar from '@material-ui/core/Avatar';
 //import Select from '@material-ui/core/Select';
 //import Button from '@material-ui/core/Button';
-import teachers  from '../mocks/teachers'
+import teachers  from '../../mocks/teachers.json'
 import { Link } from 'react-router-dom';
-import useStyles from "../Shared/useStyles";
+import useStyles from "../../Shared/useStyles";
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 //import TeachersList from "../pages/TeachersList";
 //import { BrowserRouter as Router, Route,  Switch, useParams } from "react-router-dom";
-import coursesItems from "../mocks/coursesItems.json"
+import coursesItems from "../../mocks/coursesItems.json"
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
