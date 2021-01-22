@@ -1,10 +1,10 @@
-import React, {Component, useEffect, useState} from "react";
+// import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
 import "./RegStyles.css";
 import {Multiselect} from "multiselect-react-dropdown";
 import firebase from "firebase";
-import Card from "../../Shared/Card";
 import RegCard from "./RegCard";
 import {useAuthState} from "react-firebase-hooks/auth";
 
@@ -14,7 +14,7 @@ function UpdateDetails() {
     useEffect(() => {
         loadTeacherData()
         loadCourses()
-        fixCourses()
+        //fixCourses()
     }, [])
 
 

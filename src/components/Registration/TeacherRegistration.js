@@ -1,14 +1,13 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+//import React, {Component, useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
-//import ErrorMessage from "./errorMessage";
 import "./RegStyles.css";
 import {Multiselect} from "multiselect-react-dropdown"
-import Card from "../../Shared/Card"
 import firebase from "firebase";
 import RegCard from "./RegCard";
 
-function Register3() {
+function TeacherRegistration() {
 
     const {
         register,
@@ -39,7 +38,7 @@ function Register3() {
         console.log(data)
         //console.log(data.firstName)
         writeUserData(data)
-    };
+    }
 
 
 
@@ -247,8 +246,8 @@ function Register3() {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Register3 />, rootElement );
+ReactDOM.render(<TeacherRegistration />, rootElement );
 
-export default Register3
+export default TeacherRegistration
 
 
