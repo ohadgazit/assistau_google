@@ -11,8 +11,6 @@ import 'firebase/auth';
 import {useAuthState} from "react-firebase-hooks/auth";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
-//import Modal from '@material-ui/core/Modal';
-
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -27,7 +25,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Carousel from 'react-material-ui-carousel'
 import {Paper} from '@material-ui/core'
-import { borders } from '@material-ui/system';
+
 
 import { makeStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
