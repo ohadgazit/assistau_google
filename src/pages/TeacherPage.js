@@ -146,15 +146,13 @@ const TeacherItemExpanded = props =>{
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
-
-
         <Card className="place-item__content">
             <div className="place-item__image">
-                <img src={teacherData.image} alt={teacherData.name} />
+                <img src={teacherData.image} alt={teacherData.first_name} />
 
             </div>
             <div className="place-item__info">
-                <h2>{teacherData.name}</h2>
+                <h2>{teacherData.first_name}  {teacherData.last_name}</h2>
                 <Typography color={'textSecondary'} variant={'title'}> "{teacherData.desc}" </Typography>
                 <p></p>
                 <p>השכלה: {teacherData.education}</p>
