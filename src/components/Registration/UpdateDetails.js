@@ -126,7 +126,7 @@ function UpdateDetails() {
         const imageUrl = auth.currentUser.photoURL
         const db = firebase.firestore();
         const teacherRef = db.collection('teachers/')
-        teacherRef.doc(email).set({
+        teacherRef.doc(email).update({
             first_name: data.firstName,
             last_name: data.lastName,
             age: data.age,
