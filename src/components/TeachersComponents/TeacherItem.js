@@ -34,7 +34,7 @@ const TeacherItem = props => {
                         <img src={props.image} alt={props.name} />
                     </div>
                     <div className="place-item__info">
-                        <h2>{props.name}</h2>
+                        <h2>{props.first_name} {props.last_name} </h2>
                         {props.rating?
                             <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>:
                             null
@@ -44,10 +44,9 @@ const TeacherItem = props => {
                         {/*<h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>*/}
                         <p> {props.desc}</p>
                         <p>השכלה: {props.education}</p>
-                        <p> נסיון: {props.experience}</p>
                         <p> מחיר שיעור: {props.lessonCost}&#8362;</p>
+                        <p> נסיון: {props.experience}</p>
                         <p> גיל: {props.age}</p>
-                        <p> עיר מגורים: {props.city}</p>
                     </div>
                     <div className="place-item__actions">
                         <Button to = '/'>חזור לחיפוש</Button>
@@ -58,6 +57,8 @@ const TeacherItem = props => {
                                     key : props.id,
                                     id  : props.id,
                                     image: props.image,
+                                    first_name: props.first_name,
+                                    last_name : props.last_name,
                                     name: props.name,
                                     education: props.education,
                                     locations: props.locations,
@@ -69,7 +70,8 @@ const TeacherItem = props => {
                                     rating: props.rating,
                                     lessonCost: props.lessonCost,
                                     email: props.email,
-                                    city: props.city
+                                    courses: props.courses,
+                                    course_list: props.course_list
                             }
                             }}
                             >

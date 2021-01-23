@@ -37,7 +37,6 @@ const TeacherItemExpanded = props =>{
     const teacherData = useLocation().state;
     var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
         + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
-    const additionalCourses = ["מתמטיקה בדידה"," אלגברה לינארית"];
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
     const [open, setOpen] = React.useState(false); //review test
@@ -147,31 +146,28 @@ const TeacherItemExpanded = props =>{
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
-
-
         <Card className="place-item__content">
             <div className="place-item__image">
-                <img src={teacherData.image} alt={teacherData.name} />
+                <img src={teacherData.image} alt={teacherData.first_name} />
 
             </div>
             <div className="place-item__info">
-                <h2>{teacherData.name}</h2>
+                <h2>{teacherData.first_name}  {teacherData.last_name}</h2>
                 <Typography color={'textSecondary'} variant={'title'}> "{teacherData.desc}" </Typography>
                 <p></p>
                 <p>השכלה: {teacherData.education}</p>
-                <p>ניסיון:{teacherData.experience} שנים</p>
-                <p>עלות שיעור:{teacherData.lessonCost}&#8362; </p>
                 <p>גיל: {teacherData.age}</p>
-                <p>מגדר: {teacherData.gender}</p>
-                <p></p>
-                <p>עיר מגורים: {teacherData.city}</p>
+                {teacherData.gender === "2" ? <p>מגדר: זכר </p> :  <p>מגדר: נקבה </p>}
+                <p>ניסיון :{teacherData.experience} שנים</p>
+                <p>עלות שיעור :{teacherData.lessonCost}&#8362; </p>
                 {user ?
-                    <p>מספר טלפון: {teacherData.phone_number} </p>:null
+                    <p>מספר טלפון : {teacherData.phone_number} </p>:null
                 }
                 {user ?
                     <p>דואר אלקטרוני: {teacherData.email} </p>:null
                 }
-                <li>קורסים נוספים: {additionalCourses.map(item => item) }</li>
+                <p>מלמד גם את הקורסים הבאים:   </p>
+                {teacherData.course_list.map(item => (<li>{item.courseName}</li>))}
                 {/*<Carusela/>*/}
 
 
@@ -214,7 +210,6 @@ const TeacherItemExpanded = props =>{
                         <Box component="fieldset" mb={3} borderColor="transparent">
                             <Typography component="legend">דרג</Typography>
                             <Rating
-                                dir="ltr"
                                 name="simple-controlled"
                                 value={score}
                                 onChange={(event, newValue) => {

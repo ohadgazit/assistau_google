@@ -46,6 +46,8 @@ const CourseTeachersList = props => {
                     id={place.id}
                     image={place.imageUrl}
                     name={place.name}
+                    first_name = {place.first_name}
+                    last_name = {place.last_name}
                     education={place.education}
                     locations={place.locations}
                     creatorId={place.creator}
@@ -58,7 +60,8 @@ const CourseTeachersList = props => {
                     lessonCost = {place.lessonCost}
                     experience = {place.experience}
                     email = {place.email}
-                    city = {place.city}
+                    courses = {place.courses}
+                    course_list = {place.course_list}
 
                 />
 
