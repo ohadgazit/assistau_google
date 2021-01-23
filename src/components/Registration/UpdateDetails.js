@@ -14,7 +14,7 @@ function UpdateDetails() {
     useEffect(() => {
         loadTeacherData()
         loadCourses()
-        //fixCourses()
+
     }, [])
 
 
@@ -44,7 +44,8 @@ function UpdateDetails() {
     // };
 
     function onSubmit(data) {
-        console.log(data)
+        //console.log(data)
+        loadTeacherData()
         //console.log(data.firstName)
         updateTeacherInfo(data)
     }
@@ -110,6 +111,7 @@ function UpdateDetails() {
             })
             console.log(loadedCourses)
             setLoadedCoursestate(loadedCourses)
+            console.log(setLoadedCoursestate)
         })
             .catch(function (error) {
                 console.log("Error getting documents: ", error);
@@ -139,20 +141,16 @@ function UpdateDetails() {
             timestamp : new Date().getTime(),
             courses: courses1.map( function( el ){
                 return el.courseCode
+            }),
+            course_list: courses1.map( function( el ){
+                return el
             })
-            //courses: data.courses
+
         });
 
     }
 
-    function getCourseNameFromDB() {
-        if (loadedCourseState && loadedTeacherState) {
-            loadedTeacherState.courses.map((number) =>
-                console.log({courseCode: {number}, courseName: {loadedCourseState: number.toString()}})
-            );
-        }
 
-    }
 
     function SelectCourses() {
 
@@ -181,7 +179,7 @@ function UpdateDetails() {
                 <label className="reg-label">ערוך את הקורסים שברצונך ללמוד. ביכולתך להוסיף או למחוק קורסים</label>
                 {/*<Multiselect options={op}*/}
                 <Multiselect options={loadedCourseState}
-                             selectedValues={loadedTeacherState.courses}
+                             selectedValues={loadedTeacherState.course_list}
                              isMulti
                              displayValue="courseName"
                              displayName="courseName"

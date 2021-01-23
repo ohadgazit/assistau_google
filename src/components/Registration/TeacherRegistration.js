@@ -121,7 +121,10 @@ function TeacherRegistration() {
             timestamp : new Date().getTime(),
             courses: courses1.map( function( el ){
                 return el.courseCode
-            })
+            }),
+            course_list: courses1.map( function( el ){
+                return el
+            }),
             //courses: data.courses
         });
 
