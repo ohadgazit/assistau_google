@@ -159,12 +159,14 @@ const TeacherItemExpanded = props =>{
                 <Typography color={'textSecondary'} variant={'title'}> "{teacherData.desc}" </Typography>
                 <p></p>
                 <p>השכלה: {teacherData.education}</p>
+                <p>ניסיון:{teacherData.experience} שנים</p>
+                <p>עלות שיעור:{teacherData.lessonCost}&#8362; </p>
                 <p>גיל: {teacherData.age}</p>
                 <p>מגדר: {teacherData.gender}</p>
-                <p>ניסיון :{teacherData.experience} שנים</p>
-                <p>עלות שיעור :{teacherData.lessonCost}&#8362; </p>
+                <p></p>
+                <p>עיר מגורים: {teacherData.city}</p>
                 {user ?
-                    <p>מספר טלפון : {teacherData.phone_number} </p>:null
+                    <p>מספר טלפון: {teacherData.phone_number} </p>:null
                 }
                 {user ?
                     <p>דואר אלקטרוני: {teacherData.email} </p>:null
@@ -212,6 +214,7 @@ const TeacherItemExpanded = props =>{
                         <Box component="fieldset" mb={3} borderColor="transparent">
                             <Typography component="legend">דרג</Typography>
                             <Rating
+                                dir="ltr"
                                 name="simple-controlled"
                                 value={score}
                                 onChange={(event, newValue) => {

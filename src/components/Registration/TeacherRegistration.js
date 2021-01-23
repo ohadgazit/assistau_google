@@ -118,6 +118,7 @@ function TeacherRegistration() {
             desc: data.desc,
             experience: data.experience,
             imageUrl: imageUrl,
+            city:data.city,
             timestamp : new Date().getTime(),
             courses: courses1.map( function( el ){
                 return el.courseCode
@@ -208,6 +209,13 @@ function TeacherRegistration() {
             {errors.email && errors.email.type === "required" && (<p className="p-error">שדה חובה</p>)}
             {errors.email && errors.email.type === "pattern" && (<p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}
 
+            <label className="reg-label">עיר מגורים:</label>
+            <select name="city" ref={register({ required: true })} dir="rtl" style={styles.select}>
+                <option value="" >בחר..</option>
+                <option value="1">תל אביב</option>
+                <option value="2">הרצליה</option>
+            </select>
+            {errors.city && <p className="p-error">שדה חובה</p>}
 
             <label className="reg-label">השכלה:</label>
             <input className="reg-input"
