@@ -37,7 +37,6 @@ const TeacherItemExpanded = props =>{
     const teacherData = useLocation().state;
     var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
         + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
-    const additionalCourses = ["מתמטיקה בדידה"," אלגברה לינארית"];
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
     const [open, setOpen] = React.useState(false); //review test
@@ -169,7 +168,8 @@ const TeacherItemExpanded = props =>{
                 {user ?
                     <p>דואר אלקטרוני: {teacherData.email} </p>:null
                 }
-                <li>קורסים נוספים: {additionalCourses.map(item => item) }</li>
+                <p>מלמד גם את הקורסים הבאים:   </p>
+                {teacherData.course_list.map(item => (<li>{item.courseName}</li>))}
                 {/*<Carusela/>*/}
 
 

@@ -58,6 +58,8 @@ const CourseTeachersList = props => {
                     lessonCost = {place.lessonCost}
                     experience = {place.experience}
                     email = {place.email}
+                    courses = {place.courses}
+                    course_list = {place.course_list}
 
                 />
 

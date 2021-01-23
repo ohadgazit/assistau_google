@@ -67,7 +67,9 @@ const TeacherItem = props => {
                                     reviews: props.reviews,
                                     rating: props.rating,
                                     lessonCost: props.lessonCost,
-                                    email: props.email
+                                    email: props.email,
+                                    courses: props.courses,
+                                    course_list: props.course_list
                             }
                             }}
                             >
