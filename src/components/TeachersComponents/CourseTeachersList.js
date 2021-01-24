@@ -36,11 +36,12 @@ const CourseTeachersList = props => {
         );
     }
 
-    console.log(props.items)
+    console.log(props.items[0].reviews)
 
 
         return <ul className="place-list">
             {props.items.map(place => (
+
                 <TeacherItem
                     key={place.id}
                     id={place.id}

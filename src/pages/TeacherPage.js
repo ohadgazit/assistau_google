@@ -94,6 +94,12 @@ const TeacherItemExpanded = props =>{
     //     },
     // });
 
+    const useStylesForRating = makeStyles((theme)=> ({
+        rating:{
+            direction:'ltr'
+        }
+    }));
+
     const useStyles = makeStyles(() => ({
         root: {
             overflow: 'initial',
@@ -123,6 +129,9 @@ const TeacherItemExpanded = props =>{
             marginRight: 4,
             fontSize: 18,
         },
+        rating:{
+            direction:'ltr'
+        },
     }));
 
 
@@ -130,19 +139,22 @@ const TeacherItemExpanded = props =>{
     function writeUserData() {
         const email = auth.currentUser.email
         const db = firebase.firestore()
-        const teacherRef = db.collection('teachers').doc('4')
-        console.log(teacherData.Name)
-        console.log(teacherRef)
-        console.log(text)
+        const teacherRef = db.collection('teachers').doc(teacherData.email)
+        const average = teacherRef.rating;
+        const size = teacherData.reviews[0].length;
+        const new_rating = Number(Number(average)*Number(size)+Number(score)/(Number(size)+1));
         const pushit = {
-        //email,
-        //text_review : text,
-        //score: score
+        email,
+        text_review : text,
+        score: score
         }
         teacherRef.update({
-            reviews: firebase.firestore.FieldValue.arrayUnion(pushit)
+            reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
+            rating: Number(new_rating)
         });
     }
+
+
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
@@ -210,10 +222,11 @@ const TeacherItemExpanded = props =>{
                         <Box component="fieldset" mb={3} borderColor="transparent">
                             <Typography component="legend">דרג</Typography>
                             <Rating
+                                className={classes.rating}
                                 name="simple-controlled"
                                 value={score}
                                 onChange={(event, newValue) => {
-                                    setValue(newValue);
+                                    setScore(newValue);
                                 }}
                             />
                         </Box>
@@ -229,11 +242,12 @@ const TeacherItemExpanded = props =>{
                 </Dialog>
             </div>
             <div className="place-item__actions">
+                {console.log(teacherData.reviews[0])}
                 {teacherData.reviews[0]?
                     <Typography> ביקורות הסטודנטים </Typography>:
                     <Typography>אין ביקורות על מורה זה</Typography>
                 }
-                {teacherData.reviews[0]?
+                {teacherData.reviews[0].length>0?
                 <h1>{teacherData.reviews[0].text_review}</h1> &&
                 <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}>
                 {teacherData.reviews[0].map((person, index) => {

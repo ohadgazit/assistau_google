@@ -119,6 +119,8 @@ function TeacherRegistration() {
             experience: data.experience,
             imageUrl: imageUrl,
             timestamp : new Date().getTime(),
+            rating: 0,
+            reviews: [],
             courses: courses1.map( function( el ){
                 return el.courseCode
             }),
