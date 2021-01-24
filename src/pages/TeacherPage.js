@@ -140,18 +140,24 @@ const TeacherItemExpanded = props =>{
         const email = auth.currentUser.email
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(teacherData.email)
-        const average = teacherRef.rating;
-        const size = teacherData.reviews[0].length;
-        const new_rating = Number(Number(average)*Number(size)+Number(score)/(Number(size)+1));
+        const average = Number(teacherData.rating);
+        const size = Number(teacherData.reviews[0].length);
+        let new_rating = (average*size+score)/(size+1);
+        console.log(size)
+        console.log(average)
+        console.log((average*size+score)/(size+1))
         const pushit = {
         email,
         text_review : text,
-        score: score
+        score: score,
+
         }
         teacherRef.update({
             reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
-            rating: Number(new_rating)
+            rating: new_rating,
+
         });
+
     }
 
 
