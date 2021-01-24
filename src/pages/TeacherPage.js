@@ -143,9 +143,6 @@ const TeacherItemExpanded = props =>{
         const average = Number(teacherData.rating);
         const size = Number(teacherData.reviews[0].length);
         let new_rating = (average*size+score)/(size+1);
-        console.log(size)
-        console.log(average)
-        console.log((average*size+score)/(size+1))
         const pushit = {
         email,
         text_review : text,
