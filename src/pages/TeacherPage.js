@@ -189,16 +189,17 @@ const TeacherItemExpanded = props =>{
                 <p></p>
                 <p>השכלה: {teacherData.education}</p>
                 <p>גיל: {teacherData.age}</p>
-                {teacherData.gender === "2" ? <p>מגדר: זכר </p> :  <p>מגדר: נקבה </p>}
+                {teacherData.gender === "2" ? <p>מגדר: גבר </p> :  <p>מגדר: אישה </p>}
                 <p>ניסיון :{teacherData.experience} שנים</p>
                 <p>עלות שיעור :{teacherData.lessonCost}&#8362; </p>
                 {user ?
-                    <p>מספר טלפון : {teacherData.phone_number} </p>:null
+                    <p>מספר טלפון : {teacherData.phone_number} </p> :
+                    <Typography color={'textSecondary'} > * התחבר על מנת לצפות בפרטי התקשרות (טלפון וכתובת email)</Typography>
                 }
                 {user ?
                     <p>דואר אלקטרוני: {teacherData.email} </p>:null
                 }
-                <p>מלמד גם את הקורסים הבאים:   </p>
+                <p>מלמד את הקורסים הבאים:   </p>
                 {teacherData.course_list.map(item => (<li>{item.courseName}</li>))}
                 {/*<Carusela/>*/}
 

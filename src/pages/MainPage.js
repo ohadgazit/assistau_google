@@ -75,9 +75,9 @@ function MainPage() {
                 <div className="MainPage">
                     <header className="MainPage-header">
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <p>
-                            Team 6 - AssisTAU
-                        </p>
+                        {/*<p>*/}
+                        {/*    Team 6 - AssisTAU*/}
+                        {/*</p>*/}
                         <p>
                             בחר קורס על מנת למצוא מורה המלמד קורס זה
                         </p>
