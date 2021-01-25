@@ -78,6 +78,9 @@ function MainPage() {
                         <p>
                             Team 6 - AssisTAU
                         </p>
+                        <p>
+                            בחר קורס על מנת למצוא מורה המלמד קורס זה
+                        </p>
                         <ControllableStates/>
                     </header>
 
