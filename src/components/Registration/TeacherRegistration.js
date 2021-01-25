@@ -55,7 +55,6 @@ function TeacherRegistration() {
     function onChangeInput(value){
         console.log('multi:',value)
         courses1 = value
-
         // courses1=value.map( function( el ){
         //     return el.options.map( function( eln ){
         //         return eln.courseCode;
@@ -112,7 +111,8 @@ function TeacherRegistration() {
             age: data.age,
             gender: Number(data.gender),
             phoneNumber: data.phoneNumber,
-            email: data.email,
+            //New change by David
+            email: auth.currentUser.email,
             education: data.education,
             lessonCost: Number(data.lessonCost),
             desc: data.desc,
@@ -128,7 +128,7 @@ function TeacherRegistration() {
             course_list: courses1.map( function( el ){
                 return el
             }),
-            //courses: data.courses
+
         });
 
     }
@@ -136,19 +136,7 @@ function TeacherRegistration() {
 
 
     function SelectCourses() {
-        const menuitems = [
-            {courseCode: 1, courseName: 'מתמטיקה בדידה'},
-            {courseCode: 2, courseName: 'מבוא מורחב למדעי המחשב'},
-            {courseCode: 3, courseName: 'אלגברה לינארית 1ב'},
-            {courseCode: 4, courseName: 'מבוא לפסיכופתולוגיה'},
-            {courseCode: 5, courseName: 'Class 5'},
-            {courseCode: 6, courseName: 'Class 6'},
-            {courseCode: 7, courseName: 'Class 7'},
-            {courseCode: 8, courseName: 'Class 8'},
-            {courseCode: 9, courseName: 'Class 9'},
-        ]
 
-        const [op] = useState(menuitems);
 
         return (
             <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
@@ -206,13 +194,13 @@ function TeacherRegistration() {
             {errors.phoneNumber && errors.phoneNumber.type === "maxLength" && (<p className="p-error">על מספר הטלפון להכיל 10 ספרות</p>)}
             {errors.phoneNumber && errors.phoneNumber.type === "pattern" && (<p className="p-error">על שדה זה להכיל ספרות בלבד</p>)}
 
-            <label className="reg-label">כתובת Email:</label>
-            <input className="reg-input"
-                name="email"
-                ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-            />
-            {errors.email && errors.email.type === "required" && (<p className="p-error">שדה חובה</p>)}
-            {errors.email && errors.email.type === "pattern" && (<p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}
+            {/*<label className="reg-label">כתובת Email:</label>*/}
+            {/*<input className="reg-input"*/}
+            {/*    name="email"*/}
+            {/*    ref={register({ required: true, pattern: /^\S+@\S+$/i })}*/}
+            {/*/>*/}
+            {/*{errors.email && errors.email.type === "required" && (<p className="p-error">שדה חובה</p>)}*/}
+            {/*{errors.email && errors.email.type === "pattern" && (<p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}*/}
 
             <label className="reg-label">עיר מגורים:</label>
             <select name="city" ref={register({ required: true })} dir="rtl" style={styles.select}>

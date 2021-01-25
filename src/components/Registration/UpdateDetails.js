@@ -22,6 +22,7 @@ function UpdateDetails() {
     //const userId = auth.currentUser.uid
     //const email = auth.currentUser.email
     const [user] = useAuthState(auth);
+
     if (user) {
         console.log("connected user:", user.displayName)
     } else {
@@ -74,25 +75,28 @@ function UpdateDetails() {
 
         var db = firebase.firestore();
         var teachersCollection = db.collection("teachers")
-        var docRef = teachersCollection.doc("davidoren@mail.tau.ac.il")
-        docRef.get().then(function(doc) {
-            if (doc.exists) {
-                console.log(doc.get("education"))
-                let teacherEdu = doc.get("education")
-                const docData = doc.data()
-                console.log("Document data:", doc.data());
-                console.log(docData.phoneNumber)
-                setLoadedTeacherstate(docData)
-                return doc.data();
+        if (user) {var current_email = auth.currentUser.email}
+        console.log(current_email)
+            var docRef = teachersCollection.doc(current_email)
+            docRef.get().then(function (doc) {
+                if (doc.exists) {
+                    console.log(doc.get("education"))
+                    let teacherEdu = doc.get("education")
+                    const docData = doc.data()
+                    console.log("Document data:", doc.data());
+                    console.log(docData.phoneNumber)
+                    setLoadedTeacherstate(docData)
+                    return doc.data();
 
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch(function(error) {
-            console.log("Error getting document:", error);
-        });
-    }
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch(function (error) {
+                console.log("Error getting document:", error);
+            });
+        }
+
 
     function loadCourses() {
 
@@ -155,25 +159,6 @@ function UpdateDetails() {
 
     function SelectCourses() {
 
-        //mock - delete it !!
-        // const menuitems = [
-        //     {courseCode: 1, courseName: 'מתמטיקה בדידה'},
-        //     {courseCode: 2, courseName: 'מבוא מורחב למדעי המחשב'},
-        //     {courseCode: 3, courseName: 'אלגברה לינארית 1ב'},
-        //     {courseCode: 4, courseName: 'מבוא לפסיכופתולוגיה'},
-        //     {id: 5, name: 'Class 5'},
-        //     {id: 6, name: 'Class 6'},
-        //     {id: 7, name: 'Class 7'},
-        //     {id: 8, name: 'Class 8'},
-        //     {id: 9, name: 'Class 9'},
-        // ]
-        //
-        // const [op] = useState(menuitems);
-
-        ///////////
-
-
-
 
         return (
             <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
@@ -206,8 +191,9 @@ function UpdateDetails() {
 
                     <h1 className="reg-header">עדכון פרטים</h1>
                     <h3 className="reg-header-small">עדכן את השדות הרלוונטיים. את השאר השאר ללא שינוי</h3>
-                    <p>{user ? user.displayName : "No user detected"}</p>
-                    <p>{user ? user.email : "No user detected"}</p>
+                    <h3 className="reg-header-small">{user ? "מחובר בתור: " + user.email : "No user detected"}</h3>
+
+
                     <label className="reg-label">שם פרטי:</label>
                     <input className="reg-input" name="firstName" ref={register({required: true, minLength: 2})}
                            defaultValue={loadedTeacherState.first_name} //replace with firstName from DB
@@ -237,8 +223,8 @@ function UpdateDetails() {
                             defaultValue={loadedTeacherState.gender} //replace with gender from DB
                     >
                         <option value="">בחר..</option>
-                        <option value="male">גבר</option>
-                        <option value="female">אישה</option>
+                        <option value={2}>גבר</option>
+                        <option value={1}>אישה</option>
                     </select>
 
 
@@ -254,14 +240,14 @@ function UpdateDetails() {
                     {errors.phoneNumber && errors.phoneNumber.type === "pattern" && (
                         <p className="p-error">על שדה זה להכיל ספרות בלבד</p>)}
 
-                    <label className="reg-label">כתובת Email:</label>
-                    <input className="reg-input"
-                           name="email"
-                           ref={register({required: true, pattern: /^\S+@\S+$/i})}
-                           defaultValue={loadedTeacherState.email} //replace with email from DB
-                    />
-                    {errors.email && errors.email.type === "pattern" && (
-                        <p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}
+                    {/*<label className="reg-label">כתובת Email:</label>*/}
+                    {/*<input className="reg-input"*/}
+                    {/*       name="email"*/}
+                    {/*       ref={register({required: true, pattern: /^\S+@\S+$/i})}*/}
+                    {/*       defaultValue={loadedTeacherState.email} //replace with email from DB*/}
+                    {/*/>*/}
+                    {/*{errors.email && errors.email.type === "pattern" && (*/}
+                    {/*    <p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}*/}
 
                     <label className="reg-label">עיר מגורים:</label>
                     <select name="city" ref={register({ required: true })} dir="rtl" style={styles.select} defaultValue={loadedTeacherState.city}>
