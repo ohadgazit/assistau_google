@@ -46,9 +46,10 @@ function UpdateDetails() {
 
     function onSubmit(data) {
         //console.log(data)
-        loadTeacherData()
+
         //console.log(data.firstName)
         updateTeacherInfo(data)
+        loadTeacherData()
     }
 
     //for 'gender' field
@@ -136,7 +137,7 @@ function UpdateDetails() {
             age: data.age,
             gender: Number(data.gender),
             phoneNumber: data.phoneNumber,
-            email: data.email,
+            email: email,
             education: data.education,
             lessonCost: Number(data.lessonCost),
             desc: data.desc,
