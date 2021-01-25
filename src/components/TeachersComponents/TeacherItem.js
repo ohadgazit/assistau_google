@@ -35,7 +35,7 @@ const TeacherItem = props => {
                     </div>
                     <div className="place-item__info">
                         <h2>{props.first_name} {props.last_name} </h2>
-                        {props.rating?
+                        {props.rating>0?
                             <h3 className={classes.root}>{ <Rating name="half-rating-read" readOnly={true} value={props.rating} precision={0.5} />}</h3>:
                             null
                         }
