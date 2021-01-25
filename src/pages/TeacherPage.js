@@ -24,6 +24,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 import Carousel from 'react-material-ui-carousel'
 import {Paper} from '@material-ui/core'
@@ -42,7 +44,8 @@ const TeacherItemExpanded = props =>{
         + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
-    const [open, setOpen] = React.useState(false); //review test
+    const [open, setOpen] = React.useState(false);
+    const [show,setShow] = React.useState(false)
     const [value1, setValue] = React.useState({id: 0, name: ""});
     const [text,setText] = React.useState('');
     const [score, setScore] = React.useState(2);
@@ -52,21 +55,23 @@ const TeacherItemExpanded = props =>{
         setOpen(true);
     };
 
-    function showSuccess()
-    {
 
-            return ( <div className={classes.root}>    <Snackbar open={open} autoHideDuration={6000} >
-                <Alert severity="success">
-                    This is a success message!
-                </Alert>
-            </Snackbar> </div>)
-    }
 
     const handleClose = () => {
         writeUserData();
-        showSuccess();
+        setShow(true);
         setOpen(false);
     };
+
+    const handleClose2 = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setShow(false);
+    };
+
+
 
     //end of reviews test
     console.log(teacherData)
@@ -277,7 +282,25 @@ const TeacherItemExpanded = props =>{
                     </Card>
                 })}
                 </Carousel>:null}
+                <div>
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        open={show}
+                        autoHideDuration={2500}
+                        message="הביקורת התקבלה בהצלחה ותתפרסם בקרוב"
+                        onClose={handleClose2}
+                        action={
+                            <React.Fragment>
+                                <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose2}>
+                                    <CloseIcon fontSize="small" />
+                                </IconButton>
+                            </React.Fragment>}
 
+                    />
+                </div>
             </div>
 
         </Card>
