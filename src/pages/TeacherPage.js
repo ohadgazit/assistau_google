@@ -16,7 +16,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import Alert from '@material-ui/lab/Alert';
+import MuiAlert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
 import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -34,6 +36,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 
 const TeacherItemExpanded = props =>{
+    const reload=()=>window.location.reload();
     const teacherData = useLocation().state;
     var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
         + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
@@ -49,10 +52,20 @@ const TeacherItemExpanded = props =>{
         setOpen(true);
     };
 
+    function showSuccess()
+    {
+
+            return ( <div className={classes.root}>    <Snackbar open={open} autoHideDuration={6000} >
+                <Alert severity="success">
+                    This is a success message!
+                </Alert>
+            </Snackbar> </div>)
+    }
+
     const handleClose = () => {
         writeUserData();
+        showSuccess();
         setOpen(false);
-
     };
 
     //end of reviews test
@@ -154,7 +167,6 @@ const TeacherItemExpanded = props =>{
             rating: new_rating,
 
         });
-
     }
 
 
