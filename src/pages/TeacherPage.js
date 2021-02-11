@@ -48,11 +48,16 @@ const TeacherItemExpanded = props =>{
     const [show,setShow] = React.useState(false)
     const [value1, setValue] = React.useState({id: 0, name: ""});
     const [text,setText] = React.useState('');
-    const [score, setScore] = React.useState(2);
+    const [score, setScore] = React.useState(0);
 
     //Reviews test
     const handleClickOpen = () => {
         setOpen(true);
+    };
+
+    const handleClose3= () => {
+        setShow(false);
+        setOpen(false);
     };
 
 
@@ -66,7 +71,6 @@ const TeacherItemExpanded = props =>{
     const handleClose2 = (event, reason) => {
         if (reason === 'clickaway') {
             return;
-        }
 
         setShow(false);
     };
@@ -227,7 +231,7 @@ const TeacherItemExpanded = props =>{
                     <DialogTitle id="form-dialog-title"> דרג את המורה {teacherData.name}</DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                            הזן ביקורת עבור המורה - במה הוא עזר לך,מה הוא לימד וכו׳. הגבלה של 144 תוים
+                            הזן ביקורת עבור המורה - במה הוא עזר לך,מה הוא לימד וכו׳. הגבלה של 144 תוים.
                         </DialogContentText>
                         <TextField
                             rtl
@@ -244,10 +248,11 @@ const TeacherItemExpanded = props =>{
                             }}
                         />
                         <Box component="fieldset" mb={3} borderColor="transparent">
-                            <Typography component="legend">דרג</Typography>
+                            <Typography component="legend">דרג (שדה חובה)</Typography>
                             <Rating
                                 className={classes.rating}
                                 name="simple-controlled"
+                                defaultValue={0}
                                 value={score}
                                 onChange={(event, newValue) => {
                                     setScore(newValue);
@@ -256,10 +261,10 @@ const TeacherItemExpanded = props =>{
                         </Box>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose} color="primary">
+                        {score !== 0 ? <Button onClick={handleClose} color="primary">
                             שלח ביקורת
-                        </Button>
-                        <Button onClick={handleClose} color="primary">
+                        </Button> : null}
+                        <Button onClick={handleClose3} color="primary">
                             בטל
                         </Button>
                     </DialogActions>
@@ -308,15 +313,7 @@ const TeacherItemExpanded = props =>{
             </div>
 
         </Card>
-
-
-
-
-
-
-
     );
-
 };
 
 export default TeacherItemExpanded;

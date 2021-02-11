@@ -3,6 +3,9 @@ import Card from "../../Shared/Card";
 import TeacherItem from "./TeacherItem";
 import './CourseTeachersList.css';
 import Button from "../../Shared/Button";
+import Typography from '@material-ui/core/Typography';
+
+
 
 
 
@@ -37,9 +40,26 @@ const CourseTeachersList = props => {
     }
 
     console.log(props.items[0].reviews)
+    console.log(props.items[0].courses)
 
 
         return <ul className="place-list">
+
+            <Typography>
+           {props.items[0].course_list.filter(item => item['courseCode'] === props.from_course).map(chosenCourse =>(
+                <h2 align='center'>מציג תוצאות עבור הקורס: {chosenCourse['courseName']}  </h2>
+            ))}
+
+            </Typography>
+
+            {/*<div>*/}
+            {/*    {people.filter(person => person.age < 60).map(filteredPerson => (*/}
+            {/*        <li>*/}
+            {/*            {filteredPerson.name}*/}
+            {/*        </li>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
+
             {props.items.map(place => (
 
                 <TeacherItem

@@ -50,6 +50,7 @@ function UpdateDetails() {
         //console.log(data.firstName)
         updateTeacherInfo(data)
         loadTeacherData()
+
     }
 
     //for 'gender' field
