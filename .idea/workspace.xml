@@ -26,8 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Changed Firestore function from set to update">
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Added new review mechanism">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +111,7 @@
       <workItem from="1607947550777" duration="10989000" />
       <workItem from="1608141464563" duration="985000" />
       <workItem from="1608287981049" duration="28122000" />
-      <workItem from="1613065118590" duration="13359000" />
+      <workItem from="1613065118590" duration="14111000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -340,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613071081522</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="#Added new review mechanism">
+      <created>1613078708784</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1613078708784</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +400,8 @@
     <MESSAGE value="#Updated teacher info with new gender render" />
     <MESSAGE value="#Updated teacher info with new name fields" />
     <MESSAGE value="#Changed Firestore function from set to update" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Changed Firestore function from set to update" />
+    <MESSAGE value="#Added new review mechanism" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Added new review mechanism" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

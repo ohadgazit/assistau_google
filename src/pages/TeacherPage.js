@@ -210,13 +210,14 @@ const TeacherItemExpanded = props =>{
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
             }
-            const reviews_number = Number(teacherData.reviews_dict);
+            const reviews_number = Number(teacherData.reviews_number);
             let new_rating = (current_avg * reviews_number + score) / (reviews_number + new_review);
         teacherRef.update({
             reviews_dict: {
                 [email]: pushit
             },
-            rating: new_rating
+            rating: new_rating,
+            reviews_number: firebase.firestore.FieldValue.increment(new_review)
         });
 
         })

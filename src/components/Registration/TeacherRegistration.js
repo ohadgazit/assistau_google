@@ -127,7 +127,8 @@ function TeacherRegistration() {
             course_list: courses1.map( function( el ){
                 return el
             }),
-
+            reviewes_number: 0,
+            reviews_dict: {}
         });
 
     }
