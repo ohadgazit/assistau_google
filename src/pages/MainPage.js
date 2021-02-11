@@ -79,21 +79,23 @@ function MainPage() {
                         {/*    Team 6 - AssisTAU*/}
                         {/*</p>*/}
                         <p>
-                            בחר קורס על מנת למצוא מורה המלמד קורס זה
+                            הקלד שם או מספר קורס על מנת למצוא מורה המלמד קורס זה
                         </p>
                         <ControllableStates/>
                     </header>
 
                     <Dialog open={openHelp} onClose={handleCloseHelp} aria-labelledby="form-dialog-title">
-                        <DialogTitle id="form-dialog-title"> הסבר על האתר </DialogTitle>
+                        {/*<DialogTitle id="form-dialog-title"> ברוכים הבאים ל AssisTAU! האתר שמאפשר לסטודנטים מאוניברסיטת תל אביב לאתר מורים פרטיים לקורסי האוניברסיטה</DialogTitle>*/}
                         <DialogContent>
-                            <DialogContentText>
-                                כאן צריך לכתוב מידע עלינו ועל האתר
-                            </DialogContentText>
+                            <DialogTitle id="form-dialog-title"> ברוכים הבאים ל AssisTAU! האתר שמאפשר לסטודנטים מאוניברסיטת תל אביב לאתר מורים פרטיים לקורסי האוניברסיטה</DialogTitle>
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                                <Typography component="legend">* על מנת לחפש מורה פרטי הקלידו את שם או מספר הקורס המבוקש בתיבת החיפוש שבדף הבית.</Typography>
+                                <DialogContentText>שימו לב כי יש להתחבר באמצעות המייל האוניברסיטאי כדי לצפות בפרטי הקשר של המורה, לשלוח לו הודעה או להזין ביקורת.</DialogContentText>
+                            </Box>
 
                             <Box component="fieldset" mb={3} borderColor="transparent">
-                                <Typography component="legend">מידעמידע</Typography>
-
+                                <Typography component="legend">* על מנת להרשם כמורה פרטי התחבר\י באמצעות המייל האוניברסיטאי ומלא\י את פרטייך בעמוד המיועד לכך.</Typography>
+                                <DialogContentText>לאחר שתירשם\י תופיע בפנייך האפשרות לעדכן את פרטייך בכל עת בדף עדכון פרטים.</DialogContentText>
                             </Box>
                         </DialogContent>
 
@@ -104,9 +106,9 @@ function MainPage() {
                             <DialogContentText>
 
                                מפתחי האתר:
-                                עדי פישר
+                                עדי פישר,
                                 {"\n"}
-                                דודי אורן
+                                דודי אורן,
                                 אהד גזית
 
                             </DialogContentText>
