@@ -71,7 +71,8 @@ const TeachersList = () => {
                 } dataAge={
                     {lessonCostSorting: lessonCostSorting, changeLessonCostSorting: changeLessonCostSorting.bind(this)}
                 }/>
-                <CourseTeachersList items={loadedPlaces2}
+                <CourseTeachersList
+                                    items={loadedPlaces2}
                                     from_course={courseId}
                                     gotData={dataPulled}
                                     showBar={{

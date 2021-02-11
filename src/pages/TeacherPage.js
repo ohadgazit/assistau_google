@@ -40,7 +40,9 @@ import CardContent from '@material-ui/core/CardContent';
 const TeacherItemExpanded = props =>{
     const reload=()=>window.location.reload();
     const teacherData = useLocation().state;
-    var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
+    //var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
+       // + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+    var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number.replace("0","+972") +"?text= שלום "
         + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
