@@ -9,6 +9,7 @@ import 'firebase/database'
 import { useHistory } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import {useLocation} from 'react-router-dom';
 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
@@ -24,18 +25,16 @@ const config = {
 };
 
 
-
-
 firebase.initializeApp(config);
 // Configure FirebaseUI.
 const uiConfig = {
-
     // Popup signin flow rather than redirect flow.
     signInFlow: 'popup',
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
     // signInSuccessUrl: '/signedIn',
-   // signInSuccessUrl: window.history.back,
+    //signInSuccessUrl: window.history.back,
     signInSuccessUrl: window.location.href,
+    //signInSuccessUrl:  window.location.state,
     signInOptions: [
         {
             provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -47,6 +46,9 @@ const uiConfig = {
         //firebase.auth.EmailAuthProvider.PROVIDER_ID // Other providers don't need to be given as object.
     ]
 };
+
+
+
 
 
 class SignInScreen extends React.Component {
@@ -72,7 +74,6 @@ const analytics = firebase.analytics();
 
 function SignInPage() {
     const [user] = useAuthState(auth);
-
 
     if (user) {
         console.log("connected user:", user.displayName)
