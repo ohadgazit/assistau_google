@@ -83,7 +83,8 @@ const CourseTeachersList = props => {
                     email = {place.email}
                     courses = {place.courses}
                     course_list = {place.course_list}
-
+                    reviews_number= {place.reviews_number}
+                    reviews_dict = {place.reviews_dict}
                 />
 
             ))}

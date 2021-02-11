@@ -62,7 +62,7 @@ const TeacherItemExpanded = props =>{
     };
 
     const handleSubmit = () => {
-        AddReviewToDataBase();
+        // AddReviewToDataBase();
         AddReviewToDict();
         setShow(true);
         setOpen(false);
@@ -218,6 +218,7 @@ const TeacherItemExpanded = props =>{
             },
             rating: new_rating,
             reviews_number: firebase.firestore.FieldValue.increment(new_review)
+
         });
 
         })
