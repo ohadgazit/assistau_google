@@ -215,7 +215,7 @@ function UpdateDetails() {
                            ref={register({required: true, min: 0})}
                            defaultValue={loadedTeacherState.age} //replace with the age from DB
                     />
-                    {errors.age && errors.age.type === "min" && (<p className="p-error">על הגיל להיות חיובי</p>)}
+                    {errors.age && errors.age.type === "min" && (<p className="p-error">נא הזן ערך חיובי</p>)}
 
 
                     <label className="reg-label">מגדר:</label>
@@ -260,9 +260,11 @@ function UpdateDetails() {
                     <label className="reg-label">מספר שנות נסיון:</label>
                     <input className="reg-input"
                            name="experience"
-                           ref={register({required: true})}
+                           type="number"
+                           ref={register({required: true, min:0})}
                            defaultValue={loadedTeacherState.experience} //replace with experience from DB
                     />
+                    {errors.experience && errors.experience.type === "min" && (<p className="p-error">נא הזן ערך חיובי</p>)}
 
                     <label className="reg-label">עלות שיעור:</label>
                     <input className="reg-input"

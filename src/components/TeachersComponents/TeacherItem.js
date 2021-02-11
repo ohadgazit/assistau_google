@@ -45,7 +45,7 @@ const TeacherItem = props => {
                         <p> {props.desc}</p>
                         <p>השכלה: {props.education}</p>
                         <p> מחיר שיעור: {props.lessonCost}&#8362;</p>
-                        <p> נסיון: {props.experience}</p>
+                        <p> מספר שנות נסיון: {props.experience}</p>
                         <p> גיל: {props.age}</p>
                     </div>
                     <div className="place-item__actions">

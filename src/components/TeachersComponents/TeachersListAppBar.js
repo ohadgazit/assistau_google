@@ -151,7 +151,7 @@ const ButtonAppBar = (props) =>{
                     <FormGroup>
                         <FormControlLabel
                             control={<Switch checked={checked} onChange={toggleChecked} />}
-                            label="מיין על פי ציון"
+                            label="מיין על פי דירוג"
                         />
                     </FormGroup>
 

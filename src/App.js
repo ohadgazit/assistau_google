@@ -34,13 +34,19 @@ const App = () => {
                 <Route path="/UserForm" exact>
                     <TeacherRegistration/>
                 </Route>
-                <Route path="/updateUserForm" exact>
+                {/*<Route path="/updateUserForm" exact>*/}
+                {/*    <UpdateDetails />*/}
+                {/*</Route>*/}
+                <Route path="/updateUserForm" >
                     <UpdateDetails />
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />
                 </Route>
-                <Route path="/register" exact>
+                {/*<Route path="/register" exact>*/}
+                {/*    <TeacherRegistration />*/}
+                {/*</Route>*/}
+                <Route path="/register" >
                     <TeacherRegistration />
                 </Route>
                 <Route path="/teachers/:teacherId" exact>

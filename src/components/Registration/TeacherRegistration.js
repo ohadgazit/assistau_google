@@ -141,16 +141,17 @@ function TeacherRegistration() {
             <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
                 <label className="reg-label">בחר את הקורסים שברצונך ללמד (ניתן לבחור יותר מקורס אחד)</label>
                 <Multiselect options={loadedCourseState}
+                             isMulti
                              displayValue="courseName"
+                             displayName="courseName"
                              name="courses"
                              ref={register({required: true})}
                              onSelect={onChangeInput}
                              placeholder=''
                 />
             </div>
-
         );
-    }
+    };
 
 
     return (
@@ -174,7 +175,7 @@ function TeacherRegistration() {
                 ref={register({ required: true, min:0})}
             />
             {errors.age && errors.age.type === "required" && (<p className="p-error">שדה חובה</p>)}
-            {errors.age && errors.age.type === "min" && (<p className="p-error">על הגיל להיות חיובי</p>)}
+            {errors.age && errors.age.type === "min" && (<p className="p-error">נא הזן ערך חיובי</p>)}
 
 
             <label className="reg-label">מגדר:</label>
@@ -209,12 +210,22 @@ function TeacherRegistration() {
             />
             {errors.education && <p className="p-error">שדה חובה</p>}
 
+            {/*<label className="reg-label">מספר שנות נסיון:</label>*/}
+            {/*<input className="reg-input"*/}
+            {/*    name="experience"*/}
+            {/*    ref={register({ required: true})}*/}
+            {/*/>*/}
+            {/*{errors.experience && <p className="p-error">שדה חובה</p>}*/}
+
             <label className="reg-label">מספר שנות נסיון:</label>
             <input className="reg-input"
-                name="experience"
-                ref={register({ required: true})}
+                   name="experience"
+                   type="number"
+                   ref={register({ required: true, min:0})}
             />
-            {errors.experience && <p className="p-error">שדה חובה</p>}
+            {errors.experience && errors.experience.type === "required" && (<p className="p-error">שדה חובה</p>)}
+            {errors.experience && errors.experience.type === "min" && (<p className="p-error">נא הזן ערך חיובי</p>)}
+
 
             <label className="reg-label">עלות שיעור:</label>
             <input className="reg-input"
