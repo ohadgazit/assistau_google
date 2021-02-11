@@ -28,17 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Changed Firestore function from set to update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/to_delete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Firebase/context.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Firebase/firebase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Landing/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PasswordChange/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PasswordForget/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeachersComponents/CourseTeachersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeachersComponents/CourseTeachersList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +110,7 @@
       <workItem from="1607947550777" duration="10989000" />
       <workItem from="1608141464563" duration="985000" />
       <workItem from="1608287981049" duration="28122000" />
-      <workItem from="1613065118590" duration="5724000" />
+      <workItem from="1613065118590" duration="13359000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -344,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611607870122</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="#Changed Firestore function from set to update">
+      <created>1613071081522</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1613071081522</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

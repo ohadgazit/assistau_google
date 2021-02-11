@@ -55,23 +55,26 @@ const TeacherItemExpanded = props =>{
         setOpen(true);
     };
 
-    const handleClose3= () => {
+    const handleCancel= () => {
         setShow(false);
         setOpen(false);
+        setScore(0)
     };
 
-
-
-    const handleClose = () => {
-        writeUserData();
+    const handleSubmit = () => {
+        AddReviewToDataBase();
+        AddReviewToDict();
         setShow(true);
         setOpen(false);
+        setScore(0)
     };
+
+
 
     const handleClose2 = (event, reason) => {
         if (reason === 'clickaway') {
             return;
-
+        }
         setShow(false);
     };
 
@@ -158,7 +161,7 @@ const TeacherItemExpanded = props =>{
 
 
 
-    function writeUserData() {
+    function AddReviewToDataBase() {
         const email = auth.currentUser.email
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(teacherData.email)
@@ -169,13 +172,54 @@ const TeacherItemExpanded = props =>{
         email,
         text_review : text,
         score: score,
-
         }
+        // teacherRef.update({
+        //     reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
+        //     rating: new_rating,
+        // });
         teacherRef.update({
             reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
             rating: new_rating,
-
         });
+    }
+
+    function AddReviewToDict() {
+        var new_review = 1
+        const email = auth.currentUser.email
+        const db = firebase.firestore()
+        const teacherRef = db.collection('teachers').doc(teacherData.email)
+        const pushit = {
+            text_review: text,
+            score: score
+        }
+        const current_avg = Number(teacherData.rating)
+
+        teacherRef.get().then((doc) => {
+            if (doc.exists) {
+                var reviewes_new = doc.data().reviews_dict
+                console.log(reviewes_new)
+                if (reviewes_new[email]) {
+                    console.log(reviewes_new[email])
+                    new_review = 0
+                }
+                else {
+                    new_review = 1
+                }
+                console.log(new_review)
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+            const reviews_number = Number(teacherData.reviews_dict);
+            let new_rating = (current_avg * reviews_number + score) / (reviews_number + new_review);
+        teacherRef.update({
+            reviews_dict: {
+                [email]: pushit
+            },
+            rating: new_rating
+        });
+
+        })
     }
 
 
@@ -227,7 +271,7 @@ const TeacherItemExpanded = props =>{
 
 
 
-                <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <Dialog open={open} onClose={handleCancel} aria-labelledby="form-dialog-title">
                     <DialogTitle id="form-dialog-title"> דרג את המורה {teacherData.name}</DialogTitle>
                     <DialogContent>
                         <DialogContentText>
@@ -261,10 +305,10 @@ const TeacherItemExpanded = props =>{
                         </Box>
                     </DialogContent>
                     <DialogActions>
-                        {score !== 0 ? <Button onClick={handleClose} color="primary">
+                        {score !== 0 ? <Button onClick={handleSubmit} color="primary">
                             שלח ביקורת
                         </Button> : null}
-                        <Button onClick={handleClose3} color="primary">
+                        <Button onClick={handleCancel} color="primary">
                             בטל
                         </Button>
                     </DialogActions>
@@ -311,9 +355,9 @@ const TeacherItemExpanded = props =>{
                     />
                 </div>
             </div>
-
         </Card>
     );
+
 };
 
 export default TeacherItemExpanded;
