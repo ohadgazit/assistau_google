@@ -66,6 +66,7 @@ const TeacherItemExpanded = props =>{
     const handleSubmit = () => {
         // AddReviewToDataBase();
         AddReviewToDict();
+        checkTeacherExists();
         setShow(true);
         setOpen(false);
         setScore(0)
@@ -198,7 +199,7 @@ const TeacherItemExpanded = props =>{
 
         teacherRef.get().then((doc) => {
             if (doc.exists) {
-                var reviewes_new = doc.data().reviews_dict
+                var reviewes_new = doc.data().reviews_dict;
                 var reviews_number = doc.data().reviews_number;
                 console.log(reviewes_new)
                 if (reviewes_new[email]) {
@@ -227,6 +228,18 @@ const TeacherItemExpanded = props =>{
         });
 
         })
+    }
+
+    function checkTeacherExists() {
+        const db = firebase.firestore()
+        const teacherRef = db.collection('teachers').doc(auth.currentUser.email)
+        if (teacherRef) {
+            console.log("Teacher with email:",auth.currentUser.email,"exists")
+        }
+        else {
+            console.log("No such teacher exists")
+        }
+
     }
 
 
