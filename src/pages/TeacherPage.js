@@ -195,17 +195,19 @@ const TeacherItemExpanded = props =>{
             text_review: text,
             score: score
         }
-        const current_avg = Number(teacherData.rating)
+        //const current_avg = Number(teacherData.rating)
 
         teacherRef.get().then((doc) => {
+            var old_score = 0
             if (doc.exists) {
                 var reviewes_new = doc.data().reviews_dict;
                 var reviews_number = doc.data().reviews_number;
+                var current_avg = doc.data().rating;
                 console.log(reviewes_new)
                 if (reviewes_new[email]) {
                     console.log(reviewes_new[email])
                     new_review = 0
-                    var old_score = reviewes_new[email]['score']
+                    old_score = reviewes_new[email]['score']
                     console.log(old_score)
                 }
                 else {
@@ -216,8 +218,8 @@ const TeacherItemExpanded = props =>{
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
             }
-            console.log(current_avg,reviews_number,score,new_review)
-            let new_rating = (current_avg * reviews_number + score) / (reviews_number + new_review);
+            console.log(current_avg,reviews_number,score,new_review,old_score)
+            let new_rating = (current_avg * reviews_number + score - old_score) / (reviews_number + new_review);
         teacherRef.update({
             reviews_dict: {
                 [email]: pushit
