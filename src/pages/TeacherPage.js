@@ -84,7 +84,7 @@ const TeacherItemExpanded = props =>{
 
 
     //end of reviews test
-    console.log(teacherData)
+    //console.log(teacherData)
 
 
     //box design param
@@ -219,9 +219,11 @@ const TeacherItemExpanded = props =>{
             console.log(current_avg,reviews_number,score,new_review)
             let new_rating = (current_avg * reviews_number + score) / (reviews_number + new_review);
         teacherRef.update({
-            reviews_dict: {
-                [email]: pushit
-            },
+            // reviews_dict: {
+            //     [email]: pushit
+            // },
+            'reviews_dict.{email}': pushit,
+
             rating: new_rating,
             reviews_number: firebase.firestore.FieldValue.increment(new_review)
 

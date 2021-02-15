@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Added new review mechanism">
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#New function: checkTeacherExists() in TeacherPage.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
@@ -111,7 +111,8 @@
       <workItem from="1608141464563" duration="985000" />
       <workItem from="1608287981049" duration="28122000" />
       <workItem from="1613065118590" duration="16001000" />
-      <workItem from="1613132931949" duration="842000" />
+      <workItem from="1613132931949" duration="1049000" />
+      <workItem from="1613211036040" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -376,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613081141699</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="#New function: checkTeacherExists() in TeacherPage.js">
+      <created>1613133825306</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1613133825306</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +437,8 @@
     <MESSAGE value="#Updated teacher info with new name fields" />
     <MESSAGE value="#Changed Firestore function from set to update" />
     <MESSAGE value="#Added new review mechanism" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Added new review mechanism" />
+    <MESSAGE value="#New function: checkTeacherExists() in TeacherPage.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="#New function: checkTeacherExists() in TeacherPage.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
