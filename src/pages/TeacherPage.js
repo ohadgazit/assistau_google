@@ -162,7 +162,10 @@ const TeacherItemExpanded = props =>{
         },
     }));
 
-
+    function email_to_dict(str){
+        let pos = str.indexOf("@")
+        return ("reviews_dict." + str.slice(0,pos))
+    }
 
     function AddReviewToDataBase() {
         const email = auth.currentUser.email
@@ -189,7 +192,8 @@ const TeacherItemExpanded = props =>{
     function AddReviewToDict() {
         var new_review = 1
         const email = auth.currentUser.email
-        const push_email = "reviews_dict."+email
+        //const push_email = "reviews_dict."+email
+        const push_email = email_to_dict(email)
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(teacherData.email)
         const pushit = {
@@ -205,10 +209,10 @@ const TeacherItemExpanded = props =>{
                 var reviews_number = doc.data().reviews_number;
                 var current_avg = doc.data().rating;
                 console.log(reviewes_new)
-                if (reviewes_new[email]) {
-                    console.log(reviewes_new[email])
+                if (reviewes_new[push_email.slice(13,push_email.length)]) {
+                    console.log(reviewes_new[push_email.slice(13,push_email.length)])
                     new_review = 0
-                    old_score = reviewes_new[email]['score']
+                    old_score = reviewes_new[push_email.slice(13,push_email.length)]['score']
                     console.log(old_score)
                 }
                 else {
@@ -340,22 +344,23 @@ const TeacherItemExpanded = props =>{
                 </Dialog>
             </div>
             <div className="place-item__actions">
-                {console.log(teacherData.reviews[0])}
-                {teacherData.reviews[0]?
+                {console.log(teacherData.reviews_dict)}
+                {teacherData.reviews_dict?
                     <Typography> ביקורות הסטודנטים </Typography>:
                     <Typography>אין ביקורות על מורה זה</Typography>
                 }
-                {teacherData.reviews[0].length>0?
+
+                {Object.keys(teacherData.reviews_dict).length?
                 <h1>{teacherData.reviews[0].text_review}</h1> &&
                 <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}>
-                {teacherData.reviews[0].map((person, index) => {
+                {Object.entries(teacherData.reviews_dict).map(([person, review_data]) => {  //teacherData.reviews_dict.map((person, index) => {
                     return <Card>
-                        <p key={index}> <h3>{person.email}</h3>
+                        <p key={person}> <h3>{person}</h3>
                             <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
-                                <Rating name="read-only"  variant={'body2'} value={person.score} readOnly={true} />
+                                <Rating name="read-only"  variant={'body2'} value={review_data.score} readOnly={true} />
                             </Box>
-                            <Typography color={'textSecondary'} variant={'body2'}> "{person.text_review}" </Typography>
+                            <Typography color={'textSecondary'} variant={'body2'}> "{review_data.text_review}" </Typography>
                     </p>
                     </Card>
                 })}
