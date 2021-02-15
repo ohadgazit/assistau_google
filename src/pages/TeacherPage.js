@@ -189,6 +189,7 @@ const TeacherItemExpanded = props =>{
     function AddReviewToDict() {
         var new_review = 1
         const email = auth.currentUser.email
+        const push_email = "reviews_dict."+email
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(teacherData.email)
         const pushit = {
@@ -221,9 +222,11 @@ const TeacherItemExpanded = props =>{
             console.log(current_avg,reviews_number,score,new_review,old_score)
             let new_rating = (current_avg * reviews_number + score - old_score) / (reviews_number + new_review);
         teacherRef.update({
-            reviews_dict: {
-                [email]: pushit
-            },
+            //reviews_dict: {
+            //    [email]: pushit
+            //},
+            [push_email]:pushit,
+            //[email]: pushit,,
             rating: new_rating,
             reviews_number: firebase.firestore.FieldValue.increment(new_review)
 
