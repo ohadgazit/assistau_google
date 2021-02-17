@@ -43,7 +43,7 @@ const TeacherItemExpanded = props =>{
     //var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
        // + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
     var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number.replace("0","+972") +"?text= שלום "
-        + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+        + teacherData.first_name+" " + teacherData.last_name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
     const [open, setOpen] = React.useState(false);
