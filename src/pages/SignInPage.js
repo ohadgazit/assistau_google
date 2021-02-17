@@ -12,6 +12,11 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import {useLocation} from 'react-router-dom';
 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import Typography from "@material-ui/core/Typography";
+import RegCard from "../components/Registration/RegCard";
+import Button from "../Shared/Button";
+import "./ButtonSignOut.css";
+import "./SignInCard.css";
 
 const config = {
     apiKey: "AIzaSyDdCMmFaU2kFI7Rcx3PQf32_lHWlaHgt54",
@@ -85,14 +90,23 @@ function SignInPage() {
     return (
 
         <div className="App">
-            <header>
-                <h3>AssisTAU Playground - Firebase Google Auth + DB </h3>
-                <SignOut />
-            </header>
+            <RegCard className ="SingIn-Card">
+            {/*<header>*/}
+            {/*    /!*<h3>AssisTAU Playground - Firebase Google Auth + DB </h3>*!/*/}
+            {/*    <SignOut />*/}
+            {/*</header>*/}
             <section>
-                {user ?  null : <SignIn />}
+                {/*{user ?  null : <SignIn />}*/}
+                {user ? <p className="SingInText">לחץ על הכפתור על מנת להתנתק </p> :
+                    <div>
+                        <p className="SingInText"> התחבר באמצעות המייל האוניברסיטאי </p>
+                        <SignIn />
+                    </div>}
+                <SignOut />
             </section>
+            </RegCard>
         </div>
+
     );
 
 }
@@ -124,7 +138,10 @@ function SignIn() {
 function SignOut() {
     return auth.currentUser && (
         <div>
-            <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+            {/*<Button color="primary" variant="contained" onClick={() => auth.signOut()}>התנתק</Button>*/}
+            <button className="buttonSingOut" color="primary" onClick={() => auth.signOut()}>התנתק</button>
+            {/*<button className="sign-out" color="primary" onClick={() => auth.signOut()}>התנתק</button>*/}
+
             {/*<button className="user-name" onClick={() => writeUserData()}> {auth.currentUser.displayName} </button>
             <button className="test-button" onClick={() => readUserData()}> Read Data </button>
             <button className="test-button" onClick={() => writeUserData2()}> Write to collection </button>*/}

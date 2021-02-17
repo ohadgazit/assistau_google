@@ -1,0 +1,26 @@
+.buttonSingOut {
+    font: inherit;
+    padding: 0.3rem 1.5rem;
+    border: 0.01px solid #979797;
+    border-radius: 2px;
+    background: white;
+    color: dimgray;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block  ;
+    transition: all 0.2s;
+    /*font-size: 1rem;*/
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.26);
+}
+
+.buttonSingOut:focus {
+    outline: none;
+}
+
+.SingInText {
+    font: inherit;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+}
