@@ -23,7 +23,7 @@ const TeachersList = () => {
 
     useEffect(() => {
         filterTeacherByCourseNum(courseId)
-    }, [])
+    }, [courseId])
 
     const loadedPlaces2 = loadedPlacesState.filter(teacher => genderFilter > 0 ? teacher.gender === (Number(genderFilter)): 1)
 
@@ -63,8 +63,9 @@ const TeachersList = () => {
     }
 
 
-
+        console.log("here")
         return (
+
             <div>
                 <ButtonAppBar dataGender={
                     {genderFilter: genderFilter, changeGender: changeGender.bind(this)}
