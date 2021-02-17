@@ -52,7 +52,7 @@ const TeacherItem = props => {
                         <Button to = '/'>חזור לחיפוש</Button>
                          <Button
                             to={{
-                                pathname: `/teachers/${props.id}`,
+                                pathname: `/teachers/${props.first_name+props.last_name}`,
                                 state: {
                                     key : props.id,
                                     id  : props.id,
