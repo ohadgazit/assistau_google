@@ -11,6 +11,12 @@ import RegCard from "../components/Registration/RegCard";
 import "./ButtonSignOut.css";
 import "./SignInCard.css";
 import {FirebaseAuth} from "react-firebaseui";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import useStyles from "../Shared/useStyles";
+import {makeStyles} from "@material-ui/core";
+import {Alert} from "@material-ui/lab";
 
 const config = {
     apiKey: "AIzaSyDdCMmFaU2kFI7Rcx3PQf32_lHWlaHgt54",
@@ -34,12 +40,19 @@ console.log("sdddddddddddddddddddddddd",previous_route)
 const auth = firebase.auth();
 
 function SignInPage(props) {
+    const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    let redirect_url = '/'
+    if (props.location.state) {
+        redirect_url = props.location.state.previous_page
+    }
+
     const uiConfig = {
         // Popup signin flow rather than redirect flow.
         signInFlow: 'popup',
         // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
         //signInSuccessUrl: '/',
-        signInSuccessUrl: props.location.state.previous_page,
+        signInSuccessUrl: redirect_url,
         //signInSuccessUrl: window.location.href,
         //signInSuccessUrl:  window.location.state,
         signInOptions: [
@@ -53,7 +66,6 @@ function SignInPage(props) {
             //firebase.auth.EmailAuthProvider.PROVIDER_ID // Other providers don't need to be given as object.
         ]
     };
-    console.log("XXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxx",props)
     const [user] = useAuthState(auth);
 
     if (user) {
@@ -62,6 +74,17 @@ function SignInPage(props) {
         console.log(user)
     }
 
+    const handleClick = () => {
+        auth.signOut()
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
 
     return (
 
@@ -74,6 +97,18 @@ function SignInPage(props) {
                         <SignIn uiConfig={uiConfig}/>
                     </div>}
                 <SignOut />
+                {auth.currentUser && <button className="buttonSingOut" color="primary" onClick={handleClick}> NEWהתנתק</button>}
+                {/*<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>*/}
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        open={open}
+                        autoHideDuration={2500}
+                        message="התנתקת בהצלחה"
+                        onClose={handleClose}
+                    />
             </section>
             </RegCard>
         </div>
@@ -91,14 +126,6 @@ export function SignIn(props) {
     )
 }
 
-// export function SignIn2() {
-//     return (
-//         <>
-//             <FirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
-//         </>
-//     )
-// }
-
 export function SignOut() {
     return auth.currentUser && (
         <div>
@@ -106,9 +133,13 @@ export function SignOut() {
         </div>
     )
 }
-export function SignOut2() {
-    return <button  onClick={() => auth.signOut()}>התנתק</button>
-}
+
+
+
+
+
+
+
 
 
 export default SignInPage;

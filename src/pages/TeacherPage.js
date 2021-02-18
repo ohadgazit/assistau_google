@@ -45,16 +45,28 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
 const TeacherItemExpanded = props => {
+    const [teacherEmail,setTeacherEmail] = React.useState(null)
+    let teacherDatafromLocation = useLocation().state;
     useEffect(() => {
-        loadTeacherData('ohadgazit@mail.tau.ac.il')
+        console.log(path_to_email(window.location.pathname))
+        console.log(teacherDatafromLocation)
+        setTeacherEmail(teacherDatafromLocation)
+        if (teacherDatafromLocation) {
+            loadTeacherData(teacherDatafromLocation.email)
+        }
+        else {
+            loadTeacherData(path_to_email(window.location.pathname))
+
+        }
     },[] )
     //const [teacher, setTeacher] = React.useState(false);
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
     const reload = () => window.location.reload();
-    let teacherDatafromLocation = null
-    teacherDatafromLocation = useLocation().state;
-    console.log(email_to_prefix(teacherDatafromLocation.email))
+    //let teacherDatafromLocation = null
+
+
+    //console.log(email_to_prefix(teacherDatafromLocation.email))
     // if (!teacherData) {
     //     console.log(user)
     //     teacherData = loadTeacherData('ohadgazit@mail.tau.ac.il')
@@ -62,6 +74,9 @@ const TeacherItemExpanded = props => {
     //     debugger
     // }
     console.log(user)
+    console.log("teacher email from props",teacherEmail)
+
+
 
 
 
@@ -78,6 +93,10 @@ const TeacherItemExpanded = props => {
     const [text, setText] = React.useState('');
     const [score, setScore] = React.useState(0);
     const [teacherData,setTeacher] = React.useState(null);
+
+
+
+    console.log(teacherEmail)
 
 
 
@@ -199,6 +218,12 @@ const TeacherItemExpanded = props => {
         return str.slice(0,pos)
     }
 
+    function path_to_email(str) {
+        let new_str = str.replace('/teachers/','').concat('@mail.tau.ac.il')
+        return new_str
+
+    }
+
     function AddReviewToDataBase() {
         const email = auth.currentUser.email
         const db = firebase.firestore()
@@ -281,14 +306,14 @@ const TeacherItemExpanded = props => {
 
     }
 
-    function loadTeacherData(user) {
-
+    function loadTeacherData(email) {
+        console.log("EMAIL INSIDE LOAD TEACHER DATA",email)
         const db = firebase.firestore();
         let teachersCollection = db.collection("teachers")
         //if (user) {var current_email = auth.currentUser.email}
         //console.log("qqqqqqqqqqqqqqqqqqq",user)
         //console.log(current_email)
-        let docRef = teachersCollection.doc('ohadgazit@mail.tau.ac.il')
+        let docRef = teachersCollection.doc(email)
         docRef.get().then(function (doc) {
             if (doc.exists) {
                 //console.log("ABCDABCDE",doc)
@@ -369,7 +394,7 @@ const TeacherItemExpanded = props => {
                     <Button onClick={handleClickOpen} type = "button">
                         כתוב ביקורת
                     </Button> :
-                    <SignInPage/>
+                    null
                 }
 
 

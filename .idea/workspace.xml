@@ -27,14 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#New function: checkTeacherExists() in TeacherPage.js">
-      <change afterPath="$PROJECT_DIR$/src/utils/loadTeacherData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeachersComponents/TeacherItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeachersComponents/TeacherItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/NavLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/NavLinks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignInPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
@@ -84,7 +77,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/TeachersComponents" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -122,7 +115,7 @@
       <workItem from="1613065118590" duration="16001000" />
       <workItem from="1613132931949" duration="1049000" />
       <workItem from="1613211036040" duration="5444000" />
-      <workItem from="1613583653442" duration="34118000" />
+      <workItem from="1613583653442" duration="40369000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -401,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613393096480</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="#New function: checkTeacherExists() in TeacherPage.js">
+      <created>1613670188712</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1613670188712</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
