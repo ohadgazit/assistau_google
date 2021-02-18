@@ -48,9 +48,9 @@ const TeacherItemExpanded = props =>{
     const [user] = useAuthState(auth);
     const [open, setOpen] = React.useState(false);
     const [show,setShow] = React.useState(false)
-    const [value1, setValue] = React.useState({id: 0, name: ""});
     const [text,setText] = React.useState('');
     const [score, setScore] = React.useState(0);
+
 
     //Reviews test
     const handleClickOpen = () => {
@@ -65,6 +65,7 @@ const TeacherItemExpanded = props =>{
 
     const handleSubmit = () => {
         // AddReviewToDataBase();
+        console.log(text)
         AddReviewToDict();
         checkTeacherExists();
         setShow(true);
@@ -168,6 +169,7 @@ const TeacherItemExpanded = props =>{
     }
 
     function AddReviewToDataBase() {
+        console.log(text)
         const email = auth.currentUser.email
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(teacherData.email)
@@ -191,6 +193,7 @@ const TeacherItemExpanded = props =>{
 
     function AddReviewToDict() {
         var new_review = 1
+        console.log("thiss  is text",text)
         const email = auth.currentUser.email
         //const push_email = "reviews_dict."+email
         const push_email = email_to_dict(email)
@@ -316,9 +319,14 @@ const TeacherItemExpanded = props =>{
                             rowsMax={4}
                             type="text"
                             fullWidth
-                            onChange={(event) => {
+                            onBlur={(event) => {
                                 setText(event.target.value);
                             }}
+
+                            //onChange={(event) => {
+                            //    setText(event.target.value);
+                            //}}
+
                         />
                         <Box component="fieldset" mb={3} borderColor="transparent">
                             <Typography component="legend">דרג (שדה חובה)</Typography>
