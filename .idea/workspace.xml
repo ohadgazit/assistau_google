@@ -27,7 +27,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#New function: checkTeacherExists() in TeacherPage.js">
+      <change afterPath="$PROJECT_DIR$/src/utils/loadTeacherData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TeachersComponents/TeacherItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeachersComponents/TeacherItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/NavLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/NavLinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignInPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +81,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/TeachersComponents" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -82,6 +90,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/TeachersComponents" />
       <recent name="C:\Users\adifi\WebstormProjects\new_assitau_google\src\pages" />
       <recent name="C:\Users\adifi\WebstormProjects\new_assitau_google\src\components\Registration" />
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
@@ -112,7 +121,8 @@
       <workItem from="1608287981049" duration="28122000" />
       <workItem from="1613065118590" duration="16001000" />
       <workItem from="1613132931949" duration="1049000" />
-      <workItem from="1613211036040" duration="1691000" />
+      <workItem from="1613211036040" duration="5444000" />
+      <workItem from="1613583653442" duration="34118000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -384,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613133825306</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="#New function: checkTeacherExists() in TeacherPage.js">
+      <created>1613393096480</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1613393096480</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

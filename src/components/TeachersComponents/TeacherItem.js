@@ -9,7 +9,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const TeacherItem = props => {
 
-
+    function email_prefix(str){
+        let pos = str.indexOf("@")
+        return (str.slice(0,pos))
+    }
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -52,7 +55,7 @@ const TeacherItem = props => {
                         <Button to = '/'>חזור לחיפוש</Button>
                          <Button
                             to={{
-                                pathname: `/teachers/${props.first_name+props.last_name}`,
+                                pathname: `/teachers/${email_prefix(props.email)}`,
                                 state: {
                                     key : props.id,
                                     id  : props.id,

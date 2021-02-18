@@ -2,7 +2,7 @@ import Button from '../Shared/Button'
 import './TeacherPage.css';
 import Card from "../Shared/Card";
 import {useLocation} from 'react-router-dom';
-import React from "react";
+import React, {useEffect} from "react";
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/analytics';
@@ -10,6 +10,8 @@ import 'firebase/database'
 import 'firebase/auth';
 import {useAuthState} from "react-firebase-hooks/auth";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import {loadTeacherData} from "../utils/loadTeacherData";
+
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -34,30 +36,57 @@ import {Paper} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import SignInPage, {SignIn2} from "./SignInPage";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
 
-const TeacherItemExpanded = props =>{
-    const reload=()=>window.location.reload();
-    const teacherData = useLocation().state;
-    //var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
-       // + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
-    var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number.replace("0","+972") +"?text= שלום "
-        + teacherData.first_name+" " + teacherData.last_name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+
+
+
+const TeacherItemExpanded = props => {
+    useEffect(() => {
+        loadTeacherData('ohadgazit@mail.tau.ac.il')
+    },[] )
+    //const [teacher, setTeacher] = React.useState(false);
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
+    const reload = () => window.location.reload();
+    let teacherDatafromLocation = null
+    teacherDatafromLocation = useLocation().state;
+    console.log(email_to_prefix(teacherDatafromLocation.email))
+    // if (!teacherData) {
+    //     console.log(user)
+    //     teacherData = loadTeacherData('ohadgazit@mail.tau.ac.il')
+    //     console.log("NEW NEW NEW NEW NEW NEW ", teacherData)
+    //     debugger
+    // }
+    console.log(user)
+
+
+
+
+    //var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
+    // + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+    // var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number.replace("0","+972") +"?text= שלום "
+    //     + teacherData.first_name+" " + teacherData.last_name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+
+
     const [open, setOpen] = React.useState(false);
-    const [show,setShow] = React.useState(false)
+    const [show, setShow] = React.useState(false)
     const [value1, setValue] = React.useState({id: 0, name: ""});
-    const [text,setText] = React.useState('');
+    const [text, setText] = React.useState('');
     const [score, setScore] = React.useState(0);
+    const [teacherData,setTeacher] = React.useState(null);
+
+
 
     //Reviews test
     const handleClickOpen = () => {
         setOpen(true);
     };
 
-    const handleCancel= () => {
+    const handleCancel = () => {
         setShow(false);
         setOpen(false);
         setScore(0)
@@ -73,14 +102,12 @@ const TeacherItemExpanded = props =>{
     };
 
 
-
     const handleClose2 = (event, reason) => {
         if (reason === 'clickaway') {
             return;
         }
         setShow(false);
     };
-
 
 
     //end of reviews test
@@ -93,7 +120,7 @@ const TeacherItemExpanded = props =>{
         borderColor: 'text.primary',
         m: 1,
         border: 1,
-        style: { width: '5rem', height: '5rem' },
+        style: {width: '5rem', height: '5rem'},
     };
 
     const StyledRating = withStyles({
@@ -122,9 +149,9 @@ const TeacherItemExpanded = props =>{
     //     },
     // });
 
-    const useStylesForRating = makeStyles((theme)=> ({
-        rating:{
-            direction:'ltr'
+    const useStylesForRating = makeStyles((theme) => ({
+        rating: {
+            direction: 'ltr'
         }
     }));
 
@@ -157,14 +184,19 @@ const TeacherItemExpanded = props =>{
             marginRight: 4,
             fontSize: 18,
         },
-        rating:{
-            direction:'ltr'
+        rating: {
+            direction: 'ltr'
         },
     }));
 
-    function email_to_dict(str){
+    function email_to_dict(str) {
         let pos = str.indexOf("@")
-        return ("reviews_dict." + str.slice(0,pos))
+        return ("reviews_dict." + str.slice(0, pos))
+    }
+
+    function email_to_prefix(str) {
+        let pos = str.indexOf("@")
+        return str.slice(0,pos)
     }
 
     function AddReviewToDataBase() {
@@ -173,11 +205,11 @@ const TeacherItemExpanded = props =>{
         const teacherRef = db.collection('teachers').doc(teacherData.email)
         const average = Number(teacherData.rating);
         const size = Number(teacherData.reviews[0].length);
-        let new_rating = (average*size+score)/(size+1);
+        let new_rating = (average * size + score) / (size + 1);
         const pushit = {
-        email,
-        text_review : text,
-        score: score,
+            email,
+            text_review: text,
+            score: score,
         }
         // teacherRef.update({
         //     reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
@@ -209,13 +241,12 @@ const TeacherItemExpanded = props =>{
                 var reviews_number = doc.data().reviews_number;
                 var current_avg = doc.data().rating;
                 console.log(reviewes_new)
-                if (reviewes_new[push_email.slice(13,push_email.length)]) {
-                    console.log(reviewes_new[push_email.slice(13,push_email.length)])
+                if (reviewes_new[push_email.slice(13, push_email.length)]) {
+                    console.log(reviewes_new[push_email.slice(13, push_email.length)])
                     new_review = 0
-                    old_score = reviewes_new[push_email.slice(13,push_email.length)]['score']
+                    old_score = reviewes_new[push_email.slice(13, push_email.length)]['score']
                     console.log(old_score)
-                }
-                else {
+                } else {
                     new_review = 1
                 }
                 console.log(new_review)
@@ -223,18 +254,18 @@ const TeacherItemExpanded = props =>{
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
             }
-            console.log(current_avg,reviews_number,score,new_review,old_score)
+            console.log(current_avg, reviews_number, score, new_review, old_score)
             let new_rating = (current_avg * reviews_number + score - old_score) / (reviews_number + new_review);
-        teacherRef.update({
-            //reviews_dict: {
-            //    [email]: pushit
-            //},
-            [push_email]:pushit,
-            //[email]: pushit,,
-            rating: new_rating,
-            reviews_number: firebase.firestore.FieldValue.increment(new_review)
+            teacherRef.update({
+                //reviews_dict: {
+                //    [email]: pushit
+                //},
+                [push_email]: pushit,
+                //[email]: pushit,,
+                rating: new_rating,
+                reviews_number: firebase.firestore.FieldValue.increment(new_review)
 
-        });
+            });
 
         })
     }
@@ -243,11 +274,41 @@ const TeacherItemExpanded = props =>{
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(auth.currentUser.email)
         if (teacherRef) {
-            console.log("Teacher with email:",auth.currentUser.email,"exists")
-        }
-        else {
+            console.log("Teacher with email:", auth.currentUser.email, "exists")
+        } else {
             console.log("No such teacher exists")
         }
+
+    }
+
+    function loadTeacherData(user) {
+
+        const db = firebase.firestore();
+        let teachersCollection = db.collection("teachers")
+        //if (user) {var current_email = auth.currentUser.email}
+        //console.log("qqqqqqqqqqqqqqqqqqq",user)
+        //console.log(current_email)
+        let docRef = teachersCollection.doc('ohadgazit@mail.tau.ac.il')
+        docRef.get().then(function (doc) {
+            if (doc.exists) {
+                //console.log("ABCDABCDE",doc)
+                //console.log(doc.get("education"))
+                //let teacherEdu = doc.get("education")
+                const docData = doc.data()
+                //console.log("Document data:", doc.data());
+                //console.log(docData.phoneNumber)
+                setTeacher(docData)
+                //console.log("DOC DATA DOC DATA DOC DTARA",doc.data())
+                //console.log("DOC DATA DOC DATA DOC DTARA",teacher)
+                return doc.data();
+
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
 
     }
 
@@ -255,49 +316,61 @@ const TeacherItemExpanded = props =>{
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
+        teacherData !== null ?
         <Card className="place-item__content">
             <div className="place-item__image">
-                <img src={teacherData.image} alt={teacherData.first_name} />
+                <img src={teacherData.imageUrl} alt={teacherData.first_name}/>
 
             </div>
             <div className="place-item__info">
-                <h2>{teacherData.first_name}  {teacherData.last_name}</h2>
+                <h2>{teacherData.first_name} {teacherData.last_name}</h2>
                 <Typography color={'textSecondary'} variant={'title'}> "{teacherData.desc}" </Typography>
                 <p></p>
                 <p>השכלה: {teacherData.education}</p>
                 <p>גיל: {teacherData.age}</p>
-                {teacherData.gender === "2" ? <p>מגדר: גבר </p> :  <p>מגדר: אישה </p>}
+                {teacherData.gender === "2" ? <p>מגדר: גבר </p> : <p>מגדר: אישה </p>}
                 <p>מספר שנות נסיון : {teacherData.experience}</p>
                 <p>עלות שיעור : {teacherData.lessonCost}&#8362; </p>
                 {user ?
-                    <p>מספר טלפון : {teacherData.phone_number} </p> :
-                    <Typography color={'textSecondary'} > * התחבר על מנת לצפות בפרטי התקשרות (טלפון וכתובת email)</Typography>
+                    <p>מספר טלפון : {teacherData.phoneNumber} </p> :
+                    <Typography color={'textSecondary'}> * התחבר על מנת לצפות בפרטי התקשרות (טלפון וכתובת
+                        email)</Typography>
                 }
                 {user ?
-                    <p>דואר אלקטרוני: {teacherData.email} </p>:null
+                    <p>דואר אלקטרוני: {teacherData.email} </p> : null
                 }
-                <p>מלמד את הקורסים הבאים:   </p>
+                <p>מלמד את הקורסים הבאים: </p>
                 {teacherData.course_list.map(item => (<li>{item.courseName}</li>))}
                 {/*<Carusela/>*/}
 
 
             </div>
             <div className="place-item__actions">
-                <Button  to={`/courses/${teacherData.from_course}`} >חזור לחיפוש</Button>
-                {user?
-                    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>
-                    :<Button to ={{
-                        pathname:"/SignIn",
-                        state: "inWebsite"
+                <Button to={`/courses/${teacherData.from_course}`}>חזור לחיפוש</Button>
+                {user ?
+                    <Button href={'whastappMessageUrl'} target="_blank" rel="noreferrer"><WhatsAppIcon
+                        fontSize={'default'}/></Button>
+                    : <Button to={{
+                        pathname: "/SignIn/",
+                        state: {previous_page: window.location.pathname}
                     }}>התחבר על מנת ליצור קשר עם המורה</Button>
                 }
+
+                {/*{user?*/}
+                {/*    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>*/}
+                {/*    :<SignIn/>*/}
+                {/*}*/}
+                {/*{user?*/}
+                {/*    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>*/}
+                {/*    :<SignIn/>*/}
+                {/*}*/}
+
                 {user?
                     <Button onClick={handleClickOpen} type = "button">
                         כתוב ביקורת
-                    </Button>
-                    :<Button to = "/SignIn">התחבר על מנת לכתוב ביקורת</Button>
+                    </Button> :
+                    <SignInPage/>
                 }
-
 
 
                 <Dialog open={open} onClose={handleCancel} aria-labelledby="form-dialog-title">
@@ -345,26 +418,28 @@ const TeacherItemExpanded = props =>{
             </div>
             <div className="place-item__actions">
                 {console.log(teacherData.reviews_dict)}
-                {teacherData.reviews_dict?
-                    <Typography> ביקורות הסטודנטים </Typography>:
+                {teacherData.reviews_dict ?
+                    <Typography> ביקורות הסטודנטים </Typography> :
                     <Typography>אין ביקורות על מורה זה</Typography>
                 }
 
-                {Object.keys(teacherData.reviews_dict).length?
-                <h1>{teacherData.reviews[0].text_review}</h1> &&
-                <Carousel autoPlay={true}  navButtonsAlwaysVisible={true}>
-                {Object.entries(teacherData.reviews_dict).map(([person, review_data]) => {  //teacherData.reviews_dict.map((person, index) => {
-                    return <Card>
-                        <p key={person}> <h3>{person}</h3>
-                            <Box component="fieldset" mb={3} borderColor="transparent">
-                                <Typography component="legend"></Typography>
-                                <Rating name="read-only"  variant={'body2'} value={review_data.score} readOnly={true} />
-                            </Box>
-                            <Typography color={'textSecondary'} variant={'body2'}> "{review_data.text_review}" </Typography>
-                    </p>
-                    </Card>
-                })}
-                </Carousel>:null}
+                {Object.keys(teacherData.reviews_dict).length ?
+                    //<h1>{teacherData.reviews[0].text_review}</h1> &&
+                    <Carousel autoPlay={true} navButtonsAlwaysVisible={true}>
+                        {Object.entries(teacherData.reviews_dict).map(([person, review_data]) => {  //teacherData.reviews_dict.map((person, index) => {
+                            return <Card>
+                                <p key={person}><h3>{person}</h3>
+                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                                        <Typography component="legend"></Typography>
+                                        <Rating name="read-only" variant={'body2'} value={review_data.score}
+                                                readOnly={true}/>
+                                    </Box>
+                                    <Typography color={'textSecondary'}
+                                                variant={'body2'}> "{review_data.text_review}" </Typography>
+                                </p>
+                            </Card>
+                        })}
+                    </Carousel> : null}
                 <div>
                     <Snackbar
                         anchorOrigin={{
@@ -378,14 +453,14 @@ const TeacherItemExpanded = props =>{
                         action={
                             <React.Fragment>
                                 <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose2}>
-                                    <CloseIcon fontSize="small" />
+                                    <CloseIcon fontSize="small"/>
                                 </IconButton>
                             </React.Fragment>}
 
                     />
                 </div>
             </div>
-        </Card>
+        </Card> : <h3>טוען מידע</h3>
     );
 
 };

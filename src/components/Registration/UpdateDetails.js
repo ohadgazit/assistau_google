@@ -45,11 +45,13 @@ function UpdateDetails() {
     // };
 
     function onSubmit(data) {
-        //console.log(data)
 
+        //console.log(data)
         //console.log(data.firstName)
         updateTeacherInfo(data)
         loadTeacherData()
+        window.history.go(-1)
+        //window.location.assign("http://www.mozilla.org")
 
     }
 
@@ -153,7 +155,7 @@ function UpdateDetails() {
             })
 
         });
-
+        window.location = "www.google.com"
     }
 
 

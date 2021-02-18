@@ -28,8 +28,8 @@ const App = () => {
                 <Route path="/" exact>
                     <MainPage/>
                 </Route>
-                <Route path="/SignIn" exact>
-                    <SignInPage/>
+                <Route path="/SignIn" component={SignInPage} exact  >
+                    {/*<SignInPage/>*/}
                 </Route>
                 <Route path="/UserForm" exact>
                     <TeacherRegistration/>

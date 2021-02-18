@@ -6,12 +6,14 @@ import 'firebase/analytics';
 import 'firebase/database'
 import 'firebase/auth';
 import { useHistory } from "react-router-dom";
+import {SignIn, SignOut2} from '../pages/SignInPage'
 
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import './NavLinks.css';
+import Button from "../Shared/Button";
 
 var ret = {"to_ret":0}
 
@@ -41,6 +43,10 @@ var ret = {"to_ret":0}
 //     }
 //     return 0
 // }
+
+
+
+
 
 const NavLinks = props => {
     let history = useHistory();
@@ -120,11 +126,22 @@ const NavLinks = props => {
 
 
 
-        <li>
-            <NavLink to="/SignIn">{ user ?  'התנתק' : 'התחבר'}</NavLink>
-        </li>
+        {/*<li>*/}
+            <NavLink to="/SignIn">{ user ?  'התנתק דרך עמוד' : 'התחבר דרך עמוד'}</NavLink>
+        {/*</li>*/}
+        {/*<li>*/}
+        {/*    {user?*/}
+        {/*        <SignOut2/>*/}
+        {/*        :*/}
+        {/*        <SignIn/>*/}
+        {/*    }*/}
+        {/*</li>*/}
+
         {isNotHomePage?<li>
             <button onClick={() => history.goBack()}>חזור אחורה</button>
+
+
+
         </li>:null}
 
 

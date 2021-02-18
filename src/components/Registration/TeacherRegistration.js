@@ -38,6 +38,8 @@ function TeacherRegistration() {
         console.log(data)
         //console.log(data.firstName)
         writeUserData(data)
+        //window.location.assign("http://www.mozilla.org")
+        window.history.go(-1)
     }
 
 
