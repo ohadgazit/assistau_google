@@ -42,10 +42,9 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
 
-
-
 const TeacherItemExpanded = props => {
     const [teacherEmail,setTeacherEmail] = React.useState(null)
+    const [whastappMessageUrl,setwhastappMessageUrl] = React.useState(null)
     let teacherDatafromLocation = useLocation().state;
     useEffect(() => {
         console.log(path_to_email(window.location.pathname))
@@ -56,7 +55,6 @@ const TeacherItemExpanded = props => {
         }
         else {
             loadTeacherData(path_to_email(window.location.pathname))
-
         }
     },[] )
     //const [teacher, setTeacher] = React.useState(false);
@@ -81,10 +79,6 @@ const TeacherItemExpanded = props => {
 
 
 
-    //var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
-    // + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
-    // var whastappMessageUrl = "https://wa.me/" +teacherData.phone_number.replace("0","+972") +"?text= שלום "
-    //     + teacherData.first_name+" " + teacherData.last_name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
 
 
     const [open, setOpen] = React.useState(false);
@@ -335,6 +329,9 @@ const TeacherItemExpanded = props => {
             console.log("Error getting document:", error);
         });
 
+        // let whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
+        //     + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+
     }
 
 
@@ -342,6 +339,7 @@ const TeacherItemExpanded = props => {
     const bull = <span className={classes.bullet}>•</span>;
     return (
         teacherData !== null ?
+
         <Card className="place-item__content">
             <div className="place-item__image">
                 <img src={teacherData.imageUrl} alt={teacherData.first_name}/>
@@ -362,7 +360,7 @@ const TeacherItemExpanded = props => {
                         email)</Typography>
                 }
                 {user ?
-                    <p>דואר אלקטרוני: {teacherData.email} </p> : null
+                    <p>דואר אלקטרוני: <a href={"mailto:" + teacherData.email}>{teacherData.email}</a> </p> : null
                 }
                 <p>מלמד את הקורסים הבאים: </p>
                 {teacherData.course_list.map(item => (<li>{item.courseName}</li>))}
@@ -373,7 +371,8 @@ const TeacherItemExpanded = props => {
             <div className="place-item__actions">
                 <Button to={`/courses/${teacherData.from_course}`}>חזור לחיפוש</Button>
                 {user ?
-                    <Button href={'whastappMessageUrl'} target="_blank" rel="noreferrer"><WhatsAppIcon
+                    <Button href={"https://wa.me/" +teacherData.phoneNumber.replace("0","+972") + "?text= שלום " +
+                        teacherData.first_name+" " + teacherData.last_name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " } target="_blank" rel="noreferrer"><WhatsAppIcon
                         fontSize={'default'}/></Button>
                     : <Button to={{
                         pathname: "/SignIn/",

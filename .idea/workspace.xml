@@ -28,7 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#New function: checkTeacherExists() in TeacherPage.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignInPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +114,7 @@
       <workItem from="1613065118590" duration="16001000" />
       <workItem from="1613132931949" duration="1049000" />
       <workItem from="1613211036040" duration="5444000" />
-      <workItem from="1613583653442" duration="40369000" />
+      <workItem from="1613583653442" duration="44129000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -401,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613670188712</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="#New function: checkTeacherExists() in TeacherPage.js">
+      <created>1613676330419</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1613676330419</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
