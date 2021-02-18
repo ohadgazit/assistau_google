@@ -370,6 +370,7 @@ const TeacherItemExpanded = props => {
             </div>
             <div className="place-item__actions">
                 <Button to={`/courses/${teacherData.from_course}`}>חזור לחיפוש</Button>
+                <Button to={`/courses/${teacherDatafromLocation.from_course}`}>חזור לחיפוש 2 </Button>
                 {user ?
                     <Button href={"https://wa.me/" +teacherData.phoneNumber.replace("0","+972") + "?text= שלום " +
                         teacherData.first_name+" " + teacherData.last_name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " } target="_blank" rel="noreferrer"><WhatsAppIcon

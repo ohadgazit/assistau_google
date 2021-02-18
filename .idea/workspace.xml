@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#New function: checkTeacherExists() in TeacherPage.js">
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Updated WhatsApp messaging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
@@ -114,7 +114,7 @@
       <workItem from="1613065118590" duration="16001000" />
       <workItem from="1613132931949" duration="1049000" />
       <workItem from="1613211036040" duration="5444000" />
-      <workItem from="1613583653442" duration="44129000" />
+      <workItem from="1613583653442" duration="44531000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -407,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613676330419</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="#Updated WhatsApp messaging">
+      <created>1613680313449</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1613680313449</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +468,8 @@
     <MESSAGE value="#Changed Firestore function from set to update" />
     <MESSAGE value="#Added new review mechanism" />
     <MESSAGE value="#New function: checkTeacherExists() in TeacherPage.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="#New function: checkTeacherExists() in TeacherPage.js" />
+    <MESSAGE value="#Updated WhatsApp messaging" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Updated WhatsApp messaging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
