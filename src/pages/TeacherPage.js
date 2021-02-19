@@ -416,7 +416,7 @@ const TeacherItemExpanded = props => {
                             rowsMax={4}
                             type="text"
                             fullWidth
-                            onChange={(event) => {
+                            onBlur={(event) => {
                                 setText(event.target.value);
                             }}
                         />

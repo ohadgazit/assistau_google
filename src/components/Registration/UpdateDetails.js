@@ -155,7 +155,6 @@ function UpdateDetails() {
             })
 
         });
-        window.location = "www.google.com"
     }
 
 
