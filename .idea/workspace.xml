@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Updated WhatsApp messaging">
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
     </list>
@@ -114,7 +114,7 @@
       <workItem from="1613065118590" duration="16001000" />
       <workItem from="1613132931949" duration="1049000" />
       <workItem from="1613211036040" duration="5444000" />
-      <workItem from="1613583653442" duration="44531000" />
+      <workItem from="1613583653442" duration="46159000" />
     </task>
     <task id="LOCAL-00001" summary="#Updated logo and design">
       <created>1606757587482</created>
@@ -414,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613680313449</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher">
+      <created>1613680659403</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1613680659403</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +476,8 @@
     <MESSAGE value="#Added new review mechanism" />
     <MESSAGE value="#New function: checkTeacherExists() in TeacherPage.js" />
     <MESSAGE value="#Updated WhatsApp messaging" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Updated WhatsApp messaging" />
+    <MESSAGE value="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
