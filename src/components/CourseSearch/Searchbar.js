@@ -6,14 +6,11 @@ import FormControl from '@material-ui/core/FormControl';
 //import Avatar from '@material-ui/core/Avatar';
 //import Select from '@material-ui/core/Select';
 //import Button from '@material-ui/core/Button';
-import teachers  from '../../mocks/teachers.json'
-import { Link } from 'react-router-dom';
 import useStyles from "../../Shared/useStyles";
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 //import TeachersList from "../pages/TeachersList";
 //import { BrowserRouter as Router, Route,  Switch, useParams } from "react-router-dom";
-import coursesItems from "../../mocks/coursesItems.json"
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -21,22 +18,15 @@ import 'firebase/analytics';
 import 'firebase/database'
 
 
-import { useAuthState } from 'react-firebase-hooks/auth';
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import {createFilterOptions} from "@material-ui/lab";
 
 
 
 const ControllableStates = (props) => {
     const classes = useStyles();
-    //const [value1, setValue] = React.useState({id: 0, name: ""});
     const [inputValue, setInputValue] = React.useState('');
-    const [chosenTeachers, setTeacher] = React.useState([]);
-    const [course, setCourse] = React.useState('');
     const [chosenCourse, setId] = React.useState(0);
-    const handleTeacher = (chosenTeacher) => {
-        setTeacher(chosenTeacher);
-    };
+
 
 
     const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
@@ -80,22 +70,12 @@ const ControllableStates = (props) => {
 
 
 
-    const menuitems = [
-        {id: 1, courseName: 'מתמטיקה בדידה' },
-        {id: 2, courseName: 'מבוא מורחב למדעי המחשב' },
-        {id: 3, courseName: 'אלגברה לינארית 1ב' },
-        {id: 4, courseName: 'מבוא לפסיכופתולוגיה' },
-        {id: 5, courseName: 'Class 5' },
-        {id: 6, courseName: 'Class 6' },
-        {id: 7, courseName: 'Class 7' },
-        {id: 8, courseName: 'Class 8' },
-        {id: 9, courseName: 'Class 9' },
-    ];
+
 
 
 
     const filterOptions = createFilterOptions({
-        limit:30,
+        limit:10,
     });
     console.log("in search!!!!")
     return (
@@ -129,6 +109,7 @@ const ControllableStates = (props) => {
                 getOptionLabel={(option => option.courseName)}
                 // style={{ width: 300 }}
                 style={{ width: 500 }}
+
                 renderInput={(params) =>  <TextField  {...params}  label="הקלד שם או מספר קורס" variant="outlined" /> }
 
             />
