@@ -127,7 +127,7 @@ const NavLinks = props => {
 
 
         {/*<li>*/}
-            <NavLink to="/SignIn">{ user ?  'התנתק דרך עמוד' : 'התחבר דרך עמוד'}</NavLink>
+            <NavLink to="/SignIn">{ user ?  'התנתק' : 'התחבר'}</NavLink>
         {/*</li>*/}
         {/*<li>*/}
         {/*    {user?*/}

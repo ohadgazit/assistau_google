@@ -40,7 +40,6 @@ console.log("sdddddddddddddddddddddddd",previous_route)
 const auth = firebase.auth();
 
 function SignInPage(props) {
-    const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     let redirect_url = '/'
     if (props.location.state) {
@@ -96,9 +95,9 @@ function SignInPage(props) {
                         <p className="SingInText"> התחבר באמצעות המייל האוניברסיטאי </p>
                         <SignIn uiConfig={uiConfig}/>
                     </div>}
-                <SignOut />
-                {auth.currentUser && <button className="buttonSingOut" color="primary" onClick={handleClick}> NEWהתנתק</button>}
-                {/*<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>*/}
+                {/*<SignOut />*/}
+                {auth.currentUser && <button className="buttonSingOut" color="primary" onClick={handleClick}>התנתק</button>}
+
                     <Snackbar
                         anchorOrigin={{
                             vertical: 'bottom',
