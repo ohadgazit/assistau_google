@@ -26,9 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher">
+    <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#fix text indentation in &quot;אודותינו&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2020_23_21__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2020_23_21__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TeacherPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TeacherPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,13 +82,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/TeachersComponents" />
       <recent name="C:\Users\adifi\WebstormProjects\new_assitau_google\src\pages" />
       <recent name="C:\Users\adifi\WebstormProjects\new_assitau_google\src\components\Registration" />
-      <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\אוהד גזית\WebstormProjects\assitau_google\src\pages" />
     </key>
   </component>
@@ -477,7 +478,30 @@
     <MESSAGE value="#New function: checkTeacherExists() in TeacherPage.js" />
     <MESSAGE value="#Updated WhatsApp messaging" />
     <MESSAGE value="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Updated WhatsApp messaging&#10;# Fixed Go Back from teacher" />
+    <MESSAGE value="#fix text indentation in &quot;אודותינו&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="#fix text indentation in &quot;אודותינו&quot;" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1259" height="2" key="GridCell.Tab.0.bottom" timestamp="1613822592585">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1613822592585" />
+    <state width="1259" height="2" key="GridCell.Tab.0.center" timestamp="1613822592585">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1613822592585" />
+    <state width="1259" height="2" key="GridCell.Tab.0.left" timestamp="1613822592585">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1613822592585" />
+    <state width="1259" height="2" key="GridCell.Tab.0.right" timestamp="1613822592585">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1613822592585" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613820821065">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1613820821065" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

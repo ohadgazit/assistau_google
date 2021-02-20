@@ -98,28 +98,36 @@ function MainPage() {
                                 <DialogContentText>לאחר שתירשם\י תופיע בפנייך האפשרות לעדכן את פרטייך בכל עת בדף עדכון פרטים.</DialogContentText>
                             </Box>
                         </DialogContent>
-
                     </Dialog>
+
                     <Dialog open={openContact} onClose={handleCloseContact} aria-labelledby="form-dialog-title">
-                        <DialogTitle id="form-dialog-title"> אתר זה נבנה במסגרת סדנת פיתוח בטכנולוגיות גוגל </DialogTitle>
                         <DialogContent>
-                            <DialogContentText>
-
-                               מפתחי האתר:
-                                עדי פישר,
-                                {"\n"}
-                                דודי אורן,
-                                אהד גזית
-
-                            </DialogContentText>
-
-                            <Box component="fieldset" mb={3} borderColor="transparent">
-                                <Typography component="legend">למידע ניתן לפנות במייל ohadgt@gmail.com</Typography>
-
-                            </Box>
+                            <DialogTitle id="form-dialog-title"> אתר זה נבנה במסגרת סדנת פיתוח בטכנולוגיות גוגל </DialogTitle>
+                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                    <DialogContentText>מפתחי האתר: עדי פישר, דודי אורן, אהד גזית</DialogContentText>
+                                    <Typography component="legend"></Typography>
+                                    <Typography component="legend">למידע ניתן לפנות במייל ohadgt@gmail.com</Typography>
+                                </Box>
                         </DialogContent>
-
                     </Dialog>
+
+                    {/*<Dialog open={openContact} onClose={handleCloseContact} aria-labelledby="form-dialog-title">*/}
+                    {/*    <DialogContent>*/}
+                    {/*        <DialogTitle id="form-dialog-title"> אתר זה נבנה במסגרת סדנת פיתוח בטכנולוגיות גוגל </DialogTitle>*/}
+                    {/*        <Box component="fieldset" mb={3} borderColor="transparent">*/}
+                    {/*            <DialogContentText>*/}
+                    {/*               מפתחי האתר:*/}
+                    {/*                עדי פישר,*/}
+                    {/*                דודי אורן,*/}
+                    {/*                אהד גזית*/}
+                    {/*            </DialogContentText>*/}
+                    {/*        </Box>*/}
+                    {/*        <Box component="fieldset" mb={3} borderColor="transparent">*/}
+                    {/*            <Typography component="legend">למידע ניתן לפנות במייל ohadgt@gmail.com</Typography>*/}
+                    {/*        </Box>*/}
+                    {/*    </DialogContent>*/}
+                    {/*</Dialog>*/}
+
                     <AppBar flexGrow={1} className={classes.appBar}>
                         <Toolbar>
                             <IconButton edge="start" color="inherit" aria-label="open drawer">
