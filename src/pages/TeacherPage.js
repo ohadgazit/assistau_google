@@ -10,8 +10,6 @@ import 'firebase/database'
 import 'firebase/auth';
 import {useAuthState} from "react-firebase-hooks/auth";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-
-
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -25,10 +23,7 @@ import TextField from "@material-ui/core/TextField";
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-
 import Carousel from 'react-material-ui-carousel'
-
-
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -36,7 +31,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const TeacherItemExpanded = props => {
-    //const [teacherEmail,setTeacherEmail] = React.useState(null)
     let teacherDatafromLocation = useLocation().state;
     useEffect(() => {
         //setTeacherEmail(teacherDatafromLocation)
@@ -47,11 +41,9 @@ const TeacherItemExpanded = props => {
             loadTeacherData(path_to_email(window.location.pathname))
         }
     },[] )
-    //const [teacher, setTeacher] = React.useState(false);
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
-    //const reload = () => window.location.reload();
-    //let teacherDatafromLocation = null
+
 
 
 
@@ -104,7 +96,6 @@ const TeacherItemExpanded = props => {
     };
 
 
-    //end of reviews test
 
 
 
@@ -120,22 +111,7 @@ const TeacherItemExpanded = props => {
         },
     })(Rating);
 
-    // const useStyles = makeStyles({
-    //     root: {
-    //         minWidth: 275,
-    //     },
-    //     bullet: {
-    //         display: 'inline-block',
-    //         margin: '0 2px',
-    //         transform: 'scale(0.8)',
-    //     },
-    //     title: {
-    //         fontSize: 14,
-    //     },
-    //     pos: {
-    //         marginBottom: 12,
-    //     },
-    // });
+
 
 
 
@@ -191,7 +167,6 @@ const TeacherItemExpanded = props => {
     function AddReviewToDict() {
         var new_review = 1
         const email = auth.currentUser.email
-        //const push_email = "reviews_dict."+email
         const push_email = email_to_dict(email)
         const db = firebase.firestore()
         const teacherRef = db.collection('teachers').doc(teacherData.email)
@@ -199,7 +174,6 @@ const TeacherItemExpanded = props => {
             text_review: text,
             score: score
         }
-        //const current_avg = Number(teacherData.rating)
 
         teacherRef.get().then((doc) => {
             var old_score = 0
@@ -219,11 +193,7 @@ const TeacherItemExpanded = props => {
             }
             let new_rating = (current_avg * reviews_number + score - old_score) / (reviews_number + new_review);
             teacherRef.update({
-                //reviews_dict: {
-                //    [email]: pushit
-                //},
                 [push_email]: pushit,
-                //[email]: pushit,,
                 rating: new_rating,
                 reviews_number: firebase.firestore.FieldValue.increment(new_review)
 
@@ -241,21 +211,11 @@ const TeacherItemExpanded = props => {
     function loadTeacherData(email) {
         const db = firebase.firestore();
         let teachersCollection = db.collection("teachers")
-        //if (user) {var current_email = auth.currentUser.email}
-        //console.log("qqqqqqqqqqqqqqqqqqq",user)
-        //console.log(current_email)
         let docRef = teachersCollection.doc(email)
         docRef.get().then(function (doc) {
             if (doc.exists) {
-                //console.log("ABCDABCDE",doc)
-                //console.log(doc.get("education"))
-                //let teacherEdu = doc.get("education")
                 const docData = doc.data()
-                //console.log("Document data:", doc.data());
-                //console.log(docData.phoneNumber)
                 setTeacher(docData)
-                //console.log("DOC DATA DOC DATA DOC DTARA",doc.data())
-                //console.log("DOC DATA DOC DATA DOC DTARA",teacher)
                 return doc.data();
 
             } else {
