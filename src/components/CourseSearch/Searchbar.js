@@ -1,16 +1,12 @@
 import React, {useEffect} from 'react';
 import Button from '../../Shared/Button'
-//import InputLabel from '@material-ui/core/InputLabel';
-//import MenuItem from '@material-ui/core/MenuItem';
+
 import FormControl from '@material-ui/core/FormControl';
-//import Avatar from '@material-ui/core/Avatar';
-//import Select from '@material-ui/core/Select';
-//import Button from '@material-ui/core/Button';
+
 import useStyles from "../../Shared/useStyles";
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-//import TeachersList from "../pages/TeachersList";
-//import { BrowserRouter as Router, Route,  Switch, useParams } from "react-router-dom";
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
