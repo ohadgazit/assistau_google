@@ -6,21 +6,9 @@ import 'firebase/analytics';
 import 'firebase/database'
 import 'firebase/auth';
 import { useHistory } from "react-router-dom";
-import {SignIn, SignOut2} from '../pages/SignInPage'
-
-
-
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 import './NavLinks.css';
-import Button from "../Shared/Button";
-
 var ret = {"to_ret":0}
-
-
-
-
-
 
 
 const NavLinks = props => {
@@ -28,13 +16,8 @@ const NavLinks = props => {
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
     let ret1
-
     if (user) {
-
         ret1 = checkTeacherExists(auth)
-
-    } else {
-
     }
 
     const [isNotHomePage,isNotHomeSet] = useState(window.location.pathname !== "/");
@@ -43,7 +26,6 @@ const NavLinks = props => {
     useEffect(() => {
         return history.listen((location) => {
             if(user) {
-                // checkTeacherExists(auth)
             }
             isNotHomeSet(window.location.pathname !== "/");
         })
@@ -53,9 +35,7 @@ const NavLinks = props => {
     function checkTeacherExists(us) {
         const db = firebase.firestore()
 
-        //const teacherRef = db.collection('teachers').doc(user.email)
         const teacherRef = db.collection('teachers').doc(us.currentUser.email)
-        //var ret = {"to_ret":0}
         teacherRef.get().then((doc) => {
             if (doc.exists) {
 
@@ -101,16 +81,8 @@ const NavLinks = props => {
 
 
 
-        {/*<li>*/}
             <NavLink to="/SignIn">{ user ?  'התנתק' : 'התחבר'}</NavLink>
-        {/*</li>*/}
-        {/*<li>*/}
-        {/*    {user?*/}
-        {/*        <SignOut2/>*/}
-        {/*        :*/}
-        {/*        <SignIn/>*/}
-        {/*    }*/}
-        {/*</li>*/}
+
 
         {isNotHomePage?<li>
             <button onClick={() => history.goBack()}>חזור אחורה</button>
