@@ -27,9 +27,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e1381ef-39a1-408e-8288-1f1d1cf1ae9b" name="Default Changelist" comment="#fix text indentation in &quot;אודותינו&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2020_23_21__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2020_23_21__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/RegStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/RegStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/TeacherRegistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration/UpdateDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613680659403</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="#fix text indentation in &quot;אודותינו&quot;">
+      <created>1613822604972</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1613822604972</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,10 +506,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1259" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1613822592585" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613820821065">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1613822623422">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1613820821065" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1613822623422" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613933420418">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1613933420418" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
