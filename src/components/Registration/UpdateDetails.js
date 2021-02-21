@@ -1,4 +1,3 @@
-// import React, {Component, useEffect, useState} from "react";
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
@@ -8,26 +7,21 @@ import firebase from "firebase";
 import RegCard from "./RegCard";
 import {useAuthState} from "react-firebase-hooks/auth";
 
-
 function UpdateDetails() {
 
     useEffect(() => {
         loadTeacherData()
         loadCourses()
-
     }, [])
 
-
     const auth = firebase.auth();
-    //const userId = auth.currentUser.uid
-    //const email = auth.currentUser.email
     const [user] = useAuthState(auth);
 
-    if (user) {
-        console.log("connected user:", user.displayName)
-    } else {
-        console.log("not connected")
-    }
+    // if (user) {
+    //     //console.log("connected user:", user.displayName)
+    // } else {
+    //     //console.log("not connected")
+    // }
 
     const {
         register,
@@ -36,23 +30,10 @@ function UpdateDetails() {
         formState: { isSubmitting }
     } = useForm();
 
-
-    // const onSubmit = data => {
-    //     console.log(data)
-    //     console.log(data.firstName)
-    //     updateTeacherInfo(data)
-    //
-    // };
-
     function onSubmit(data) {
-
-        //console.log(data)
-        //console.log(data.firstName)
         updateTeacherInfo(data)
         loadTeacherData()
         window.history.go(-1)
-        //window.location.assign("http://www.mozilla.org")
-
     }
 
     //for 'gender' field
@@ -66,7 +47,6 @@ function UpdateDetails() {
     var courses1 = []
 
     function onChangeInput(value){
-        console.log('multi:',value)
         courses1 = value
     }
 
@@ -74,30 +54,20 @@ function UpdateDetails() {
 
     const [loadedCourseState,setLoadedCoursestate] = React.useState([]);
 
-
     function loadTeacherData() {
 
         var db = firebase.firestore();
         var teachersCollection = db.collection("teachers")
         if (user) {var current_email = auth.currentUser.email}
-        console.log(current_email)
             var docRef = teachersCollection.doc(current_email)
             docRef.get().then(function (doc) {
                 if (doc.exists) {
-                    console.log(doc.get("education"))
                     let teacherEdu = doc.get("education")
                     const docData = doc.data()
-                    console.log("Document data:", doc.data());
-                    console.log(docData.phoneNumber)
                     setLoadedTeacherstate(docData)
                     return doc.data();
-
-                } else {
-                    // doc.data() will be undefined in this case
-                    console.log("No such document!");
                 }
             }).catch(function (error) {
-                console.log("Error getting document:", error);
             });
         }
 
@@ -110,26 +80,19 @@ function UpdateDetails() {
         query.limit(10).get().then(function (querySnapshot) {
             let loadedCourses= [] ;
             querySnapshot.forEach(function (doc) {
-                // doc.data() is never undefined for query doc snapshots
-                //console.log(doc.data());
-                //debugger
                 let docData = doc.data()
                 loadedCourses.push({...docData
                 });
             })
-            console.log(loadedCourses)
             setLoadedCoursestate(loadedCourses)
-            console.log(setLoadedCoursestate)
         })
             .catch(function (error) {
-                console.log("Error getting documents: ", error);
             });
     }
 
 
-
-
     function updateTeacherInfo(data){
+
         const email = auth.currentUser.email
         const imageUrl = auth.currentUser.photoURL
         const db = firebase.firestore();
@@ -158,14 +121,11 @@ function UpdateDetails() {
     }
 
 
-
     function SelectCourses() {
-
 
         return (
             <div className="SelectCourses" onSubmit={handleSubmit(onSubmit)}>
                 <label className="reg-label">ערוך את הקורסים שברצונך ללמוד. ביכולתך להוסיף או למחוק קורסים</label>
-                {/*<Multiselect options={op}*/}
                 <Multiselect options={loadedCourseState}
                              selectedValues={loadedTeacherState.course_list}
                              isMulti
@@ -175,26 +135,20 @@ function UpdateDetails() {
                              ref={register({required: true})}
                              onSelect={onChangeInput}
                              placeholder=''
-                             //value={"מתמטיקה בדידה"} //replace with courses list from DB
                 />
             </div>
         );
     }
 
 
-
     return (
         <RegCard>
-
             {
                 loadedTeacherState !== null ?
                 <form className="reg-form" onSubmit={handleSubmit(onSubmit)}>
-
-
                     <h1 className="reg-header">עדכון פרטים</h1>
                     <h3 className="reg-header-small">עדכן את השדות הרלוונטיים. את השאר השאר ללא שינוי</h3>
                     <h3 className="reg-header-small">{user ? "מחובר בתור: " + user.email : "No user detected"}</h3>
-
 
                     <label className="reg-label">שם פרטי:</label>
                     <input className="reg-input" name="firstName" ref={register({required: true, minLength: 2})}
@@ -219,7 +173,6 @@ function UpdateDetails() {
                     />
                     {errors.age && errors.age.type === "min" && (<p className="p-error">נא הזן ערך חיובי</p>)}
 
-
                     <label className="reg-label">מגדר:</label>
                     <select name="gender" ref={register({required: true})} dir="rtl" style={styles.select}
                             defaultValue={loadedTeacherState.gender} //replace with gender from DB
@@ -228,7 +181,6 @@ function UpdateDetails() {
                         <option value={2}>גבר</option>
                         <option value={1}>אישה</option>
                     </select>
-
 
                     <label className="reg-label">מספר טלפון:</label>
                     <input className="reg-input" name="phoneNumber"
@@ -241,16 +193,6 @@ function UpdateDetails() {
                         <p className="p-error">על מספר הטלפון להכיל 10 ספרות</p>)}
                     {errors.phoneNumber && errors.phoneNumber.type === "pattern" && (
                         <p className="p-error">על שדה זה להכיל ספרות בלבד</p>)}
-
-                    {/*<label className="reg-label">כתובת Email:</label>*/}
-                    {/*<input className="reg-input"*/}
-                    {/*       name="email"*/}
-                    {/*       ref={register({required: true, pattern: /^\S+@\S+$/i})}*/}
-                    {/*       defaultValue={loadedTeacherState.email} //replace with email from DB*/}
-                    {/*/>*/}
-                    {/*{errors.email && errors.email.type === "pattern" && (*/}
-                    {/*    <p className="p-error">על שדה זה להכיל כתובת מייל חוקית</p>)}*/}
-
 
                     <label className="reg-label">השכלה:</label>
                     <input className="reg-input"
