@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react';
 import Button from '../../Shared/Button'
-
 import FormControl from '@material-ui/core/FormControl';
-
 import useStyles from "../../Shared/useStyles";
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -77,8 +74,6 @@ const ControllableStates = (props) => {
 
         <div>
             <FormControl className={classes.formControl}>
-                {/*<div>{`value: ${value1 !== null ? `'${value1.name}'` : 'null'}`}</div>*/}
-                {/*<div>{`inputValue: '${inputValue}'`}</div>*/}
             <br />
 
             <Autocomplete
@@ -87,7 +82,6 @@ const ControllableStates = (props) => {
                 //value={value1}
                 onChange={(event, newValue) => {
                     if (newValue !== null) {
-                        //setValue(newValue);
                         setId(newValue)
 
                     }
