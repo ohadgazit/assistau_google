@@ -32,10 +32,10 @@ const TeachersList = () => {
     }
 
     else if (lessonCostSorting === 1){
-        loadedPlaces2.sort((a,b) => Number(a.age)>Number(b.age) ? 1 : -1);
+        loadedPlaces2.sort((a,b) => Number(a.lessonCost)>Number(b.lessonCost) ? 1 : -1);
     }
     else if (lessonCostSorting === 2){
-        loadedPlaces2.sort((a,b) => Number(a.age)>Number(b.age) ? -1 : 1);
+        loadedPlaces2.sort((a,b) => Number(a.lessonCost)>Number(b.lessonCost) ? -1 : 1);
     }
 
 
