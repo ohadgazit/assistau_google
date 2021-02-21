@@ -39,8 +39,6 @@ const CourseTeachersList = props => {
         );
     }
 
-    console.log(props.items[0].reviews)
-    console.log(props.items[0].courses)
 
 
         return <ul className="place-list">
@@ -52,13 +50,7 @@ const CourseTeachersList = props => {
 
             </Typography>
 
-            {/*<div>*/}
-            {/*    {people.filter(person => person.age < 60).map(filteredPerson => (*/}
-            {/*        <li>*/}
-            {/*            {filteredPerson.name}*/}
-            {/*        </li>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
+
 
             {props.items.map(place => (
 

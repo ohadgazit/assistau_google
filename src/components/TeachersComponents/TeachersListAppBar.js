@@ -109,9 +109,7 @@ const ButtonAppBar = (props) =>{
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar className={classes.bar}>
-                    {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>*/}
+
 
 
 

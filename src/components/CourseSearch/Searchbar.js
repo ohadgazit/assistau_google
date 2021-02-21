@@ -55,7 +55,7 @@ const ControllableStates = (props) => {
                 loadedCourses.push({...docData
                 });
             })
-            console.log(loadedCourses)
+
             setLoadedCoursestate(loadedCourses)
         })
             .catch(function (error) {
@@ -93,8 +93,6 @@ const ControllableStates = (props) => {
                     if (newValue !== null) {
                         //setValue(newValue);
                         setId(newValue)
-                        console.log(newValue)
-                        console.log(event.target)
 
                     }
                 }}

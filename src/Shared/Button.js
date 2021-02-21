@@ -18,7 +18,6 @@ const Button = props => {
         );
     }
     if (props.to) {
-        console.log(props.to)
         return (
             <Link
                 to={props.to}

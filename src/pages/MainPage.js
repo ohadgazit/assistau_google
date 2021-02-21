@@ -75,9 +75,6 @@ function MainPage() {
                 <div className="MainPage">
                     <header className="MainPage-header">
                         <img src={logo} className="App-logo" alt="logo"/>
-                        {/*<p>*/}
-                        {/*    Team 6 - AssisTAU*/}
-                        {/*</p>*/}
                         <p>
                             הקלד שם או מספר קורס על מנת למצוא מורה המלמד קורס זה
                         </p>
@@ -85,7 +82,6 @@ function MainPage() {
                     </header>
 
                     <Dialog open={openHelp} onClose={handleCloseHelp} aria-labelledby="form-dialog-title">
-                        {/*<DialogTitle id="form-dialog-title"> ברוכים הבאים ל AssisTAU! האתר שמאפשר לסטודנטים מאוניברסיטת תל אביב לאתר מורים פרטיים לקורסי האוניברסיטה</DialogTitle>*/}
                         <DialogContent>
                             <DialogTitle id="form-dialog-title"> ברוכים הבאים ל AssisTAU! האתר שמאפשר לסטודנטים מאוניברסיטת תל אביב לאתר מורים פרטיים לקורסי האוניברסיטה</DialogTitle>
                             <Box component="fieldset" mb={3} borderColor="transparent">
@@ -111,22 +107,7 @@ function MainPage() {
                         </DialogContent>
                     </Dialog>
 
-                    {/*<Dialog open={openContact} onClose={handleCloseContact} aria-labelledby="form-dialog-title">*/}
-                    {/*    <DialogContent>*/}
-                    {/*        <DialogTitle id="form-dialog-title"> אתר זה נבנה במסגרת סדנת פיתוח בטכנולוגיות גוגל </DialogTitle>*/}
-                    {/*        <Box component="fieldset" mb={3} borderColor="transparent">*/}
-                    {/*            <DialogContentText>*/}
-                    {/*               מפתחי האתר:*/}
-                    {/*                עדי פישר,*/}
-                    {/*                דודי אורן,*/}
-                    {/*                אהד גזית*/}
-                    {/*            </DialogContentText>*/}
-                    {/*        </Box>*/}
-                    {/*        <Box component="fieldset" mb={3} borderColor="transparent">*/}
-                    {/*            <Typography component="legend">למידע ניתן לפנות במייל ohadgt@gmail.com</Typography>*/}
-                    {/*        </Box>*/}
-                    {/*    </DialogContent>*/}
-                    {/*</Dialog>*/}
+                    
 
                     <AppBar flexGrow={1} className={classes.appBar}>
                         <Toolbar>

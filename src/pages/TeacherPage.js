@@ -10,7 +10,6 @@ import 'firebase/database'
 import 'firebase/auth';
 import {useAuthState} from "react-firebase-hooks/auth";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import {loadTeacherData} from "../utils/loadTeacherData";
 
 
 import Dialog from '@material-ui/core/Dialog';
@@ -18,8 +17,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Alert from '@material-ui/lab/Alert';
-import MuiAlert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
@@ -30,26 +27,19 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 import Carousel from 'react-material-ui-carousel'
-import {Paper} from '@material-ui/core'
 
 
 import { makeStyles } from '@material-ui/core/styles';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import SignInPage, {SignIn2} from "./SignInPage";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+
 
 
 
 
 const TeacherItemExpanded = props => {
-    const [teacherEmail,setTeacherEmail] = React.useState(null)
-    const [whastappMessageUrl,setwhastappMessageUrl] = React.useState(null)
+    //const [teacherEmail,setTeacherEmail] = React.useState(null)
     let teacherDatafromLocation = useLocation().state;
     useEffect(() => {
-        console.log(path_to_email(window.location.pathname))
-        console.log(teacherDatafromLocation)
-        setTeacherEmail(teacherDatafromLocation)
+        //setTeacherEmail(teacherDatafromLocation)
         if (teacherDatafromLocation) {
             loadTeacherData(teacherDatafromLocation.email)
         }
@@ -60,19 +50,12 @@ const TeacherItemExpanded = props => {
     //const [teacher, setTeacher] = React.useState(false);
     const auth = firebase.auth();
     const [user] = useAuthState(auth);
-    const reload = () => window.location.reload();
+    //const reload = () => window.location.reload();
     //let teacherDatafromLocation = null
 
 
-    //console.log(email_to_prefix(teacherDatafromLocation.email))
-    // if (!teacherData) {
-    //     console.log(user)
-    //     teacherData = loadTeacherData('ohadgazit@mail.tau.ac.il')
-    //     console.log("NEW NEW NEW NEW NEW NEW ", teacherData)
-    //     debugger
-    // }
-    console.log(user)
-    console.log("teacher email from props",teacherEmail)
+
+
 
 
 
@@ -83,14 +66,13 @@ const TeacherItemExpanded = props => {
 
     const [open, setOpen] = React.useState(false);
     const [show, setShow] = React.useState(false)
-    const [value1, setValue] = React.useState({id: 0, name: ""});
     const [text, setText] = React.useState('');
     const [score, setScore] = React.useState(0);
     const [teacherData,setTeacher] = React.useState(null);
 
 
 
-    console.log(teacherEmail)
+
 
 
 
@@ -106,9 +88,8 @@ const TeacherItemExpanded = props => {
     };
 
     const handleSubmit = () => {
-        // AddReviewToDataBase();
         AddReviewToDict();
-        checkTeacherExists();
+        //checkTeacherExists();
         setShow(true);
         setOpen(false);
         setScore(0)
@@ -124,17 +105,11 @@ const TeacherItemExpanded = props => {
 
 
     //end of reviews test
-    console.log(teacherData)
 
 
-    //box design param
-    const defaultProps = {
-        bgcolor: 'background.paper',
-        borderColor: 'text.primary',
-        m: 1,
-        border: 1,
-        style: {width: '5rem', height: '5rem'},
-    };
+
+
+
 
     const StyledRating = withStyles({
         iconFilled: {
@@ -162,11 +137,7 @@ const TeacherItemExpanded = props => {
     //     },
     // });
 
-    const useStylesForRating = makeStyles((theme) => ({
-        rating: {
-            direction: 'ltr'
-        }
-    }));
+
 
     const useStyles = makeStyles(() => ({
         root: {
@@ -207,10 +178,7 @@ const TeacherItemExpanded = props => {
         return ("reviews_dict." + str.slice(0, pos))
     }
 
-    function email_to_prefix(str) {
-        let pos = str.indexOf("@")
-        return str.slice(0,pos)
-    }
+
 
     function path_to_email(str) {
         let new_str = str.replace('/teachers/','').concat('@mail.tau.ac.il')
@@ -218,27 +186,7 @@ const TeacherItemExpanded = props => {
 
     }
 
-    function AddReviewToDataBase() {
-        const email = auth.currentUser.email
-        const db = firebase.firestore()
-        const teacherRef = db.collection('teachers').doc(teacherData.email)
-        const average = Number(teacherData.rating);
-        const size = Number(teacherData.reviews[0].length);
-        let new_rating = (average * size + score) / (size + 1);
-        const pushit = {
-            email,
-            text_review: text,
-            score: score,
-        }
-        // teacherRef.update({
-        //     reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
-        //     rating: new_rating,
-        // });
-        teacherRef.update({
-            reviews: firebase.firestore.FieldValue.arrayUnion(pushit),
-            rating: new_rating,
-        });
-    }
+
 
     function AddReviewToDict() {
         var new_review = 1
@@ -259,21 +207,16 @@ const TeacherItemExpanded = props => {
                 var reviewes_new = doc.data().reviews_dict;
                 var reviews_number = doc.data().reviews_number;
                 var current_avg = doc.data().rating;
-                console.log(reviewes_new)
+
                 if (reviewes_new[push_email.slice(13, push_email.length)]) {
-                    console.log(reviewes_new[push_email.slice(13, push_email.length)])
                     new_review = 0
                     old_score = reviewes_new[push_email.slice(13, push_email.length)]['score']
-                    console.log(old_score)
                 } else {
                     new_review = 1
                 }
-                console.log(new_review)
             } else {
                 // doc.data() will be undefined in this case
-                console.log("No such document!");
             }
-            console.log(current_avg, reviews_number, score, new_review, old_score)
             let new_rating = (current_avg * reviews_number + score - old_score) / (reviews_number + new_review);
             teacherRef.update({
                 //reviews_dict: {
@@ -289,19 +232,13 @@ const TeacherItemExpanded = props => {
         })
     }
 
-    function checkTeacherExists() {
-        const db = firebase.firestore()
-        const teacherRef = db.collection('teachers').doc(auth.currentUser.email)
-        if (teacherRef) {
-            console.log("Teacher with email:", auth.currentUser.email, "exists")
-        } else {
-            console.log("No such teacher exists")
-        }
-
-    }
+    // function checkTeacherExists() {
+    //     const db = firebase.firestore()
+    //     const teacherRef = db.collection('teachers').doc(auth.currentUser.email)
+    //
+    // }
 
     function loadTeacherData(email) {
-        console.log("EMAIL INSIDE LOAD TEACHER DATA",email)
         const db = firebase.firestore();
         let teachersCollection = db.collection("teachers")
         //if (user) {var current_email = auth.currentUser.email}
@@ -323,20 +260,18 @@ const TeacherItemExpanded = props => {
 
             } else {
                 // doc.data() will be undefined in this case
-                console.log("No such document!");
             }
         }).catch(function (error) {
             console.log("Error getting document:", error);
         });
 
-        // let whastappMessageUrl = "https://wa.me/" +teacherData.phone_number +"?text= שלום "
-        //     + teacherData.name +",  מצאתי אותך בעזרת אסיסטאו! אשמח לקבוע שיעור " ;
+
 
     }
 
 
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+    //const bull = <span className={classes.bullet}>•</span>;
     return (
         teacherData !== null ?
 
@@ -364,7 +299,6 @@ const TeacherItemExpanded = props => {
                 }
                 <p>מלמד את הקורסים הבאים: </p>
                 {teacherData.course_list.map(item => (<li>{item.courseName}</li>))}
-                {/*<Carusela/>*/}
 
 
             </div>
@@ -383,14 +317,7 @@ const TeacherItemExpanded = props => {
                     }}>התחבר על מנת ליצור קשר עם המורה</Button>
                 }
 
-                {/*{user?*/}
-                {/*    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>*/}
-                {/*    :<SignIn/>*/}
-                {/*}*/}
-                {/*{user?*/}
-                {/*    <Button href={whastappMessageUrl} target="_blank" rel="noreferrer"><WhatsAppIcon fontSize={'default'} /></Button>*/}
-                {/*    :<SignIn/>*/}
-                {/*}*/}
+
 
                 {user?
                     <Button onClick={handleClickOpen} type = "button">
@@ -444,7 +371,7 @@ const TeacherItemExpanded = props => {
                 </Dialog>
             </div>
             <div className="place-item__actions">
-                {console.log(teacherData.reviews_dict)}
+
                 {teacherData.reviews_dict ?
                     <Typography> ביקורות הסטודנטים </Typography> :
                     <Typography>אין ביקורות על מורה זה</Typography>

@@ -29,32 +29,25 @@ const App = () => {
                     <MainPage/>
                 </Route>
                 <Route path="/SignIn" component={SignInPage} exact  >
-                    {/*<SignInPage/>*/}
                 </Route>
                 <Route path="/UserForm" exact>
                     <TeacherRegistration/>
                 </Route>
-                {/*<Route path="/updateUserForm" exact>*/}
-                {/*    <UpdateDetails />*/}
-                {/*</Route>*/}
+
                 <Route path="/updateUserForm" >
                     <UpdateDetails />
                 </Route>
                 <Route path="/courses/:courseId/" exact>
                     <TeachersList />
                 </Route>
-                {/*<Route path="/register" exact>*/}
-                {/*    <TeacherRegistration />*/}
-                {/*</Route>*/}
+
                 <Route path="/register" >
                     <TeacherRegistration />
                 </Route>
                 <Route path="/teachers/:teacherId" exact>
                     <TeacherItemExpanded />
                 </Route>
-                {/*<Route path="/register" exact>*/}
-                {/*    <Register />*/}
-                {/*</Route>*/}
+
                 <Redirect to="/"/>
             </Switch>
             </main>
