@@ -274,7 +274,7 @@ const TeacherItemExpanded = props => {
                     : <Button to={{
                         pathname: "/SignIn/",
                         state: {previous_page: window.location.pathname}
-                    }}>התחבר על מנת ליצור קשר עם המורה</Button>
+                    }}>התחבר על מנת ליצור קשר או לכתוב ביקורת</Button>
                 }
 
 
