@@ -43,7 +43,7 @@ function TeacherRegistration() {
         var db = firebase.firestore();
         var coursesRef = db.collection("courses")
         var query = coursesRef.where("courseCode", "!=", 'null');
-        query.limit(10).get().then(function (querySnapshot) {
+        query.get().then(function (querySnapshot) {
             let loadedCourses= [] ;
             querySnapshot.forEach(function (doc) {
                 let docData = doc.data()
