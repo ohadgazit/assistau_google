@@ -60,7 +60,7 @@ function UpdateDetails() {
         var teachersCollection = db.collection("teachers")
         if (user) {var current_email = auth.currentUser.email}
             var docRef = teachersCollection.doc(current_email)
-            docRef.limit(100).get().then(function (doc) {
+            docRef.get().then(function (doc) {
                 if (doc.exists) {
                     let teacherEdu = doc.get("education")
                     const docData = doc.data()
@@ -77,7 +77,7 @@ function UpdateDetails() {
         var db = firebase.firestore();
         var coursesRef = db.collection("courses")
         var query = coursesRef.where("courseCode", "!=", 'null');
-        query.get().then(function (querySnapshot) {
+        query.limit(100).get().then(function (querySnapshot) {
             let loadedCourses= [] ;
             querySnapshot.forEach(function (doc) {
                 let docData = doc.data()
