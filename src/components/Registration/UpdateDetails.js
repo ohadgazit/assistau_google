@@ -60,7 +60,7 @@ function UpdateDetails() {
         var teachersCollection = db.collection("teachers")
         if (user) {var current_email = auth.currentUser.email}
             var docRef = teachersCollection.doc(current_email)
-            docRef.get().then(function (doc) {
+            docRef.limit(100).get().then(function (doc) {
                 if (doc.exists) {
                     let teacherEdu = doc.get("education")
                     const docData = doc.data()
