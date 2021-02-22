@@ -10,13 +10,8 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import RegCard from "../components/Registration/RegCard";
 import "./ButtonSignOut.css";
 import "./SignInCard.css";
-import {FirebaseAuth} from "react-firebaseui";
 import Snackbar from "@material-ui/core/Snackbar";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
-import useStyles from "../Shared/useStyles";
-import {makeStyles} from "@material-ui/core";
-import {Alert} from "@material-ui/lab";
+
 
 const config = {
     apiKey: "AIzaSyDdCMmFaU2kFI7Rcx3PQf32_lHWlaHgt54",
@@ -33,8 +28,6 @@ firebase.initializeApp(config);
 // Configure FirebaseUI.
 
 let previous_route = document.referrer
-console.log("sdddddddddddddddddddddddd",previous_route)
-
 
 
 const auth = firebase.auth();
@@ -49,11 +42,8 @@ function SignInPage(props) {
     const uiConfig = {
         // Popup signin flow rather than redirect flow.
         signInFlow: 'popup',
-        // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-        //signInSuccessUrl: '/',
+        // Redirect to /signedIn after sign in is successful.
         signInSuccessUrl: redirect_url,
-        //signInSuccessUrl: window.location.href,
-        //signInSuccessUrl:  window.location.state,
         signInOptions: [
             {
                 provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -61,8 +51,6 @@ function SignInPage(props) {
                     hd: "mail.tau.ac.il"
                 }
             },
-            //firebase.auth.TwitterAuthProvider.PROVIDER_ID, // Twitter does not support scopes.
-            //firebase.auth.EmailAuthProvider.PROVIDER_ID // Other providers don't need to be given as object.
         ]
     };
     const [user] = useAuthState(auth);
@@ -95,7 +83,6 @@ function SignInPage(props) {
                         <p className="SingInText"> התחבר באמצעות המייל האוניברסיטאי </p>
                         <SignIn uiConfig={uiConfig}/>
                     </div>}
-                {/*<SignOut />*/}
                 {auth.currentUser && <button className="buttonSingOut" color="primary" onClick={handleClick}>התנתק</button>}
 
                     <Snackbar
