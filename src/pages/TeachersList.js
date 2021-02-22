@@ -1,45 +1,89 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import teachers from '../mocks/teachers.json'
-import CourseTeachersList from '../components/CourseTeachersList';
+import CourseTeachersList from '../components/TeachersComponents/CourseTeachersList';
+import ButtonAppBar from "../components/TeachersComponents/TeachersListAppBar";
+import firebase from "firebase";
 
-/*
-const DUMMY_TEACHERS = [
-    {
-        courses: '1',
-        name: 'דודי אורן',
-        education: 'מדעי המחשב ופילוסופיה',
-        imageUrl: 'https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/17264250_1596514743709275_7928669354904976584_n.jpg?_nc_cat=104&cb=846ca55b-311e05c7&ccb=2&_nc_sid=9267fe&_nc_ohc=LfVLcwbE_-wAX8zgepp&_nc_ht=scontent-mxp1-1.xx&oh=0ddda56556b4c621f9d11040b9a323db&oe=5FED5953',
-        locations: 'מרכז תל אביב',
-        creator: 'u1'
-    },
-    {
-        courses: '2',
-        name: 'בני ברוכים',
-        education: 'מדעי המחשב ופסיכולוגיה',
-        imageUrl: 'https://tmssl.akamaized.net/images/foto/normal/lionel-messi-ballon-dor-2019-1592819026-41968.jpg',
-        locations: 'בית התלמיד, אוניברסיטה',
-        creator: 'u2'
-    },
-    {
-        courses: '2',
-        name: 'פיני בלילי',
-        education: 'מגדר',
-        imageUrl: 'https://images.one.co.il/images/d/400_221/gg827982.jpg',
-        locations: 'בית התלמיד',
-        creator: 'u2'
-    }
-
-];*/
 const TeachersList = () => {
 
-    //const userId = 'u1';
-    const courseId = useParams().courseId;
-    const loadedPlaces = teachers.filter(teacher => teacher.courses.includes(Number(courseId)));
-  /// const {chosenCourse} = this.props.location.state;
-   // console.log(chosenCourse);
 
-    return  <CourseTeachersList items={loadedPlaces} />
+
+    const [genderFilter,changeGender] = React.useState(0);
+    const [lessonCostSorting,changeLessonCostSorting] = React.useState(0);
+    const [showFilterBar,setShowFilterBar] = React.useState(1);
+    const [dataPulled,setDataPulled] = React.useState(0);
+
+
+    const [loadedPlacesState,setLoadedPlacesState] = React.useState([]);
+    const courseId = useParams().courseId;
+
+
+
+
+
+    useEffect(() => {
+        filterTeacherByCourseNum(courseId)
+    }, [courseId])
+
+    const loadedPlaces2 = loadedPlacesState.filter(teacher => genderFilter > 0 ? teacher.gender === (Number(genderFilter)): 1)
+
+    if (lessonCostSorting === 0){
+        loadedPlaces2.sort((a,b) => Number(a.rating)>Number(b.rating) ? -1 : 1);
+    }
+
+    else if (lessonCostSorting === 1){
+        loadedPlaces2.sort((a,b) => Number(a.lessonCost)>Number(b.lessonCost) ? 1 : -1);
+    }
+    else if (lessonCostSorting === 2){
+        loadedPlaces2.sort((a,b) => Number(a.lessonCost)>Number(b.lessonCost) ? -1 : 1);
+    }
+
+
+    function filterTeacherByCourseNum(course_num) {
+
+        var db = firebase.firestore();
+        var teachersRef = db.collection("teachers");
+        var query = teachersRef.where("courses", "array-contains", course_num);
+        query.get().then(function (querySnapshot) {
+            let loadedPlaces3 = [] ;
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(doc.data());
+                //debugger
+                let docData = doc.data()
+                loadedPlaces3.push({...docData
+                });
+            })
+            setLoadedPlacesState(loadedPlaces3)
+            setDataPulled(1);
+        })
+                .catch(function (error) {
+                    console.log("Error getting documents: ", error);
+                });
+    }
+
+
+        console.log("here")
+        return (
+
+            <div>
+                <ButtonAppBar dataGender={
+                    {genderFilter: genderFilter, changeGender: changeGender.bind(this)}
+                } dataAge={
+                    {lessonCostSorting: lessonCostSorting, changeLessonCostSorting: changeLessonCostSorting.bind(this)}
+                }/>
+                <CourseTeachersList
+                                    items={loadedPlaces2}
+                                    from_course={courseId}
+                                    gotData={dataPulled}
+                                    showBar={{
+                                        showFilterBar: showFilterBar,
+                                        setShowFilterBar: setShowFilterBar.bind(this)
+                                    }}
+                />
+            </div>
+        );
+
 };
 
 export default TeachersList;

@@ -1,16 +1,22 @@
-import React, { useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './MainPage.css';
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 import 'firebase/database'
-
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import RegCard from "../components/Registration/RegCard";
+import "./ButtonSignOut.css";
+import "./SignInCard.css";
+import {FirebaseAuth} from "react-firebaseui";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import useStyles from "../Shared/useStyles";
+import {makeStyles} from "@material-ui/core";
+import {Alert} from "@material-ui/lab";
 
 const config = {
     apiKey: "AIzaSyDdCMmFaU2kFI7Rcx3PQf32_lHWlaHgt54",
@@ -24,51 +30,42 @@ const config = {
 };
 
 firebase.initializeApp(config);
-
-
 // Configure FirebaseUI.
-const uiConfig = {
-    // Popup signin flow rather than redirect flow.
-    signInFlow: 'popup',
-    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: '/signedIn',
-    signInOptions: [
-        {
-            provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            customParameters: {
-                hd: "mail.tau.ac.il"
-            }
-        },
-        //firebase.auth.TwitterAuthProvider.PROVIDER_ID, // Twitter does not support scopes.
-        //firebase.auth.EmailAuthProvider.PROVIDER_ID // Other providers don't need to be given as object.
-    ]
-};
 
+let previous_route = document.referrer
+console.log("sdddddddddddddddddddddddd",previous_route)
 
-class SignInScreen extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>My App</h1>
-                <p>Please sign-in:</p>
-                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
-            </div>
-        );
-    }
-}
 
 
 const auth = firebase.auth();
-const firestore = firebase.firestore();
-const analytics = firebase.analytics();
 
+function SignInPage(props) {
+    const [open, setOpen] = React.useState(false);
+    let redirect_url = '/'
+    if (props.location.state) {
+        redirect_url = props.location.state.previous_page
+    }
 
-
-
-
-function SignInPage() {
+    const uiConfig = {
+        // Popup signin flow rather than redirect flow.
+        signInFlow: 'popup',
+        // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+        //signInSuccessUrl: '/',
+        signInSuccessUrl: redirect_url,
+        //signInSuccessUrl: window.location.href,
+        //signInSuccessUrl:  window.location.state,
+        signInOptions: [
+            {
+                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                customParameters: {
+                    hd: "mail.tau.ac.il"
+                }
+            },
+            //firebase.auth.TwitterAuthProvider.PROVIDER_ID, // Twitter does not support scopes.
+            //firebase.auth.EmailAuthProvider.PROVIDER_ID // Other providers don't need to be given as object.
+        ]
+    };
     const [user] = useAuthState(auth);
-
 
     if (user) {
         console.log("connected user:", user.displayName)
@@ -76,70 +73,72 @@ function SignInPage() {
         console.log(user)
     }
 
+    const handleClick = () => {
+        auth.signOut()
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
 
     return (
 
         <div className="App">
-            <header>
-                <h3>AssisTAU Playground - Firebase Google Auth + DB </h3>
-                <SignOut />
-            </header>
+            <RegCard className ="SingIn-Card">
             <section>
-                {user ?  <SignIn /> : <SignIn />}
+                {user ? <p className="SingInText">לחץ על הכפתור על מנת להתנתק </p> :
+                    <div>
+                        <p className="SingInText"> התחבר באמצעות המייל האוניברסיטאי </p>
+                        <SignIn uiConfig={uiConfig}/>
+                    </div>}
+                {/*<SignOut />*/}
+                {auth.currentUser && <button className="buttonSingOut" color="primary" onClick={handleClick}>התנתק</button>}
+
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        open={open}
+                        autoHideDuration={2500}
+                        message="התנתקת בהצלחה"
+                        onClose={handleClose}
+                    />
             </section>
+            </RegCard>
         </div>
+
     );
 
 }
 
-
-
-function SignIn() {
-    // const signInWithGoogle = () => {
-    //     const provider = new firebase.auth.GoogleAuthProvider();
-    //     provider.setCustomParameters({
-    //         hd: "mail.tau.ac.il"
-    //     });
-    //     auth.signInWithPopup(provider);
-    // }
-
+export function SignIn(props) {
 
     return (
         <>
-
-            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
-
-            {/*<button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>*/}
-            {/*<p>Do not violate the community guidelines or you will be banned for life!</p> */}
+            <StyledFirebaseAuth uiConfig={props.uiConfig} firebaseAuth={firebase.auth()}/>
         </>
     )
-
 }
 
-function SignOut() {
+export function SignOut() {
     return auth.currentUser && (
         <div>
-            <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-            <button className="user-name" onClick={() => writeUserData()}> {auth.currentUser.displayName} </button>
+            <button className="buttonSingOut" color="primary" onClick={() => auth.signOut()}>התנתק</button>
         </div>
-
     )
 }
 
-function writeUserData() {
 
-    const userId = auth.currentUser.uid
-    const name = auth.currentUser.displayName
-    const email = auth.currentUser.email
-    const imageUrl = auth.currentUser.photoURL
-    firebase.database().ref('users/' + userId).set({
-        uid : userId,
-        username: name,
-        email: email,
-        profile_picture : imageUrl,
-        timestamp : new Date().getTime()
-    });
-}
+
+
+
+
+
 
 
 export default SignInPage;

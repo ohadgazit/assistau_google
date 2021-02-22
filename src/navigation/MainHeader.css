@@ -6,10 +6,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: deepskyblue;
+  background-color: #282c34;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
-  padding: 0 1rem;
+  padding:  0rem;
   z-index: 5;
+  direction: ltr;
+  padding-left: 0rem;
 }
 
 main {

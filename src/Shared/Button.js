@@ -22,8 +22,10 @@ const Button = props => {
             <Link
                 to={props.to}
                 exact={props.exact}
+                {...props}
                 className={`button button--${props.size || 'default'} ${props.inverse &&
                 'button--inverse'} ${props.danger && 'button--danger'}`}
+
             >
                 {props.children}
             </Link>
@@ -31,6 +33,7 @@ const Button = props => {
     }
     return (
         <button
+
             className={`button button--${props.size || 'default'} ${props.inverse &&
             'button--inverse'} ${props.danger && 'button--danger'}`}
             type={props.type}
