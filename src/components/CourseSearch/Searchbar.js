@@ -38,7 +38,7 @@ const ControllableStates = (props) => {
         var db = firebase.firestore();
         var coursesRef = db.collection("courses")
         var query = coursesRef.where("courseCode", "!=", 'null');
-        query.limit(10).get().then(function (querySnapshot) {
+        query.get().then(function (querySnapshot) {
             let loadedCourses= [] ;
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
