@@ -246,7 +246,7 @@ const TeacherItemExpanded = props => {
                 <p></p>
                 <p>השכלה: {teacherData.education}</p>
                 <p>גיל: {teacherData.age}</p>
-                {teacherData.gender === "2" ? <p>מגדר: גבר </p> : <p>מגדר: אישה </p>}
+                {teacherData.gender === 2 ? <p>מגדר: גבר </p> : <p>מגדר: אישה </p>}
                 <p>מספר שנות נסיון : {teacherData.experience}</p>
                 <p>עלות שיעור : {teacherData.lessonCost}&#8362; </p>
                 {user ?
